@@ -5,7 +5,7 @@ public class SoulData : MonoBehaviour
 {
     [SerializeField] List<Effects> soulEffects = new List<Effects>();
     [SerializeField] List<Effects> invertedSoulEffects = new List<Effects>();
-    [SerializeField] float soulLifespan = 30f;
+    // [SerializeField] float soulLifespan = 30f;
 
     [System.Serializable]
     public struct Effects
