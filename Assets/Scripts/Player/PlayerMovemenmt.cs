@@ -4,9 +4,11 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovemenmt : MonoBehaviour
 {
-    [SerializeField] private float speed = 5f;
-    [SerializeField] private Rigidbody2D rb;
-    private Vector2 movement;
+    [SerializeField] float speed = 5f;
+    [SerializeField] Rigidbody2D rb;
+    Vector2 movement;
+    Vector2 mouse;
+
 
     private void Awake()
     {
@@ -18,6 +20,10 @@ public class PlayerMovemenmt : MonoBehaviour
         movement = context.ReadValue<Vector2>();
     }
 
+    private void Update()
+    {
+        PlayerLooking();
+    }
     private void FixedUpdate()
     {
         PlayerMoving();
@@ -26,5 +32,18 @@ public class PlayerMovemenmt : MonoBehaviour
     private void PlayerMoving()
     {
         rb.linearVelocity = movement * speed;
+    }
+
+    private void PlayerLooking()
+    {
+        Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+        mouseWorldPosition.z = 0f;
+
+        Vector2 lookDirection = (Vector2)mouseWorldPosition - (Vector2)transform.position;
+
+        float angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg;
+
+        transform.rotation = Quaternion.Euler(0, 0, angle - 90f);
     }
 }
