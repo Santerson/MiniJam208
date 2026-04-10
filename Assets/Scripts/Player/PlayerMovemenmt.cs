@@ -4,37 +4,41 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovemenmt : MonoBehaviour
 {
+    // Speed of Player
     [SerializeField] float speed = 5f;
+    // RigidBody to move the characters
     [SerializeField] Rigidbody2D rb;
+    // A Vector2 for the Movement
     Vector2 movement;
-    Vector2 mouse;
 
 
     private void Awake()
     {
+        // Get the rigid body
         rb = GetComponent<Rigidbody2D>();
     }
 
+    // To get the context of the Value of the Inputs
     public void OnMove(InputAction.CallbackContext context)
     {
         movement = context.ReadValue<Vector2>();
     }
 
-    private void Update()
+    private void Update() // To update the looking of the player character
     {
         PlayerLooking();
     }
-    private void FixedUpdate()
+    private void FixedUpdate() // To contant update the Moving of the player
     {
         PlayerMoving();
     }
 
-    private void PlayerMoving()
+    private void PlayerMoving() // To move the Player
     {
         rb.linearVelocity = movement * speed;
     }
 
-    private void PlayerLooking()
+    private void PlayerLooking() // To get the player to look at mouse 
     {
         Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 

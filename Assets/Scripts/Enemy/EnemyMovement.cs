@@ -3,7 +3,9 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
+    // Transform to know where the player is
     Transform player;
+    // The speed of enemies
     float speed = 3f;
 
     private void Awake()
@@ -13,6 +15,7 @@ public class EnemyMovement : MonoBehaviour
 
     private void Update()
     {
+        // Move to Enemies
         if(player != null)
         {
             transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
