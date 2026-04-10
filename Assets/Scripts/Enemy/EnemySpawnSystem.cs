@@ -1,21 +1,47 @@
+using NUnit.Framework.Internal;
 using UnityEngine;
 
 public class EnemySpawnSystem : MonoBehaviour
 {
     // Get Enemy Prefab
     [SerializeField] private GameObject EnemyPrefab;
+    Transform player; // to make sure its not near player
+    float minRadius = 15f; // the min of spawning distance
+    float maxRadius = 25f; // the maximum of spawning distance
+    float TestSpawnInterval= 15f;
+    public float TestTimer = 0;
 
-    // Spawn time of Enemy
-    float SpawnTime = 10f;
+    private void Awake()
+    {
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+    }
+
+
     private void Update()
     {
-        SpawnTime -= Time.deltaTime;
-
-        // Spawn Enemies when SpawnTime is less than 0
-        if(SpawnTime < 0)
+        TestTimer += Time.deltaTime;
+        if (TestTimer >=  TestSpawnInterval)
         {
-            SpawnTime = 10;
-            Instantiate(EnemyPrefab);
+            SpawnEnemy();
+            TestTimer = 0;
         }
+    }
+
+    void SpawnEnemy()
+    {
+        // Pickinga Random Angle
+        float angle = Random.Range(0, Mathf.PI * 2);
+
+        // Pick a random distance in the inner and outer radius
+        float radius = Random.Range(minRadius, maxRadius);
+
+        // Contert polar coordinats(x, y)
+        Vector2 spawnOffset = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle)) * radius;
+
+        // Final position relative to player
+        Vector2 spawnPosition = (Vector2)player.transform.position + spawnOffset;
+
+        // Spawning Enemy
+        Instantiate(EnemyPrefab, spawnPosition, Quaternion.identity);
     }
 }
