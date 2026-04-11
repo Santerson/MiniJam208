@@ -144,7 +144,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5737810785899139068}
   m_Layer: 0
-  m_Name: Enemy (Speed)
+  m_Name: Enemy (Bigger Range)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -375,9 +375,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   refWeaponCollider: {fileID: 3455335276017543480}
   BaseDamageMultiplier: 1
-  refWeaponHitboxScalePoint: {fileID: 4767329944785630851}
-  currentAttackRange: 1
-  speed: 5
+  refWeaponHitboxScalePoint: {fileID: 2462840964867018151}
+  currentAttackRange: 3
+  speed: 3
   AttackRate: 0.4
   BaseDamage: 1
 --- !u!50 &1274746341847685240

@@ -349,6 +349,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9555ad473bfe2d0438570161cd967937, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Parent: {fileID: 3789134319988432624}
   souls:
   - {fileID: 2399416122655976338, guid: ea032b1c9435d0b4e9a630274f1290a4, type: 3}
   - {fileID: 2399416122655976338, guid: 61af3bfc661a44e4a8cc673cd7769ce6, type: 3}
@@ -373,10 +374,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   refWeaponCollider: {fileID: 3455335276017543480}
-  BaseDamage: 1
   BaseDamageMultiplier: 1
   refWeaponHitboxScalePoint: {fileID: 4767329944785630851}
   currentAttackRange: 1
+  speed: 3
+  AttackRate: 0.4
+  BaseDamage: 1
 --- !u!50 &1274746341847685240
 Rigidbody2D:
   serializedVersion: 5
