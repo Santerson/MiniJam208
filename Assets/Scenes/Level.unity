@@ -326,8 +326,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fba33c477d55d384080845d1d6715a9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyPrefab: {fileID: 8364016987667324981, guid: f03a09d14d7850347a31a13968768170, type: 3}
-  EnemyHealthPrefab: {fileID: 2085563926556546624, guid: 589ec9920981c714483d0ea633b657be, type: 3}
+  EnemyPrefab: {fileID: 3789134319988432624, guid: b8b491edd0acbcd45aee8f89429f55a4, type: 3}
   TestTimer: 0
 --- !u!4 &829152215
 Transform:
