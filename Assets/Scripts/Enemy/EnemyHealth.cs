@@ -1,3 +1,4 @@
+using NUnit.Framework;
 using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
@@ -5,10 +6,7 @@ public class EnemyHealth : MonoBehaviour
     PlayerAttack PA;
 
     [Header("SOULS")]
-    [SerializeField] GameObject soulBasicPrefab;
-    [SerializeField] GameObject soulDMGPrefab;
-    [SerializeField] GameObject soulAttackRangePrefab;
-    [SerializeField] GameObject soulASPPrefab;
+    [SerializeField] GameObject[] souls = new GameObject[4];
 
     [Header("Test")]
     [SerializeField]float health = 5f;
@@ -22,17 +20,17 @@ public class EnemyHealth : MonoBehaviour
         {
             switch (Random.Range(1, 5))
             {
-                case 1: 
-                    Instantiate(soulBasicPrefab, transform.position, Quaternion.identity);
+                case 1:
+                    Instantiate(souls[0], transform.position, Quaternion.identity);
                     break;
                 case 2:
-                    Instantiate(soulDMGPrefab, transform.position, Quaternion.identity);
+                    Instantiate(souls[1], transform.position, Quaternion.identity);
                     break;
                 case 3:
-                    Instantiate(soulAttackRangePrefab, transform.position, Quaternion.identity);
+                    Instantiate(souls[2], transform.position, Quaternion.identity);
                     break;
                 case 4:
-                    Instantiate(soulASPPrefab, transform.position, Quaternion.identity);
+                    //Instantiate(souls[3], transform.position, Quaternion.identity);
                     break;
             }
             Debug.Log("Spawwn Soul");

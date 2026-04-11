@@ -160,8 +160,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9555ad473bfe2d0438570161cd967937, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soulBasicPrefab: {fileID: 7427481367193385111, guid: b90f735817dc33d4983cb5ee6a26731f, type: 3}
-  soulDMGPrefab: {fileID: 2399416122655976338, guid: 602839f7607d28942b38e3170b514455, type: 3}
-  soulAttackRangePrefab: {fileID: 2399416122655976338, guid: 61af3bfc661a44e4a8cc673cd7769ce6, type: 3}
-  soulASPPrefab: {fileID: 2399416122655976338, guid: ea032b1c9435d0b4e9a630274f1290a4, type: 3}
+  souls:
+  - {fileID: 2399416122655976338, guid: 602839f7607d28942b38e3170b514455, type: 3}
+  - {fileID: 2399416122655976338, guid: 61af3bfc661a44e4a8cc673cd7769ce6, type: 3}
+  - {fileID: 2399416122655976338, guid: ea032b1c9435d0b4e9a630274f1290a4, type: 3}
+  - {fileID: 0}
   health: 5
