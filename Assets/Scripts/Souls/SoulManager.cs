@@ -10,6 +10,11 @@ public class SoulManager : MonoBehaviour
     [SerializeField] GameObject[] SpawnUIPlacesParents = new GameObject[5];
     [SerializeField] LineRenderer[] DecayLineCovers = new LineRenderer[5];
 
+    [Header("Colors")]
+    [SerializeField] Color NoSoulColor = Color.yellow;
+    [SerializeField] Color PositiveSoulColor = Color.yellow;
+    [SerializeField] Color InvertedSoulColor = Color.black;
+
     SoulData[] Souls = new SoulData[5];
     List<GameObject> SpawnedItems = new List<GameObject>();
     List<float> DecayLinesInitialXPoses = new List<float>();
@@ -82,6 +87,8 @@ public class SoulManager : MonoBehaviour
                 ApplyTargetSoul(Souls[i].IsSoulInverted ? Souls[i].invertedSoulEffects : Souls[i].soulEffects);
             }
         }
+        // Refresh the ui
+        RefreshSoulUI();
     }
 
     void ApplyTargetSoul(List<SoulData.Effects> effects)
@@ -94,34 +101,45 @@ public class SoulManager : MonoBehaviour
             // Add conditions through a hideous switch statement
             switch (statType)
             {
+                // Depending on the stat type, add the stat change to the corresponding player stat
+
+                // Atk Dmg
                 case SoulData.StatType.AttackDamage:
                     // Add the stat change to the player's attack damage
                     refPlayerAttack.currentAttackDamage += effect.statChange;
                     break;
+                // Atk Range
                 case SoulData.StatType.AttackRange:
                     // Add the stat change to the player's attack range
                     refPlayerAttack.currentAttackRange += effect.statChange;
                     break;
+                // Asp
                 case SoulData.StatType.AttackSpeed:
                     // Add the stat change to the player's attack speed
                     refPlayerAttack.currentAttackSpeed += effect.statChange;
                     break;
+                // Player Move Speed
                 case SoulData.StatType.MoveSpeed:
                     // Add the stat change to the player's move speed
                     Debug.Log("This doesn't exist yes :/");
                     break;
+                // If the soul damages the player on attack
                 case SoulData.StatType.PlayerDamageSelf:
                     refPlayerAttack.currentSelfAttack += effect.statChange;
                     break;
+                // Heal the player over time
                 case SoulData.StatType.HealPlayer:
                     Debug.Log("This doesn't exist yet :/");
                     break;
+                // Reduce damage taken by the player
                 case SoulData.StatType.DamageReduction:
                     Debug.Log("This doesn't exist yet :/");
                     break;
+                // Heal nearby enemies on kill
                 case SoulData.StatType.EnemyHeal:
                     Debug.Log("This doesn't exist yet :/");
                     break;
+                // Explode nearby enemies on kill
                 case SoulData.StatType.ExplodingDamade:
                     Debug.Log("This doesn't exist yet :/");
                     break;
@@ -204,10 +222,24 @@ public class SoulManager : MonoBehaviour
         // Loop through the soul array and spawn the corresponding ui element for each soul in the correct position
         for (int i = 0; i < SpawnUIPlacesParents.Length; i++)
         {
+            // Spawn the soul object
             if (Souls[i] != null)
                 SpawnedItems.Add(Instantiate(Souls[i].UIGameobject, SpawnUIPlacesParents[i].transform));
+            // For each slot, set the corresponding background color for the soul
+            if (Souls[i] != null)
+            {
+                // Check if the soul is inverted, and set the color accordingly
+                if (Souls[i].IsSoulInverted)
+                    SpawnUIPlacesParents[i].GetComponent<SpriteRenderer>().color = InvertedSoulColor;
+                else
+                    SpawnUIPlacesParents[i].GetComponent<SpriteRenderer>().color = PositiveSoulColor;
+            }
+            else
+            {
+                // Otherwise, default to the no soul color
+                SpawnUIPlacesParents[i].GetComponent<SpriteRenderer>().color = NoSoulColor;
+            }
         }
-
         // Spawn the lines for decay amount
         UpdateDecayLines();
     }

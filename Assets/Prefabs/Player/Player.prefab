@@ -393,7 +393,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a9b5030e88eaa46887aaa11bd06723, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Playerhealth: 20
+  healthBarCover: {fileID: 0}
+  HealthBarOffset: {x: 0, y: -1}
+  MaxHealth: 20
 --- !u!50 &7434798361887374136
 Rigidbody2D:
   serializedVersion: 5
@@ -460,6 +462,9 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  NoSoulColor: {r: 1, g: 1, b: 0.6901961, a: 1}
+  PositiveSoulColor: {r: 1, g: 1, b: 0.6901961, a: 1}
+  InvertedSoulColor: {r: 0.45882353, g: 0, b: 0.85882354, a: 1}
 --- !u!114 &1835745131533155466
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -613,6 +618,7 @@ MonoBehaviour:
   currentAttackSpeed: 1
   currentAttackDamage: 1
   currentAttackRange: 1
+  currentDamageMultiplier: 1
   currentSelfAttack: 0
 --- !u!61 &4918697178197518546
 BoxCollider2D:
