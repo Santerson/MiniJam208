@@ -9,6 +9,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2077463714751755979, guid: b90f735817dc33d4983cb5ee6a26731f, type: 3}
+      propertyPath: UIGameobject
+      value: 
+      objectReference: {fileID: 34269102963145749, guid: 158cb143c552c1045b8870929a27fe23, type: 3}
+    - target: {fileID: 2077463714751755979, guid: b90f735817dc33d4983cb5ee6a26731f, type: 3}
       propertyPath: soulEffects.Array.size
       value: 1
       objectReference: {fileID: 0}

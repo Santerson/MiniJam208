@@ -3,8 +3,14 @@ using UnityEngine;
 
 public class SoulManager : MonoBehaviour
 {
+    [Header("Soul Stuff")]
     [SerializeField] GameObject SoulStorage;
+
+    [Header("Soul Display")]
+    [SerializeField] GameObject[] SpawnUIPlacesParents = new GameObject[5];
+
     SoulData[] Souls = new SoulData[5];
+    List<GameObject> SpawnedItems = new List<GameObject>();
     PlayerAttack refPlayerAttack;
 
     /// <summary>
@@ -41,7 +47,10 @@ public class SoulManager : MonoBehaviour
         }
         // Add the new soul to the first slot
         Souls[0] = newData;
+        // Apply them
         ApplyAllSouls();
+        // Refresh the display
+        RefreshSoulUI();
     }
 
     /// <summary>
@@ -115,6 +124,7 @@ public class SoulManager : MonoBehaviour
         newSoulData.soulEffects = new List<SoulData.Effects>(refSoulData.soulEffects);
         newSoulData.invertedSoulEffects = new List<SoulData.Effects>(refSoulData.invertedSoulEffects);
         newSoulData.soulLifespan = refSoulData.soulLifespan;
+        newSoulData.UIGameobject = refSoulData.UIGameobject;
         return newSoulData;
     }
 
@@ -150,5 +160,18 @@ public class SoulManager : MonoBehaviour
         // If no match is found, return null
         Debug.LogError("The soul data to be removed was not found in the soul storage object");
         return;
+    }
+
+    void RefreshSoulUI()
+    {
+        // Spawn each object
+        SpawnedItems.Clear();
+        for (int i = 0; i < SpawnUIPlacesParents.Length; i++)
+        {
+            if (Souls[i] != null)
+                SpawnedItems.Add(Instantiate(Souls[i].UIGameobject, SpawnUIPlacesParents[i].transform));
+        }
+
+        // TODO: Spawn the lines for decay amount
     }
 }
