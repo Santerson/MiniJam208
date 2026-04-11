@@ -24,13 +24,10 @@ public class PlayerMovemenmt : MonoBehaviour
         movement = context.ReadValue<Vector2>();
     }
 
-    private void Update() // To update the looking of the player character
-    {
-        PlayerLooking();
-    }
     private void FixedUpdate() // To contant update the Moving of the player
     {
         PlayerMoving();
+        PlayerLooking();
     }
 
     private void PlayerMoving() // To move the Player

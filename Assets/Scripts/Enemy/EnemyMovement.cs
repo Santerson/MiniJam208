@@ -13,7 +13,7 @@ public class EnemyMovement : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         // Move to Enemies
         if(player != null)
