@@ -24,5 +24,34 @@ public class SoulManager : MonoBehaviour
         }
         // Add the new soul to the first slot
         Souls[0] = Soul;
+        ApplyAllSouls();
+    }
+
+    /// <summary>
+    /// Apply the souls of the player to their stats
+    /// </summary>
+    void ApplyAllSouls()
+    {
+        // TODO: Wipe the stats of the player
+
+        // Loop through all souls and apply their effects
+        for (int i = 0; i < Souls.Length; i++)
+        {
+            if (Souls[i] != null)
+            {
+                SoulData refData = Souls[i].GetComponent<SoulData>();
+                // Apply the soul's effects here, using refData
+                ApplyTargetSoul(refData.IsSoulInverted ? refData.invertedSoulEffects : refData.soulEffects);
+            }
+        }
+    }
+
+    void ApplyTargetSoul(List<SoulData.Effects> effects)
+    {
+        foreach (SoulData.Effects effect in effects)
+        {
+            // Apply the effect to the player here, using effect.statType and effect.statChange
+
+        }
     }
 }

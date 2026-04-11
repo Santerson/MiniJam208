@@ -3,10 +3,23 @@ using UnityEngine;
 
 public class SoulData : MonoBehaviour
 {
-    [SerializeField] List<Effects> soulEffects = new List<Effects>();
-    [SerializeField] List<Effects> invertedSoulEffects = new List<Effects>();
-    // [SerializeField] float soulLifespan = 30f;
+    [Tooltip("The effects of this soul")]
+    public List<Effects> soulEffects = new List<Effects>();
+    [Tooltip("The inverted effects of the soul")]
+    public List<Effects> invertedSoulEffects = new List<Effects>();
+    [Tooltip("The lifespan of the soul in seconds")]
+    public float soulLifespan = 30f;
+    /// <summary>
+    /// Whether or not this soul is inverted
+    /// </summary>
+    [HideInInspector] public bool IsSoulInverted { get; private set; } = false;
 
+    // Time until this soul becomes corrupt
+    float soulLifeSpanLeft;
+
+    /// <summary>
+    /// Soul containing an effect of a soul
+    /// </summary>
     [System.Serializable]
     public struct Effects
     {
@@ -23,5 +36,29 @@ public class SoulData : MonoBehaviour
         AttackRange,
         AttackSpeed,
         MoveSpeed
+    }
+
+    private void Start()
+    {
+        // Set the soul's lifespan
+        soulLifeSpanLeft = soulLifespan;
+    }
+
+    void Update()
+    {
+        // Decrease the soul's lifespan
+        soulLifeSpanLeft -= Time.deltaTime;
+        // If the soul's lifespan is up, invert the soul
+        if (soulLifeSpanLeft <= 0)
+        {
+            InvertSoul();
+        }
+    }
+
+    void InvertSoul()
+    {
+        // Invert the soul
+        IsSoulInverted = true;
+        // Do something cool here too
     }
 }

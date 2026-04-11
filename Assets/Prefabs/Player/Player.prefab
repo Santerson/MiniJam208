@@ -411,7 +411,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4acfcbf0d3cccd499415f23f5f71593, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  refWeaponCollider: {fileID: 0}
+  refWeaponCollider: {fileID: 7063693213652227986}
   attackUptime: 0.4
 --- !u!61 &4918697178197518546
 BoxCollider2D:

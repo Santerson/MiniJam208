@@ -7,7 +7,11 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] Collider2D refWeaponCollider;
     [SerializeField] float attackUptime = 0.4f;
 
-    public bool isAttacking { get; private set; } = false;
+    float currentAttackSpeed = 1f;
+    float currentAttackDamage = 1f;
+    float currentAttackRange = 1f;
+
+    public bool IsAttacking { get; private set; } = false;
 
     /// <summary>
     /// Called when the player attacks, enables the weapon collider for a short bit
@@ -19,20 +23,21 @@ public class PlayerAttack : MonoBehaviour
         if (context.performed)
         {
             // Do attack logic
-            isAttacking = true;
+            IsAttacking = true;
             refWeaponCollider.gameObject.SetActive(true);
             // Disable the weapon collider after a short delay
-            StartCoroutine(waitDisableCollider());
+            StopAllCoroutines();
+            StartCoroutine(WaitDisableCollider());
         }
     }
 
     /// <summary>
     /// Disables the weapon collider after a short bit
     /// </summary>
-    IEnumerator waitDisableCollider()
+    IEnumerator WaitDisableCollider()
     {
         yield return new WaitForSeconds(attackUptime);
         refWeaponCollider.gameObject.SetActive(false);
-        isAttacking = false;
+        IsAttacking = false;
     }
 }
