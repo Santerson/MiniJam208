@@ -26,6 +26,14 @@ public class PlayerAttack : MonoBehaviour
 
     public bool IsAttacking { get; private set; } = false;
 
+    private void Start()
+    {
+        baseAttackSpeed = currentAttackSpeed;
+        baseAttackDamage = currentAttackDamage;
+        baseAttackRange = currentAttackRange;
+    }
+
+
     /// <summary>
     /// Called when the player attacks, enables the weapon collider for a short bit
     /// </summary>
@@ -52,5 +60,12 @@ public class PlayerAttack : MonoBehaviour
         yield return new WaitForSeconds(attackUptime);
         refWeaponCollider.gameObject.SetActive(false);
         IsAttacking = false;
+    }
+
+    public void ResetStats()
+    {
+        currentAttackSpeed = baseAttackSpeed;
+        currentAttackDamage = baseAttackDamage;
+        currentAttackRange = baseAttackRange;
     }
 }
