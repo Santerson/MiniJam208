@@ -8,22 +8,29 @@ public class EnemySpawnSystem : MonoBehaviour
     Transform player; // to make sure its not near player
     float minRadius = 15f; // the min of spawning distance
     float maxRadius = 25f; // the maximum of spawning distance
-    float TestSpawnInterval= 2f;
-    public float TestTimer = 0;
+    [SerializeField] float maxSpawnEnemiesPerWave = 50f;
+    [SerializeField] float spawnedEnemiesInWave = 0f;
+    float WaveTimer = 30f;
+    float ResetWaveTimer;
 
     private void Awake()
     {
+        ResetWaveTimer = WaveTimer;
+        WaveTimer = 5f;
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
 
 
     private void Update()
     {
-        TestTimer += Time.deltaTime;
-        if (TestTimer >=  TestSpawnInterval)
+        WaveTimer -= Time.deltaTime;
+        if (WaveTimer <= 0)
         {
             SpawnEnemy();
-            TestTimer = 0;
+            if (spawnedEnemiesInWave == maxSpawnEnemiesPerWave)
+            {
+                WaveTimer = ResetWaveTimer;
+            }
         }
     }
 
@@ -44,6 +51,7 @@ public class EnemySpawnSystem : MonoBehaviour
 
         // Spawning Enemy
         GameObject Enemy = Instantiate(Enemys[Random.Range(0, Enemys.Length)], spawnPosition, Quaternion.identity);
+        spawnedEnemiesInWave++;
 
 
         if (Random.Range(1, 100) <= 35)

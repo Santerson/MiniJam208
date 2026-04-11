@@ -274,7 +274,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.78125, y: 2}
+    oldSize: {x: 1.2666667, y: 1.4222223}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -375,7 +375,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   refWeaponCollider: {fileID: 3455335276017543480}
   BaseDamageMultiplier: 1
-  attackRange: 1
+  stoppingDistance: 2
+  attackRange: 2
   refWeaponHitboxScalePoint: {fileID: 4767329944785630851}
   currentAttackRange: 0.5
   speed: 3

@@ -10,7 +10,7 @@ public class EnemyMovement : MonoBehaviour
     [Header ("Attack Stuff")]
     [SerializeField] Collider2D refWeaponCollider;
     [SerializeField] float BaseDamageMultiplier = 1f;
-    float stoppingDistance = 3f;
+    [SerializeField] float stoppingDistance = 3f;
     [SerializeField] float attackRange = 4f;
     float attackTime;
 
