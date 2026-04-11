@@ -43,7 +43,7 @@ public class EnemyHealth : MonoBehaviour
         healthBarCover.transform.position = (Vector2)transform.position + HealthBarOffset;
         if (currentHealth <= 0 && gameObject.CompareTag("BiggerBadderEnemy").Equals(false))
         {
-            Destroy(gameObject);
+            Destroy(Parent);
         }
         else if (currentHealth <= 0 && gameObject.CompareTag("BiggerBadderEnemy").Equals(true))
         {
