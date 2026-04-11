@@ -43,7 +43,7 @@ public class SoulManager : MonoBehaviour
         // Do nothing if it does not have one
         if (refData == null)
         {
-            Debug.LogError("The soul passed does not have a SoulData component");
+            UnityEngine.Debug.LogError("The soul passed does not have a SoulData component");
             return;
         }
         // Duplicate this data into another component on the souldata storage object
@@ -108,10 +108,22 @@ public class SoulManager : MonoBehaviour
                     break;
                 case SoulData.StatType.MoveSpeed:
                     // Add the stat change to the player's move speed
-                    Debug.Log("This doesn't exist yet :/");
+                    Debug.Log("This doesn't exist yes :/");
                     break;
                 case SoulData.StatType.PlayerDamageSelf:
                     refPlayerAttack.currentSelfAttack += effect.statChange;
+                    break;
+                case SoulData.StatType.HealPlayer:
+                    Debug.Log("This doesn't exist yet :/");
+                    break;
+                case SoulData.StatType.DamageReduction:
+                    Debug.Log("This doesn't exist yet :/");
+                    break;
+                case SoulData.StatType.EnemyHeal:
+                    Debug.Log("This doesn't exist yet :/");
+                    break;
+                case SoulData.StatType.ExplodingDamade:
+                    Debug.Log("This doesn't exist yet :/");
                     break;
             }
         }

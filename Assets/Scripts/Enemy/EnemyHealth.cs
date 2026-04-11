@@ -18,21 +18,8 @@ public class EnemyHealth : MonoBehaviour
         }
         else if (health <= 0 && gameObject.CompareTag("BiggerBadderEnemy").Equals(true))
         {
-            switch (Random.Range(1, 5))
-            {
-                case 1:
-                    Instantiate(souls[0], transform.position, Quaternion.identity);
-                    break;
-                case 2:
-                    Instantiate(souls[1], transform.position, Quaternion.identity);
-                    break;
-                case 3:
-                    Instantiate(souls[2], transform.position, Quaternion.identity);
-                    break;
-                case 4:
-                    //Instantiate(souls[3], transform.position, Quaternion.identity);
-                    break;
-            }
+            int random = Random.Range(0, 6);
+            Instantiate(souls[random], gameObject.transform.position, Quaternion.identity);
             Debug.Log("Spawwn Soul");
             Destroy(gameObject);
         }
