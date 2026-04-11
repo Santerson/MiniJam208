@@ -25,6 +25,7 @@ public class SoulManager : MonoBehaviour
     // References to player scripts to apply soul effects to
     PlayerAttack refPlayerAttack;
     PlayerMovemenmt refPlayerMovement;
+    PlayerHealth refPlayerHealth;
 
     /// <summary>
     /// initializes variables
@@ -37,6 +38,7 @@ public class SoulManager : MonoBehaviour
             DecayLinesInitialXPoses.Add(decayline.GetPosition(1).x);
         }
         refPlayerMovement = GetComponent<PlayerMovemenmt>();
+        refPlayerHealth = GetComponent<PlayerHealth>();
     }
 
     private void Update()
@@ -135,12 +137,19 @@ public class SoulManager : MonoBehaviour
                     refPlayerAttack.currentSelfAttack += effect.statChange;
                     break;
                 // Heal the player over time
-                case SoulData.StatType.HealPlayer:
-                    Debug.Log("This doesn't exist yet :/");
+                case SoulData.StatType.HealPlayerOverTime:
+                    refPlayerHealth.ChangeHealthRegneration(effect.statChange);
+                    break;
+                // Damage Player over Time
+                case SoulData.StatType.DamagePlayerOverTime:
+                    refPlayerHealth.ChangeHealthRegneration(-effect.statChange);
                     break;
                 // Reduce damage taken by the player
                 case SoulData.StatType.DamageReduction:
-                    Debug.Log("This doesn't exist yet :/");
+                    refPlayerHealth.ChangeDamageMultiplier(-effect.statChange);
+                    break;
+                case SoulData.StatType.DamageAmplification:
+                    refPlayerHealth.ChangeDamageMultiplier(effect.statChange);
                     break;
                 // Heal nearby enemies on kill
                 case SoulData.StatType.EnemyHeal:
@@ -165,6 +174,7 @@ public class SoulManager : MonoBehaviour
     {
         refPlayerAttack.ResetStats();
         refPlayerMovement.ResetMoveSpeed();
+        refPlayerHealth.ResetStats();
     }
 
     /// <summary>

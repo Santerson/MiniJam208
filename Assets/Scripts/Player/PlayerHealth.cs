@@ -9,9 +9,13 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] Vector2 HealthBarOffset = new Vector2(0, -1f);
     [Tooltip("The maximum health of the player")]
     [SerializeField] float MaxHealth = 20f;
+    [SerializeField] float BaseIncomingDmgMultiplier = 1f;
+    [SerializeField] float BaseHealthRegen = 0f;
 
     float initialHealthBarPosition = 0;
     float currentHealth = 0;
+    float currentIncomingDmgMultiplier = 1;
+    float currentHealthRegen = 0f;
 
     /// <summary>
     /// Initializes variables
@@ -22,6 +26,8 @@ public class PlayerHealth : MonoBehaviour
         initialHealthBarPosition = healthBarCover.GetPosition(0).x;
         healthBarCover.SetPosition(1, healthBarCover.GetPosition(0));
         ChangeHealth(MaxHealth);
+        currentIncomingDmgMultiplier = BaseIncomingDmgMultiplier;
+        currentHealthRegen = BaseHealthRegen;
     }
 
     /// <summary>
@@ -31,6 +37,9 @@ public class PlayerHealth : MonoBehaviour
     {
         // Set the health bar to that position
         healthBarCover.transform.position = (Vector2)transform.position + HealthBarOffset;
+        // Apply Heal over Time or Damage over Time
+        AddHealth(currentHealthRegen * Time.deltaTime);
+        if (currentHealth > MaxHealth) currentHealth = MaxHealth;
     }
 
     /// <summary>
@@ -40,7 +49,14 @@ public class PlayerHealth : MonoBehaviour
     /// <param name="added">the amount of health to add / subtract</param>
     public void AddHealth(float added)
     {
-        ChangeHealth(currentHealth + added);
+        if (added <= 0)
+        {
+            ChangeHealth(currentHealth + added * currentIncomingDmgMultiplier);
+        }
+        else
+        {
+            ChangeHealth(currentHealth + added);
+        }
     }
 
     /// <summary>
@@ -89,6 +105,37 @@ public class PlayerHealth : MonoBehaviour
     {
         // Do something cool here eventaully
         Destroy(gameObject);
+    }
+
+    /// <summary>
+    /// Changes the incoming damage multiplier by the number given
+    /// NOTE: a positive number will AMPLIFY damage, a negative number will REDUCE damage
+    /// </summary>
+    /// <param name="change">The amount of damage changed</param>
+    public void ChangeDamageMultiplier(float change)
+    {
+        currentIncomingDmgMultiplier += change;
+        if (currentIncomingDmgMultiplier < 0) currentIncomingDmgMultiplier = 0;
+    }
+   
+    /// <summary>
+    /// Changes the health regeneration by the number given
+    /// NOTE: a negative number will cause Damage over Time, a Positive Number will grant a Heal over Time
+    /// NOTE: This increments in 1 unit per second
+    /// </summary>
+    /// <param name="change"></param>
+    public void ChangeHealthRegneration(float change)
+    {
+        currentHealthRegen += change;
+    }
+
+    /// <summary>
+    /// Resets health related stats EXCEPT current health
+    /// </summary>
+    public void ResetStats()
+    {
+        currentIncomingDmgMultiplier = BaseIncomingDmgMultiplier;
+        currentHealthRegen = BaseHealthRegen;
     }
 }
 

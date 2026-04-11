@@ -41,7 +41,9 @@ public class SoulData : MonoBehaviour
         MoveSpeed,
         PlayerDamageSelf,
         DamageReduction,
-        HealPlayer,
+        DamageAmplification,
+        HealPlayerOverTime,
+        DamagePlayerOverTime,
         ExplodingDamade,
         EnemyHeal,
         InvertPlayerControls
