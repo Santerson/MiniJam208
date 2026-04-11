@@ -52,5 +52,9 @@ public class EnemySpawnSystem : MonoBehaviour
         {
             Enemy.tag = "BiggerBadderEnemy";
         }
+        else
+        {
+                Enemy.tag = "Enemy";
+        }
     }
 }
