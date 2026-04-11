@@ -12,7 +12,7 @@ public class EnemyDeathAOE : MonoBehaviour
         // Scale the size of the gameObject
         transform.localScale *= scale;
         // Destroy the AOE after the specified duration
-        Destroy(gameObject, duration);
+        Destroy(transform.parent.gameObject, duration);
     }
 
     private void OnTriggerEnter(Collider other)
