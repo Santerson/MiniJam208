@@ -38,7 +38,8 @@ public class SoulData : MonoBehaviour
         AttackDamage,
         AttackRange,
         AttackSpeed,
-        MoveSpeed
+        MoveSpeed,
+        PlayerDamageSelf
     }
 
     private void Start()

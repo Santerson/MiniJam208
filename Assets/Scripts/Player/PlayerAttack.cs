@@ -11,6 +11,7 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] float baseAttackSpeed = 1;
     [SerializeField] float baseAttackDamage = 1;
     [SerializeField] float baseAttackRange = 1;
+    [SerializeField] float baseSelfAttack = 0;
 
     /// <summary>
     /// The attack speed of the player
@@ -25,6 +26,8 @@ public class PlayerAttack : MonoBehaviour
     /// </summary>
     [HideInInspector] public float currentAttackRange = 1f;
 
+    [HideInInspector] public float currentSelfAttack = 0f;
+
     public bool IsAttacking { get; private set; } = false;
 
     private void Start()
@@ -32,6 +35,7 @@ public class PlayerAttack : MonoBehaviour
         baseAttackSpeed = currentAttackSpeed;
         baseAttackDamage = currentAttackDamage;
         baseAttackRange = currentAttackRange;
+        baseSelfAttack = currentSelfAttack;
     }
 
 
@@ -73,5 +77,6 @@ public class PlayerAttack : MonoBehaviour
         currentAttackSpeed = baseAttackSpeed;
         currentAttackDamage = baseAttackDamage;
         currentAttackRange = baseAttackRange;
+        currentSelfAttack = baseSelfAttack;
     }
 }

@@ -292,6 +292,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!120 &644372175 stripped
+LineRenderer:
+  m_CorrespondingSourceObject: {fileID: 4511980668152849664, guid: 3f87c1c97e46ccf4ea5107cd943c930d, type: 3}
+  m_PrefabInstance: {fileID: 5700559077427828445}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &829152213
 GameObject:
   m_ObjectHideFlags: 0
@@ -338,6 +343,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!120 &833189707 stripped
+LineRenderer:
+  m_CorrespondingSourceObject: {fileID: 3828689627221471881, guid: 3f87c1c97e46ccf4ea5107cd943c930d, type: 3}
+  m_PrefabInstance: {fileID: 5700559077427828445}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &971884351
 GameObject:
   m_ObjectHideFlags: 0
@@ -491,9 +501,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!120 &1177646328 stripped
+LineRenderer:
+  m_CorrespondingSourceObject: {fileID: 5381862765778481462, guid: 3f87c1c97e46ccf4ea5107cd943c930d, type: 3}
+  m_PrefabInstance: {fileID: 5700559077427828445}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1357587396 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3991481223728189921, guid: 3f87c1c97e46ccf4ea5107cd943c930d, type: 3}
+  m_PrefabInstance: {fileID: 5700559077427828445}
+  m_PrefabAsset: {fileID: 0}
+--- !u!120 &1369434309 stripped
+LineRenderer:
+  m_CorrespondingSourceObject: {fileID: 6527533338662538605, guid: 3f87c1c97e46ccf4ea5107cd943c930d, type: 3}
   m_PrefabInstance: {fileID: 5700559077427828445}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1650863163 stripped
@@ -504,6 +524,11 @@ GameObject:
 --- !u!1 &1890212221 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8417772735839814205, guid: 3f87c1c97e46ccf4ea5107cd943c930d, type: 3}
+  m_PrefabInstance: {fileID: 5700559077427828445}
+  m_PrefabAsset: {fileID: 0}
+--- !u!120 &2039044541 stripped
+LineRenderer:
+  m_CorrespondingSourceObject: {fileID: 6673943592785886674, guid: 3f87c1c97e46ccf4ea5107cd943c930d, type: 3}
   m_PrefabInstance: {fileID: 5700559077427828445}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1145978158623603482
@@ -554,6 +579,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5201783845402012381, guid: a00a0485a38c7df49a9801ac13281d92, type: 3}
+      propertyPath: 'DecayLineCovers.Array.data[0]'
+      value: 
+      objectReference: {fileID: 833189707}
+    - target: {fileID: 5201783845402012381, guid: a00a0485a38c7df49a9801ac13281d92, type: 3}
+      propertyPath: 'DecayLineCovers.Array.data[1]'
+      value: 
+      objectReference: {fileID: 644372175}
+    - target: {fileID: 5201783845402012381, guid: a00a0485a38c7df49a9801ac13281d92, type: 3}
+      propertyPath: 'DecayLineCovers.Array.data[2]'
+      value: 
+      objectReference: {fileID: 1177646328}
+    - target: {fileID: 5201783845402012381, guid: a00a0485a38c7df49a9801ac13281d92, type: 3}
+      propertyPath: 'DecayLineCovers.Array.data[3]'
+      value: 
+      objectReference: {fileID: 2039044541}
+    - target: {fileID: 5201783845402012381, guid: a00a0485a38c7df49a9801ac13281d92, type: 3}
+      propertyPath: 'DecayLineCovers.Array.data[4]'
+      value: 
+      objectReference: {fileID: 1369434309}
     - target: {fileID: 5201783845402012381, guid: a00a0485a38c7df49a9801ac13281d92, type: 3}
       propertyPath: 'SpawnUIPlacesParents.Array.data[0]'
       value: 

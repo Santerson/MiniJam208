@@ -110,6 +110,9 @@ public class SoulManager : MonoBehaviour
                     // Add the stat change to the player's move speed
                     Debug.Log("This doesn't exist yet :/");
                     break;
+                case SoulData.StatType.PlayerDamageSelf:
+                    refPlayerAttack.currentSelfAttack += effect.statChange;
+                    break;
             }
         }
     }

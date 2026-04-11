@@ -8,7 +8,7 @@ public class EnemySpawnSystem : MonoBehaviour
     Transform player; // to make sure its not near player
     float minRadius = 15f; // the min of spawning distance
     float maxRadius = 25f; // the maximum of spawning distance
-    float TestSpawnInterval= 5f;
+    float TestSpawnInterval= 2f;
     public float TestTimer = 0;
 
     private void Awake()
