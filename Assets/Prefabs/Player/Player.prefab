@@ -221,6 +221,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &6048914178788472523
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6751369568015591770}
+  m_Layer: 0
+  m_Name: SoulStorage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6751369568015591770
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6048914178788472523}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2435596230473892758}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6709193749432787357
 GameObject:
   m_ObjectHideFlags: 0
@@ -259,6 +290,7 @@ Transform:
   m_Children:
   - {fileID: 3556083615702466400}
   - {fileID: 4845567790648392141}
+  - {fileID: 6751369568015591770}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &465024736148695634
@@ -369,6 +401,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59bba1c8595abb342aacbc98694e0402, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SoulStorage: {fileID: 6048914178788472523}
 --- !u!114 &1835745131533155466
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -513,6 +546,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   refWeaponCollider: {fileID: 7063693213652227986}
   attackUptime: 0.4
+  baseAttackSpeed: 1
+  baseAttackDamage: 1
+  baseAttackRange: 1
   currentAttackSpeed: 1
   currentAttackDamage: 1
   currentAttackRange: 1

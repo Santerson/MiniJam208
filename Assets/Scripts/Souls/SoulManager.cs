@@ -3,8 +3,22 @@ using UnityEngine;
 
 public class SoulManager : MonoBehaviour
 {
-    GameObject[] Souls = new GameObject[5];
+    [SerializeField] GameObject SoulStorage;
+    SoulData[] Souls = new SoulData[5];
+    PlayerAttack refPlayerAttack;
 
+    /// <summary>
+    /// initializes variables
+    /// </summary>
+    private void Start()
+    {
+        refPlayerAttack = GetComponent<PlayerAttack>();
+    }
+
+    /// <summary>
+    /// Adds a soul to the player's list. This also shifts all other souls and reapplies all their effects.
+    /// </summary>
+    /// <param name="Soul">The gameobject of the soul to apply. NOTE: must have a SoulData component.</param>
     public void AddSoul(GameObject Soul)
     {
         // Check if the soul passed has a souldata component
@@ -15,15 +29,18 @@ public class SoulManager : MonoBehaviour
             Debug.LogError("The soul passed does not have a SoulData component");
             return;
         }
-        // Remove the last soul
-        Souls[4] = null;
+        // Duplicate this data into another component on the souldata storage object
+        SoulData newData = DuplicateSoulData(refData);
+        // Remove the last soul from the array and storage object
+        RemoveSoulData(4);
+
         // Move all souls up one slot
-        for (int i = 3; i > 0; i--)
+        for (int i = 4; i > 0; i--)
         {
             Souls[i] = Souls[i - 1];
         }
         // Add the new soul to the first slot
-        Souls[0] = Soul;
+        Souls[0] = newData;
         ApplyAllSouls();
     }
 
@@ -32,16 +49,16 @@ public class SoulManager : MonoBehaviour
     /// </summary>
     void ApplyAllSouls()
     {
-        // TODO: Wipe the stats of the player
+        // Wipe the stats of the player
+        ResetPlayerStats();
 
         // Loop through all souls and apply their effects
         for (int i = 0; i < Souls.Length; i++)
         {
             if (Souls[i] != null)
             {
-                SoulData refData = Souls[i].GetComponent<SoulData>();
                 // Apply the soul's effects here, using refData
-                ApplyTargetSoul(refData.IsSoulInverted ? refData.invertedSoulEffects : refData.soulEffects);
+                ApplyTargetSoul(Souls[i].IsSoulInverted ? Souls[i].invertedSoulEffects : Souls[i].soulEffects);
             }
         }
     }
@@ -54,6 +71,83 @@ public class SoulManager : MonoBehaviour
             // Get the current soul effect
             SoulData.StatType statType = effect.statType;
             // Add conditions through a hideous switch statement
+            switch (statType)
+            {
+                case SoulData.StatType.AttackDamage:
+                    // Add the stat change to the player's attack damage
+                    refPlayerAttack.currentAttackDamage += effect.statChange;
+                    break;
+                case SoulData.StatType.AttackRange:
+                    // Add the stat change to the player's attack range
+                    refPlayerAttack.currentAttackRange += effect.statChange;
+                    break;
+                case SoulData.StatType.AttackSpeed:
+                    // Add the stat change to the player's attack speed
+                    refPlayerAttack.currentAttackSpeed += effect.statChange;
+                    break;
+                case SoulData.StatType.MoveSpeed:
+                    // Add the stat change to the player's move speed
+                    Debug.Log("This doesn't exist yet :/");
+                    break;
+            }
         }
+    }
+
+    /// <summary>
+    /// Resets all stats of the player
+    /// </summary>
+    void ResetPlayerStats()
+    {
+        refPlayerAttack.ResetStats();
+    }
+
+    /// <summary>
+    /// Saves a souldata to the souldata storage object, and returns a reference to the new object
+    /// </summary>
+    /// <param name="refSoulData">The SoulData to be duplicated</param>
+    /// <returns>The new souldata</returns>
+    SoulData DuplicateSoulData(SoulData refSoulData)
+    {
+        // Create a new soul data component on the soul storage object
+        SoulData newSoulData = SoulStorage.AddComponent<SoulData>();
+        // Copy all values from the reference soul data to the new one
+        newSoulData.soulEffects = new List<SoulData.Effects>(refSoulData.soulEffects);
+        newSoulData.invertedSoulEffects = new List<SoulData.Effects>(refSoulData.invertedSoulEffects);
+        newSoulData.soulLifespan = refSoulData.soulLifespan;
+        return newSoulData;
+    }
+
+    /// <summary>
+    /// Removes a soul at a specified index
+    /// </summary>
+    /// <param name="index">The index of the array of the souldata component</param>
+    void RemoveSoulData(int index)
+    {
+        if (Souls[index] != null)
+        {
+            RemoveSoulData(Souls[index]);
+            Souls[index] = null;
+        }
+    }
+
+    /// <summary>
+    /// Removes a soul
+    /// </summary>
+    /// <param name="removeSoul"></param>
+    void RemoveSoulData(SoulData removeSoul)
+    {
+        // Loop through the soul storage object and find the soul data that matches the one to be removed
+        foreach (SoulData soulData in SoulStorage.GetComponents<SoulData>())
+        {
+            if (soulData == removeSoul)
+            {
+                // If a match is found, destroy the soul data component and return
+                Destroy(soulData);
+                return;
+            }
+        }
+        // If no match is found, return null
+        Debug.LogError("The soul data to be removed was not found in the soul storage object");
+        return;
     }
 }

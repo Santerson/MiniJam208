@@ -7,22 +7,23 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] Collider2D refWeaponCollider;
     [SerializeField] float attackUptime = 0.4f;
 
+
+    [SerializeField] float baseAttackSpeed = 1;
+    [SerializeField] float baseAttackDamage = 1;
+    [SerializeField] float baseAttackRange = 1;
+
     /// <summary>
     /// The attack speed of the player
     /// </summary>
-    public float currentAttackSpeed = 1f;
+    [HideInInspector] public float currentAttackSpeed = 1f;
     /// <summary>
     /// The attack damage of the player's weapon
     /// </summary>
-    public float currentAttackDamage = 1f;
+    [HideInInspector] public float currentAttackDamage = 1f;
     /// <summary>
     /// The attack range of the player's weapon
     /// </summary>
-    public float currentAttackRange = 1f;
-
-    float baseAttackSpeed;
-    float baseAttackDamage;
-    float baseAttackRange;
+    [HideInInspector] public float currentAttackRange = 1f;
 
     public bool IsAttacking { get; private set; } = false;
 
@@ -46,6 +47,8 @@ public class PlayerAttack : MonoBehaviour
             // Do attack logic
             IsAttacking = true;
             refWeaponCollider.gameObject.SetActive(true);
+
+            Debug.Log($"{currentAttackDamage}dmg, {currentAttackSpeed}asp, {currentAttackRange}rng");
             // Disable the weapon collider after a short delay
             StopAllCoroutines();
             StartCoroutine(WaitDisableCollider());
@@ -62,6 +65,9 @@ public class PlayerAttack : MonoBehaviour
         IsAttacking = false;
     }
 
+    /// <summary>
+    /// Resets the player's attack stats to their base values
+    /// </summary>
     public void ResetStats()
     {
         currentAttackSpeed = baseAttackSpeed;
