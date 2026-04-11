@@ -579,10 +579,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2459902202233400578, guid: a00a0485a38c7df49a9801ac13281d92, type: 3}
-      propertyPath: m_SortingOrder
-      value: -1
-      objectReference: {fileID: 0}
     - target: {fileID: 5201783845402012381, guid: a00a0485a38c7df49a9801ac13281d92, type: 3}
       propertyPath: 'DecayLineCovers.Array.data[0]'
       value: 
@@ -626,6 +622,14 @@ PrefabInstance:
     - target: {fileID: 6709193749432787357, guid: a00a0485a38c7df49a9801ac13281d92, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7509634201647957615, guid: a00a0485a38c7df49a9801ac13281d92, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7509634201647957615, guid: a00a0485a38c7df49a9801ac13281d92, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
