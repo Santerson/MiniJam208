@@ -48,7 +48,7 @@ public class EnemySpawnSystem : MonoBehaviour
         GameObject Enemy = Instantiate(Enemys[Random.Range(0, Enemys.Length)], spawnPosition, Quaternion.identity);
 
 
-        if (chance == 1)
+        if (chance <= 2)
         {
             Enemy.tag = "BiggerBadderEnemy";
         }
