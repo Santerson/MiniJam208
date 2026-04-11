@@ -10,10 +10,15 @@ public class EnemyMovement : MonoBehaviour
 
     [Header ("Attack Stuff")]
     [SerializeField] Collider2D refWeaponCollider;
+    [SerializeField] float BaseDamage = 1f;
+    [SerializeField] float BaseDamageMultiplier = 1f;
     float stoppingDistance = 3f;
     float attackRange = 4f;
     float attackTime;
     float AttackRate = 2f;
+
+    float currentDamage;
+    float currentDamageMultiplier;
 
     private void Awake()
     {
@@ -56,5 +61,44 @@ public class EnemyMovement : MonoBehaviour
         yield return new WaitForSeconds(AttackRate);
         refWeaponCollider.gameObject.SetActive(false);
 
+    }
+
+    /// <summary>
+    /// Changes the damage by the given amount
+    /// </summary>
+    /// <param name="change">float of the damage change</param>
+    /// <returns></returns>
+    public void ChangeDamage(float change)
+    {
+        currentDamage += change;
+        currentDamage = Mathf.Max(0, currentDamage);
+    }
+
+    /// <summary>
+    /// Changes the damage multiplier by the given amount
+    /// Note: do a negative number to decrease the multiplier
+    /// </summary>
+    /// <param name="change">The amount to change it by</param>
+    public void ChangeDamageMultiplier(float change)
+    {
+        currentDamageMultiplier += change;
+    }
+
+    /// <summary>
+    /// Resets the enemy damage and multiplier to their base values
+    /// </summary>
+    public void ResetDamage()
+    {
+        currentDamage = BaseDamage;
+        currentDamageMultiplier = BaseDamageMultiplier;
+    }
+
+    /// <summary>
+    /// Gets the current damage of the enemy
+    /// </summary>
+    /// <returns>float of the damage</returns>
+    public float getDamage()
+    {
+        return currentDamageMultiplier * currentDamage;
     }
 }
