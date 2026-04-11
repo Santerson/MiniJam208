@@ -47,10 +47,11 @@ public class SoulManager : MonoBehaviour
     /// <summary>
     /// Apply the souls of the player to their stats
     /// </summary>
-    void ApplyAllSouls()
+    public void ApplyAllSouls()
     {
         // Wipe the stats of the player
         ResetPlayerStats();
+        Debug.Log("Applied all soul effects");
 
         // Loop through all souls and apply their effects
         for (int i = 0; i < Souls.Length; i++)
