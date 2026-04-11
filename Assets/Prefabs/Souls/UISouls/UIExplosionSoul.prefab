@@ -25,6 +25,14 @@ PrefabInstance:
       value: UIExplosionSoul
       objectReference: {fileID: 0}
     - target: {fileID: 7096806569622135344, guid: 4d55d51900e6b9547bd69e8cb94150e8, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 7096806569622135344, guid: 4d55d51900e6b9547bd69e8cb94150e8, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 7096806569622135344, guid: 4d55d51900e6b9547bd69e8cb94150e8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}

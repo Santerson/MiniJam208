@@ -17,6 +17,7 @@ public class PlayerAttack : MonoBehaviour
     [Header("Base Stats")]
     [SerializeField] float baseAttackSpeed = 1;
     [SerializeField] float baseAttackDamage = 1;
+    // [SerializeField] float baseDamageMultiplier = 1f;
     [SerializeField] float baseAttackRange = 1;
     [SerializeField] float baseSelfAttack = 0;
 
@@ -32,6 +33,10 @@ public class PlayerAttack : MonoBehaviour
     /// The attack range of the player's weapon
     /// </summary>
     [HideInInspector] public float currentAttackRange = 1f;
+    /// <summary>
+    /// The base damage multiplier of the player's weapon.
+    /// </summary>
+     // [HideInInspector] public float currentDamageMultiplier = 1f;
 
     [HideInInspector] public float currentSelfAttack = 0f;
 
@@ -69,8 +74,7 @@ public class PlayerAttack : MonoBehaviour
             refWeaponHitboxScalePoint.transform.localScale = baseScale * currentAttackRange;
             // Enable the weapon collider
             refWeaponCollider.gameObject.SetActive(true);
-
-            Debug.Log($"{currentAttackDamage}dmg, {currentAttackSpeed}asp, {currentAttackRange}rng");
+            // Debug.Log($"{currentAttackDamage}dmg, {currentAttackSpeed}asp, {currentAttackRange}rng");
             // Disable the weapon collider after a short delay
             StartCoroutine(WaitDisableCollider());
             // Set the attack cooldown

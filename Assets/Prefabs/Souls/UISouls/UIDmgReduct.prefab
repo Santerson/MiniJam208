@@ -29,6 +29,14 @@ PrefabInstance:
       value: Sprite
       objectReference: {fileID: 0}
     - target: {fileID: 7096806569622135344, guid: 01e9236c130f5ea498c9e2bdc06e1716, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 7096806569622135344, guid: 01e9236c130f5ea498c9e2bdc06e1716, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 7096806569622135344, guid: 01e9236c130f5ea498c9e2bdc06e1716, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
