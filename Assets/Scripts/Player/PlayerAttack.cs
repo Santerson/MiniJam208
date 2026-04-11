@@ -13,6 +13,7 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] float attackUptime = 0.4f;
     [Tooltip("The base attack cooldown of the player, in seconds. The actual cooldown is 1 / attack speed")]
     [SerializeField] float baseAttackCooldown = 1f;
+    [SerializeField] float AttackColliderOffset = 0.5f;
 
     [Header("Base Stats")]
     [SerializeField] float baseAttackSpeed = 1;
@@ -59,8 +60,11 @@ public class PlayerAttack : MonoBehaviour
 
     private void Update()
     {
+        // Reduce atk cd
         if (AttackCooldownLeft != 0)
             AttackCooldownLeft = Mathf.Max(0, AttackCooldownLeft - Time.deltaTime);
+        // If attacking, move the collider to in front of the player
+        refWeaponHitboxScalePoint.transform.position = transform.position + transform.up * AttackColliderOffset;
     }
 
     /// <summary>
