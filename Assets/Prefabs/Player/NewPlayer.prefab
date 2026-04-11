@@ -257,6 +257,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7103301347873441459}
     - target: {fileID: 2774688579186102073, guid: a00a0485a38c7df49a9801ac13281d92, type: 3}
+      propertyPath: AttackColliderOffset
+      value: 0.67
+      objectReference: {fileID: 0}
+    - target: {fileID: 2774688579186102073, guid: a00a0485a38c7df49a9801ac13281d92, type: 3}
       propertyPath: refWeaponHitboxScalePoint
       value: 
       objectReference: {fileID: 2694095682445655213}

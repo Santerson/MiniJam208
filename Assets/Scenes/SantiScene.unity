@@ -1686,6 +1686,10 @@ PrefabInstance:
       propertyPath: PauseMenu
       value: 
       objectReference: {fileID: 1425729631}
+    - target: {fileID: 7332484205781334755, guid: 7da548ac885e0e6428e1f266fe4cbb82, type: 3}
+      propertyPath: AttackColliderOffset
+      value: 0.67
+      objectReference: {fileID: 0}
     - target: {fileID: 8722653875819839130, guid: 7da548ac885e0e6428e1f266fe4cbb82, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.0863106
