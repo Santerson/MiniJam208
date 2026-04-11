@@ -26,7 +26,7 @@ public class PlayerAttack : MonoBehaviour
     /// </summary>
     [HideInInspector] public float currentAttackSpeed = 1f;
     /// <summary>
-    /// The attack damage of the player's weapon
+    /// The attack damage of the player's weapon. NOTE: You should call GetCurrentAttackDamage() to get outgoing damage.
     /// </summary>
     [HideInInspector] public float currentAttackDamage = 1f;
     /// <summary>
@@ -36,7 +36,7 @@ public class PlayerAttack : MonoBehaviour
     /// <summary>
     /// The base damage multiplier of the player's weapon.
     /// </summary>
-     // [HideInInspector] public float currentDamageMultiplier = 1f;
+    [HideInInspector] public float currentDamageMultiplier = 1f;
 
     [HideInInspector] public float currentSelfAttack = 0f;
 
@@ -101,5 +101,14 @@ public class PlayerAttack : MonoBehaviour
         currentAttackDamage = baseAttackDamage;
         currentAttackRange = baseAttackRange;
         currentSelfAttack = baseSelfAttack;
+    }
+
+    /// <summary>
+    /// Gets the current attack damage of the player's weapon, factoring in the damage multiplier. This is the value that should be used to calculate outgoing damage.
+    /// </summary>
+    /// <returns>float of the damage dealt</returns>
+    public float GetCurrentAttackDamage()
+    {
+        return currentAttackDamage * currentDamageMultiplier;
     }
 }

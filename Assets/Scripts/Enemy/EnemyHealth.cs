@@ -81,7 +81,7 @@ public class EnemyHealth : MonoBehaviour
             PA = AttackTrigger.gameObject.GetComponentInParent<PlayerAttack>();
             if (PA.IsAttacking)
             {
-                DamageTaken(PA.currentAttackDamage);
+                DamageTaken(PA.GetCurrentAttackDamage());
             }
         }
     }
