@@ -143,7 +143,7 @@ public class PlayerAttack : MonoBehaviour
     public void SpawnEnemyDeathAOE(Vector2 position)
     {
         GameObject aoe = Instantiate(EnemyDeathAOEPrefab, position, Quaternion.identity);
-        aoe.GetComponent<EnemyDeathAOE>().scale = currentEnemyDeathAOEScale;
-        aoe.GetComponent<EnemyDeathAOE>().damageAmount = currentEnemyDeathAOEDamage;
+        aoe.GetComponentInChildren<EnemyDeathAOE>().scale = currentEnemyDeathAOEScale;
+        aoe.GetComponentInChildren<EnemyDeathAOE>().damageAmount = currentEnemyDeathAOEDamage;
     }
 }
