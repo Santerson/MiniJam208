@@ -5,6 +5,8 @@ public class EnemyHealth : MonoBehaviour
 {
     PlayerAttack PA;
 
+    [SerializeField] GameObject Parent;
+
     [Header("SOULS")]
     [SerializeField] GameObject[] souls = new GameObject[4];
 
@@ -48,7 +50,7 @@ public class EnemyHealth : MonoBehaviour
             int random = Random.Range(0, souls.Length);
             Instantiate(souls[random], gameObject.transform.position, Quaternion.identity);
             Debug.Log("Spawwn Soul");
-            Destroy(gameObject);
+            Destroy(Parent);
         }
     }
 

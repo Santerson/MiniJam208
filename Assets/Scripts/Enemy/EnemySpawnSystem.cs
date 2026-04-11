@@ -4,7 +4,7 @@ using UnityEngine;
 public class EnemySpawnSystem : MonoBehaviour
 {
     // Get Enemy Prefab
-    [SerializeField] private GameObject EnemyPrefab;
+    [SerializeField] GameObject[] Enemys = new GameObject[4];
     Transform player; // to make sure its not near player
     float minRadius = 15f; // the min of spawning distance
     float maxRadius = 25f; // the maximum of spawning distance
@@ -45,7 +45,7 @@ public class EnemySpawnSystem : MonoBehaviour
         Vector2 spawnPosition = (Vector2)player.transform.position + spawnOffset;
 
         // Spawning Enemy
-        GameObject Enemy = Instantiate(EnemyPrefab, spawnPosition, Quaternion.identity);
+        GameObject Enemy = Instantiate(Enemys[Random.Range(0, Enemys.Length)], spawnPosition, Quaternion.identity);
 
 
         if (chance == 1)
