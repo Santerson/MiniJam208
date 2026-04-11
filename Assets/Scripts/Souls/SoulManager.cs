@@ -157,11 +157,15 @@ public class SoulManager : MonoBehaviour
                     break;
                 // Heal nearby enemies on kill
                 case SoulData.StatType.EnemyHeal:
-                    Debug.Log("This doesn't exist yet :/");
+                    refPlayerAttack.currentEnemyDeathAOEDamage -= effect.statChange;
                     break;
                 // Explode nearby enemies on kill
                 case SoulData.StatType.ExplodingDamade:
-                    Debug.Log("This doesn't exist yet :/");
+                    refPlayerAttack.currentEnemyDeathAOEDamage += effect.statChange;
+                    break;
+                // Aoe scale of enemy death aoe
+                case SoulData.StatType.EnemyDeathAOEScale:
+                    refPlayerAttack.currentEnemyDeathAOEScale += effect.statChange;
                     break;
                 // Inverts the player's controls
                 case SoulData.StatType.InvertPlayerControls:

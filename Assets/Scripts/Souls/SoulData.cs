@@ -46,6 +46,7 @@ public class SoulData : MonoBehaviour
         DamagePlayerOverTime,
         ExplodingDamade,
         EnemyHeal,
+        EnemyDeathAOEScale,
         InvertPlayerControls
     }
 

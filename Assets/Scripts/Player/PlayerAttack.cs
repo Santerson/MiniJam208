@@ -4,11 +4,15 @@ using UnityEngine.InputSystem;
 
 public class PlayerAttack : MonoBehaviour
 {
-    [Header("Attack Settings")]
+    [Header("Component References")]
     [Tooltip("The collider of the player's weapon")]
     [SerializeField] Collider2D refWeaponCollider;
     [Tooltip("The point from which the weapon collider will be scaled")]
     [SerializeField] GameObject refWeaponHitboxScalePoint;
+    [Tooltip("The explosion aoe on enemy death")]
+    [SerializeField] GameObject EnemyDeathAOEPrefab;
+
+    [Header("Attack Settings")]
     [Tooltip("The amount of time the weapon collider is active when the player attacks, in seconds")]
     [SerializeField] float attackUptime = 0.4f;
     [Tooltip("The base attack cooldown of the player, in seconds. The actual cooldown is 1 / attack speed")]
@@ -18,9 +22,10 @@ public class PlayerAttack : MonoBehaviour
     [Header("Base Stats")]
     [SerializeField] float baseAttackSpeed = 1;
     [SerializeField] float baseAttackDamage = 1;
-    // [SerializeField] float baseDamageMultiplier = 1f;
     [SerializeField] float baseAttackRange = 1;
     [SerializeField] float baseSelfAttack = 0;
+    [SerializeField] float baseEnemyDeathAOEScale = 0;
+    [SerializeField] float baseEnemyDeathAOEDamage = 0;
 
     /// <summary>
     /// The attack speed of the player
@@ -40,6 +45,8 @@ public class PlayerAttack : MonoBehaviour
     [HideInInspector] public float currentDamageMultiplier = 1f;
 
     [HideInInspector] public float currentSelfAttack = 0f;
+    [HideInInspector] public float currentEnemyDeathAOEScale = 0f;
+    [HideInInspector] public float currentEnemyDeathAOEDamage = 0f;
 
     public bool IsAttacking { get; private set; } = false;
 
@@ -113,6 +120,8 @@ public class PlayerAttack : MonoBehaviour
         currentAttackDamage = baseAttackDamage;
         currentAttackRange = baseAttackRange;
         currentSelfAttack = baseSelfAttack;
+        currentEnemyDeathAOEScale = baseEnemyDeathAOEScale;
+        currentEnemyDeathAOEDamage = baseEnemyDeathAOEDamage;
     }
 
     /// <summary>
@@ -122,5 +131,12 @@ public class PlayerAttack : MonoBehaviour
     public float GetCurrentAttackDamage()
     {
         return currentAttackDamage * currentDamageMultiplier;
+    }
+
+    public void SpawnEnemyDeathAOE(Vector2 position)
+    {
+        GameObject aoe = Instantiate(EnemyDeathAOEPrefab, position, Quaternion.identity);
+        aoe.GetComponent<EnemyDeathAOE>().scale = currentEnemyDeathAOEScale;
+        aoe.GetComponent<EnemyDeathAOE>().damageAmount = currentEnemyDeathAOEDamage;
     }
 }

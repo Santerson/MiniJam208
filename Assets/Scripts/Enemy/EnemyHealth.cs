@@ -44,7 +44,7 @@ public class EnemyHealth : MonoBehaviour
         healthBarCover.transform.position = (Vector2)transform.position + HealthBarOffset;
         if (currentHealth <= 0 && Parent.CompareTag("BiggerBadderEnemy").Equals(false))
         {
-            Destroy(Parent);
+            EnemyDie();
             Debug.Log("Dont Spawn Soul");
         }
         else if (currentHealth <= 0 && Parent.CompareTag("BiggerBadderEnemy").Equals(true))
@@ -52,7 +52,7 @@ public class EnemyHealth : MonoBehaviour
             int random = Random.Range(0, souls.Length);
             Instantiate(souls[random], gameObject.transform.position, Quaternion.identity);
             Debug.Log("Spawwn Soul");
-            Destroy(Parent);
+            EnemyDie();
         }
     }
 
@@ -94,5 +94,20 @@ public class EnemyHealth : MonoBehaviour
     private void DamageTaken(float damage)
     {
         ChangeHealth(currentHealth - damage);
+    }
+
+    private void EnemyDie()
+    {
+        // Spawn an explosion if it should
+        PlayerAttack refPlayerAttack = FindFirstObjectByType<PlayerAttack>();
+        if (refPlayerAttack.currentEnemyDeathAOEScale > 0)
+        {
+            refPlayerAttack.SpawnEnemyDeathAOE(transform.position);
+        }
+
+        // TODO: Death effect
+
+        // Destroy the enemy
+        Destroy(Parent);
     }
 }

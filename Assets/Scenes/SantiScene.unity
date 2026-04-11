@@ -347,8 +347,12 @@ MonoBehaviour:
   - {fileID: 3789134319988432624, guid: c85ed8b049b07a44e9881482fff606de, type: 3}
   - {fileID: 3789134319988432624, guid: fd8f6cf4ee4a2a34f84cb9eb9cf9d5fd, type: 3}
   - {fileID: 3789134319988432624, guid: b5e852bcc532a0747a9d9824f2a76373, type: 3}
+  StartSpawnedEnemies: 8
+  spawnedStartEnemies: 0
   maxSpawnEnemiesPerWave: 5
   spawnedEnemiesInWave: 0
+  RegualMaxSpawn: 50
+  RegularEnemiesSpawn: 0
 --- !u!4 &453422308
 Transform:
   m_ObjectHideFlags: 0
@@ -1670,6 +1674,10 @@ PrefabInstance:
       propertyPath: PauseMenu
       value: 
       objectReference: {fileID: 1425729631}
+    - target: {fileID: 7332484205781334755, guid: 7da548ac885e0e6428e1f266fe4cbb82, type: 3}
+      propertyPath: EnemyDeathAOEPrefab
+      value: 
+      objectReference: {fileID: 8781622749076016098, guid: 4aa0f897810372742b1d58028bdbc82f, type: 3}
     - target: {fileID: 8722653875819839130, guid: 7da548ac885e0e6428e1f266fe4cbb82, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.01
@@ -2290,13 +2298,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: ExpoldingUp
       objectReference: {fileID: 0}
+    - target: {fileID: 6815734884245361300, guid: 4d55d51900e6b9547bd69e8cb94150e8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.07
+      objectReference: {fileID: 0}
     - target: {fileID: 7096806569622135344, guid: 4d55d51900e6b9547bd69e8cb94150e8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 11.685768
+      value: 0.94
       objectReference: {fileID: 0}
     - target: {fileID: 7096806569622135344, guid: 4d55d51900e6b9547bd69e8cb94150e8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.726386
+      value: 1.96
       objectReference: {fileID: 0}
     - target: {fileID: 7096806569622135344, guid: 4d55d51900e6b9547bd69e8cb94150e8, type: 3}
       propertyPath: m_LocalPosition.z
