@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5959274957486197067}
   - component: {fileID: 7425494437019516065}
   m_Layer: 0
-  m_Name: SoulBase
+  m_Name: _SoulBaseDONTUSE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
