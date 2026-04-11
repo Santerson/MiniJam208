@@ -8,8 +8,7 @@ public class EnemyHealth : MonoBehaviour
     [Header("SOULS")]
     [SerializeField] GameObject[] souls = new GameObject[4];
 
-    [Header("Test")]
-    [SerializeField]float health = 5f;
+    [Header("Health")]
     [Tooltip("The line renderer that covers the health bar, used to show how much health the player has left")]
     [SerializeField] LineRenderer healthBarCover;
     [Tooltip("The offset of the health bar from the player, in world units")]
