@@ -193,8 +193,15 @@ public class SoulManager : MonoBehaviour
     /// </summary>
     void RefreshSoulUI()
     {
+        // Clear the spawned items
+        foreach (GameObject item in SpawnedItems)
+        {
+            if (item != null)
+                Destroy(item);
+        }
         // Spawn each object
         SpawnedItems.Clear();
+        // Loop through the soul array and spawn the corresponding ui element for each soul in the correct position
         for (int i = 0; i < SpawnUIPlacesParents.Length; i++)
         {
             if (Souls[i] != null)
