@@ -4,8 +4,12 @@ using UnityEngine.InputSystem;
 
 public class PlayerAttack : MonoBehaviour
 {
+    [Tooltip("The collider of the player's weapon")]
     [SerializeField] Collider2D refWeaponCollider;
+    [Tooltip("The amount of time the weapon collider is active when the player attacks, in seconds")]
     [SerializeField] float attackUptime = 0.4f;
+    [Tooltip("The base attack cooldown of the player, in seconds. The actual cooldown is 1 / attack speed")]
+    [SerializeField] float baseAttackCooldown = 1f;
 
 
     [SerializeField] float baseAttackSpeed = 1;
@@ -30,6 +34,8 @@ public class PlayerAttack : MonoBehaviour
 
     public bool IsAttacking { get; private set; } = false;
 
+    float AttackCooldownLeft = 0f;
+
     private void Start()
     {
         baseAttackSpeed = currentAttackSpeed;
@@ -38,15 +44,19 @@ public class PlayerAttack : MonoBehaviour
         baseSelfAttack = currentSelfAttack;
     }
 
+    private void Update()
+    {
+        if (AttackCooldownLeft != 0)
+            AttackCooldownLeft = Mathf.Max(0, AttackCooldownLeft - Time.deltaTime);
+    }
 
     /// <summary>
     /// Called when the player attacks, enables the weapon collider for a short bit
     /// </summary>
-    /// <param name="context"></param>
     public void OnAttack(InputAction.CallbackContext context)
     {
         // Check if the player is attacking
-        if (context.performed)
+        if (context.performed && AttackCooldownLeft <= 0 && !IsAttacking)
         {
             // Do attack logic
             IsAttacking = true;
@@ -54,8 +64,9 @@ public class PlayerAttack : MonoBehaviour
 
             Debug.Log($"{currentAttackDamage}dmg, {currentAttackSpeed}asp, {currentAttackRange}rng");
             // Disable the weapon collider after a short delay
-            StopAllCoroutines();
             StartCoroutine(WaitDisableCollider());
+            // Set the attack cooldown
+            AttackCooldownLeft = baseAttackCooldown / currentAttackSpeed;
         }
     }
 

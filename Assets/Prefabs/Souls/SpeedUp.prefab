@@ -11,7 +11,7 @@ PrefabInstance:
     - target: {fileID: 2077463714751755979, guid: b90f735817dc33d4983cb5ee6a26731f, type: 3}
       propertyPath: UIGameobject
       value: 
-      objectReference: {fileID: 9202439080172667627, guid: 4f15af029b2c07247ad0a220ecd93043, type: 3}
+      objectReference: {fileID: 2399416122655976338, guid: 7c7db7913228e874db4c09095577bbea, type: 3}
     - target: {fileID: 2077463714751755979, guid: b90f735817dc33d4983cb5ee6a26731f, type: 3}
       propertyPath: soulEffects.Array.size
       value: 1
@@ -22,15 +22,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2077463714751755979, guid: b90f735817dc33d4983cb5ee6a26731f, type: 3}
       propertyPath: soulEffects.Array.data[0].statType
-      value: 6
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2077463714751755979, guid: b90f735817dc33d4983cb5ee6a26731f, type: 3}
       propertyPath: soulEffects.Array.data[0].statChange
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2077463714751755979, guid: b90f735817dc33d4983cb5ee6a26731f, type: 3}
       propertyPath: invertedSoulEffects.Array.data[0].statType
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2077463714751755979, guid: b90f735817dc33d4983cb5ee6a26731f, type: 3}
       propertyPath: invertedSoulEffects.Array.data[1].statType
@@ -38,7 +38,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2077463714751755979, guid: b90f735817dc33d4983cb5ee6a26731f, type: 3}
       propertyPath: invertedSoulEffects.Array.data[0].statChange
-      value: 2
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 2077463714751755979, guid: b90f735817dc33d4983cb5ee6a26731f, type: 3}
       propertyPath: invertedSoulEffects.Array.data[1].statChange
@@ -86,19 +86,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4075850053458986699, guid: b90f735817dc33d4983cb5ee6a26731f, type: 3}
       propertyPath: m_Color.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4075850053458986699, guid: b90f735817dc33d4983cb5ee6a26731f, type: 3}
-      propertyPath: m_Color.g
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4075850053458986699, guid: b90f735817dc33d4983cb5ee6a26731f, type: 3}
+      propertyPath: m_Color.g
+      value: 0.38268998
+      objectReference: {fileID: 0}
+    - target: {fileID: 4075850053458986699, guid: b90f735817dc33d4983cb5ee6a26731f, type: 3}
       propertyPath: m_Color.r
-      value: 0.04862523
+      value: 0.3679244
       objectReference: {fileID: 0}
     - target: {fileID: 7427481367193385111, guid: b90f735817dc33d4983cb5ee6a26731f, type: 3}
       propertyPath: m_Name
-      value: HealUp
+      value: SpeedUp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
