@@ -397,6 +397,8 @@ MonoBehaviour:
   healthBarCover: {fileID: 0}
   HealthBarOffset: {x: -0.65, y: -1}
   MaxHealth: 20
+  BaseIncomingDmgMultiplier: 1
+  BaseHealthRegen: 0
 --- !u!50 &7434798361887374136
 Rigidbody2D:
   serializedVersion: 5
@@ -464,9 +466,11 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  NoSoulColor: {r: 1, g: 1, b: 0.6901961, a: 1}
-  PositiveSoulColor: {r: 1, g: 1, b: 0.6901961, a: 1}
-  InvertedSoulColor: {r: 0.45882353, g: 0, b: 0.85882354, a: 1}
+  PositiveSoulColor: {r: 1, g: 1, b: 1, a: 1}
+  InvertedSoulColor: {r: 0.27619532, g: 0, b: 0.5169811, a: 1}
+  NoSoulBackgroundColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  PositiveSoulBackgroundColor: {r: 1, g: 1, b: 0.6901961, a: 1}
+  InvertedSoulBackgroundColor: {r: 0.45882356, g: 0, b: 0.8588236, a: 1}
 --- !u!114 &1835745131533155466
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -603,17 +607,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   refWeaponCollider: {fileID: 680485383010994557}
   refWeaponHitboxScalePoint: {fileID: 3255540781750792057}
+  EnemyDeathAOEPrefab: {fileID: 0}
+  anim: {fileID: 0}
   attackUptime: 0.4
   baseAttackCooldown: 1
+  AttackColliderOffset: 0.5
   baseAttackSpeed: 1
   baseAttackDamage: 1
   baseAttackRange: 1
   baseSelfAttack: 0
+  baseEnemyDeathAOEScale: 0
+  baseEnemyDeathAOEDamage: 0
   currentAttackSpeed: 1
   currentAttackDamage: 1
   currentAttackRange: 1
   currentDamageMultiplier: 1
   currentSelfAttack: 0
+  currentEnemyDeathAOEScale: 0
+  currentEnemyDeathAOEDamage: 0
 --- !u!61 &4918697178197518546
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -672,3 +683,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7783eefdc30f75e4b92bf621aad807a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PauseMenu: {fileID: 0}

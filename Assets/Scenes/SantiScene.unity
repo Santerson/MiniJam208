@@ -1587,30 +1587,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 825260297470598919, guid: 7da548ac885e0e6428e1f266fe4cbb82, type: 3}
-      propertyPath: InvertedSoulColor.b
-      value: 0.5169811
-      objectReference: {fileID: 0}
-    - target: {fileID: 825260297470598919, guid: 7da548ac885e0e6428e1f266fe4cbb82, type: 3}
-      propertyPath: InvertedSoulColor.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 825260297470598919, guid: 7da548ac885e0e6428e1f266fe4cbb82, type: 3}
-      propertyPath: InvertedSoulColor.r
-      value: 0.27619532
-      objectReference: {fileID: 0}
-    - target: {fileID: 825260297470598919, guid: 7da548ac885e0e6428e1f266fe4cbb82, type: 3}
-      propertyPath: PositiveSoulColor.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 825260297470598919, guid: 7da548ac885e0e6428e1f266fe4cbb82, type: 3}
-      propertyPath: PositiveSoulColor.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 825260297470598919, guid: 7da548ac885e0e6428e1f266fe4cbb82, type: 3}
-      propertyPath: PositiveSoulColor.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 825260297470598919, guid: 7da548ac885e0e6428e1f266fe4cbb82, type: 3}
       propertyPath: 'DecayLineCovers.Array.data[0]'
       value: 
       objectReference: {fileID: 627962237}
@@ -1630,22 +1606,6 @@ PrefabInstance:
       propertyPath: 'DecayLineCovers.Array.data[4]'
       value: 
       objectReference: {fileID: 627962229}
-    - target: {fileID: 825260297470598919, guid: 7da548ac885e0e6428e1f266fe4cbb82, type: 3}
-      propertyPath: InvertedSoulBackgroundColor.b
-      value: 0.8588236
-      objectReference: {fileID: 0}
-    - target: {fileID: 825260297470598919, guid: 7da548ac885e0e6428e1f266fe4cbb82, type: 3}
-      propertyPath: InvertedSoulBackgroundColor.r
-      value: 0.45882356
-      objectReference: {fileID: 0}
-    - target: {fileID: 825260297470598919, guid: 7da548ac885e0e6428e1f266fe4cbb82, type: 3}
-      propertyPath: PositiveSoulBackgroundColor.b
-      value: 0.6901961
-      objectReference: {fileID: 0}
-    - target: {fileID: 825260297470598919, guid: 7da548ac885e0e6428e1f266fe4cbb82, type: 3}
-      propertyPath: PositiveSoulBackgroundColor.g
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 825260297470598919, guid: 7da548ac885e0e6428e1f266fe4cbb82, type: 3}
       propertyPath: 'SpawnUIPlacesParents.Array.data[0]'
       value: 
