@@ -8,7 +8,7 @@ public class EnemySpawnSystem : MonoBehaviour
     Transform player; // to make sure its not near player
     float minRadius = 15f; // the min of spawning distance
     float maxRadius = 25f; // the maximum of spawning distance
-    float TestSpawnInterval= 15f;
+    float TestSpawnInterval= 5f;
     public float TestTimer = 0;
 
     private void Awake()
@@ -29,6 +29,9 @@ public class EnemySpawnSystem : MonoBehaviour
 
     void SpawnEnemy()
     {
+        // Chance to change the to make the enemy change tag
+        int chance = Random.Range(1, 5);
+
         // Pickinga Random Angle
         float angle = Random.Range(0, Mathf.PI * 2);
 
@@ -42,6 +45,12 @@ public class EnemySpawnSystem : MonoBehaviour
         Vector2 spawnPosition = (Vector2)player.transform.position + spawnOffset;
 
         // Spawning Enemy
-        Instantiate(EnemyPrefab, spawnPosition, Quaternion.identity);
+        GameObject Enemy = Instantiate(EnemyPrefab, spawnPosition, Quaternion.identity);
+
+
+        if (chance == 1)
+        {
+            Enemy.tag = "BiggerBadderEnemy";
+        }
     }
 }
