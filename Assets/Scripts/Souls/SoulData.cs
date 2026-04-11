@@ -10,6 +10,8 @@ public class SoulData : MonoBehaviour
     public List<Effects> invertedSoulEffects = new List<Effects>();
     [Tooltip("The lifespan of the soul in seconds")]
     public float soulLifespan = 30f;
+    [Tooltip("The Gameobject this object spawns in on the ui")] 
+    public GameObject UIGameobject = null;
     /// <summary>
     /// Whether or not this soul is inverted
     /// </summary>
