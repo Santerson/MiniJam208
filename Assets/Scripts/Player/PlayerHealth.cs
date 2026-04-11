@@ -54,5 +54,41 @@ public class PlayerHealth : MonoBehaviour
         // Set the pos of the barcover
         float xPos = Mathf.Lerp(0, initialHealthBarPosition, currentHealth / MaxHealth);
         healthBarCover.SetPosition(1, new Vector3(xPos, healthBarCover.GetPosition(1).y, healthBarCover.GetPosition(1).z));
+        // Check if player ded
+        if (currentHealth <= 0)
+        {
+            Skissue();
+        }
+    }
+
+    /// <summary>
+    /// Deals damage to the player if they hit an enemy attack collider
+    /// </summary>
+    /// <param name="collision"></param>
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("EnemyAttack"))
+        {
+            // Get the damage of the attack and subtract it from the player's health
+            EnemyMovement refEnemy = collision.gameObject.GetComponentInParent<EnemyMovement>();
+            if (refEnemy != null)
+            {
+                AddHealth(-refEnemy.getDamage());
+            }
+            else
+            {
+                Debug.LogError("Enemy attack collider does not have an EnemyMovement script attached to its parent");
+            }
+        }
+    }
+
+    /// <summary>
+    /// Player loses lol what a loser
+    /// </summary>
+    void Skissue()
+    {
+        // Do something cool here eventaully
+        Destroy(gameObject);
     }
 }
+

@@ -25,6 +25,12 @@ public class EnemyMovement : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
 
+    private void Start()
+    {
+        currentDamage = BaseDamage;
+        currentDamageMultiplier = BaseDamageMultiplier;
+    }
+
     private void Update()
     {
         Vector2 direction = player.position - transform.position;
