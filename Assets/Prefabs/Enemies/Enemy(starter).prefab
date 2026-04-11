@@ -339,6 +339,7 @@ MonoBehaviour:
   - {fileID: 2399416122655976338, guid: 602839f7607d28942b38e3170b514455, type: 3}
   - {fileID: 2399416122655976338, guid: 4d55d51900e6b9547bd69e8cb94150e8, type: 3}
   - {fileID: 2399416122655976338, guid: 80897fae8a5f3ea468783ebff3593f65, type: 3}
+  - {fileID: 2399416122655976338, guid: 5a333993f244c4e439e531870954434e, type: 3}
   healthBarCover: {fileID: 1743715703104377766}
   HealthBarOffset: {x: -0.674, y: -0.775}
   MaxHealth: 5
