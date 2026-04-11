@@ -7,9 +7,22 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] Collider2D refWeaponCollider;
     [SerializeField] float attackUptime = 0.4f;
 
-    float currentAttackSpeed = 1f;
-    float currentAttackDamage = 1f;
-    float currentAttackRange = 1f;
+    /// <summary>
+    /// The attack speed of the player
+    /// </summary>
+    public float currentAttackSpeed = 1f;
+    /// <summary>
+    /// The attack damage of the player's weapon
+    /// </summary>
+    public float currentAttackDamage = 1f;
+    /// <summary>
+    /// The attack range of the player's weapon
+    /// </summary>
+    public float currentAttackRange = 1f;
+
+    float baseAttackSpeed;
+    float baseAttackDamage;
+    float baseAttackRange;
 
     public bool IsAttacking { get; private set; } = false;
 

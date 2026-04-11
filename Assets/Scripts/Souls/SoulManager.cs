@@ -51,7 +51,9 @@ public class SoulManager : MonoBehaviour
         foreach (SoulData.Effects effect in effects)
         {
             // Apply the effect to the player here, using effect.statType and effect.statChange
-
+            // Get the current soul effect
+            SoulData.StatType statType = effect.statType;
+            // Add conditions through a hideous switch statement
         }
     }
 }
