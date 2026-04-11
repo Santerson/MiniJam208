@@ -6,16 +6,21 @@ public class EnemyMovement : MonoBehaviour
 {
     [Header ("Enemy Movement")]
     Transform player;
-    float speed = 3f;
 
     [Header ("Attack Stuff")]
     [SerializeField] Collider2D refWeaponCollider;
-    [SerializeField] float BaseDamage = 1f;
     [SerializeField] float BaseDamageMultiplier = 1f;
     float stoppingDistance = 3f;
     float attackRange = 4f;
     float attackTime;
-    float AttackRate = 2f;
+
+    [Header("Variants")]
+    [SerializeField] GameObject refWeaponHitboxScalePoint;
+    [SerializeField] float currentAttackRange = 1f;
+    [SerializeField] float speed = 3f;
+    [SerializeField] float AttackRate = .4f;
+    [SerializeField] float BaseDamage = 1f;
+    Vector3 baseScale = Vector3.one;
 
     float currentDamage;
     float currentDamageMultiplier;
@@ -59,6 +64,7 @@ public class EnemyMovement : MonoBehaviour
 
     private void Shoot()
     {
+        refWeaponHitboxScalePoint.transform.localScale = baseScale * currentAttackRange;
         refWeaponCollider.gameObject.SetActive(true);
     }
 

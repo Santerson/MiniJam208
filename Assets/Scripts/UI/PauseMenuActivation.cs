@@ -4,15 +4,13 @@ using UnityEngine.InputSystem;
 public class PauseMenuActivation : MonoBehaviour
 {
     [SerializeField] GameObject PauseMenu;
-    bool PauseMenuActive = false;
 
     public void OnPauseMenuActivation(InputAction.CallbackContext context)
     {
-        if (context.performed && PauseMenuActive == false)
+        if (context.performed)
         {
 
             PauseMenu.SetActive(true);
-            PauseMenuActive=true;
             Time.timeScale = 0f;
         }
     }

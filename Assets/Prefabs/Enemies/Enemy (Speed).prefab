@@ -26,8 +26,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2462840964867018151}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0.70710576, w: 0.70710784}
-  m_LocalPosition: {x: 2.154, y: -0.056, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.6628639, y: 2.6, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -144,7 +144,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5737810785899139068}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: Enemy (Speed)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -159,7 +159,7 @@ Transform:
   m_GameObject: {fileID: 3789134319988432624}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.17, y: -0.9, z: -0.06091967}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -192,7 +192,7 @@ Transform:
   m_GameObject: {fileID: 4767329944785630851}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.15, y: 1.39, z: 0}
+  m_LocalPosition: {x: 0, y: 1.33, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -359,7 +359,7 @@ MonoBehaviour:
   - {fileID: 2399416122655976338, guid: 5a333993f244c4e439e531870954434e, type: 3}
   healthBarCover: {fileID: 27501425613462462}
   HealthBarOffset: {x: -0.674, y: -1}
-  MaxHealth: 20
+  MaxHealth: 5
 --- !u!114 &396444578974421165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -373,8 +373,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   refWeaponCollider: {fileID: 3455335276017543480}
-  BaseDamage: 1
   BaseDamageMultiplier: 1
+  refWeaponHitboxScalePoint: {fileID: 4767329944785630851}
+  currentAttackRange: 1
+  speed: 5
+  AttackRate: 0.4
+  BaseDamage: 1
 --- !u!50 &1274746341847685240
 Rigidbody2D:
   serializedVersion: 5

@@ -14,6 +14,7 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] LineRenderer healthBarCover;
     [Tooltip("The offset of the health bar from the player, in world units")]
     [SerializeField] Vector2 HealthBarOffset = new Vector2(0, -1f);
+    [Header("Variant")]
     [Tooltip("The maximum health of the player")]
     [SerializeField] float MaxHealth = 20f;
 
