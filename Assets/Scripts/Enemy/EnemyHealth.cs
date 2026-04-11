@@ -8,6 +8,7 @@ public class EnemyHealth : MonoBehaviour
     [Header("SOULS")]
     [SerializeField] GameObject[] souls = new GameObject[4];
 
+
     [Header("Health")]
     [Tooltip("The line renderer that covers the health bar, used to show how much health the player has left")]
     [SerializeField] LineRenderer healthBarCover;
@@ -43,7 +44,7 @@ public class EnemyHealth : MonoBehaviour
         }
         else if (currentHealth <= 0 && gameObject.CompareTag("BiggerBadderEnemy").Equals(true))
         {
-            int random = Random.Range(0, 6);
+            int random = Random.Range(0, souls.Length);
             Instantiate(souls[random], gameObject.transform.position, Quaternion.identity);
             Debug.Log("Spawwn Soul");
             Destroy(gameObject);
