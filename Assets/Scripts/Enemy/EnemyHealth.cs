@@ -28,6 +28,7 @@ public class EnemyHealth : MonoBehaviour
     /// </summary>
     private void Start()
     {
+
         // Set the health bar to the correct position
         initialHealthBarPosition = healthBarCover.GetPosition(0).x;
         healthBarCover.SetPosition(1, healthBarCover.GetPosition(0));
@@ -41,11 +42,12 @@ public class EnemyHealth : MonoBehaviour
     {
         // Set the health bar to that position
         healthBarCover.transform.position = (Vector2)transform.position + HealthBarOffset;
-        if (currentHealth <= 0 && gameObject.CompareTag("BiggerBadderEnemy").Equals(false))
+        if (currentHealth <= 0 && Parent.CompareTag("BiggerBadderEnemy").Equals(false))
         {
             Destroy(Parent);
+            Debug.Log("Dont Spawn Soul");
         }
-        else if (currentHealth <= 0 && gameObject.CompareTag("BiggerBadderEnemy").Equals(true))
+        else if (currentHealth <= 0 && Parent.CompareTag("BiggerBadderEnemy").Equals(true))
         {
             int random = Random.Range(0, souls.Length);
             Instantiate(souls[random], gameObject.transform.position, Quaternion.identity);

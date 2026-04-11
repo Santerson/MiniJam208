@@ -29,8 +29,6 @@ public class EnemySpawnSystem : MonoBehaviour
 
     void SpawnEnemy()
     {
-        // Chance to change the to make the enemy change tag
-        int chance = Random.Range(1, 5);
 
         // Pickinga Random Angle
         float angle = Random.Range(0, Mathf.PI * 2);
@@ -48,7 +46,7 @@ public class EnemySpawnSystem : MonoBehaviour
         GameObject Enemy = Instantiate(Enemys[Random.Range(0, Enemys.Length)], spawnPosition, Quaternion.identity);
 
 
-        if (chance <= 2)
+        if (Random.Range(1, 100) <= 35)
         {
             Enemy.tag = "BiggerBadderEnemy";
         }

@@ -376,7 +376,7 @@ MonoBehaviour:
   refWeaponCollider: {fileID: 3455335276017543480}
   BaseDamageMultiplier: 1
   refWeaponHitboxScalePoint: {fileID: 2462840964867018151}
-  currentAttackRange: 3
+  currentAttackRange: 1.5
   speed: 3
   AttackRate: 0.4
   BaseDamage: 1

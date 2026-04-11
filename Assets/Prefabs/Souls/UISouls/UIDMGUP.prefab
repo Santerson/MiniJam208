@@ -16,6 +16,10 @@ PrefabInstance:
       propertyPath: m_Radius
       value: 0.3625393
       objectReference: {fileID: 0}
+    - target: {fileID: 2521962681810020433, guid: 602839f7607d28942b38e3170b514455, type: 3}
+      propertyPath: m_SortingOrder
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 7096806569622135344, guid: 602839f7607d28942b38e3170b514455, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.75

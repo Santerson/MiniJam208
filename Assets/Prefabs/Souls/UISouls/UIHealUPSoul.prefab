@@ -16,6 +16,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.75
       objectReference: {fileID: 0}
+    - target: {fileID: 618037863927574042, guid: 80897fae8a5f3ea468783ebff3593f65, type: 3}
+      propertyPath: m_SortingOrder
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 2399416122655976338, guid: 80897fae8a5f3ea468783ebff3593f65, type: 3}
       propertyPath: m_Name
       value: UIHealUPSoul

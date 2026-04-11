@@ -28,6 +28,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sprite
       objectReference: {fileID: 0}
+    - target: {fileID: 6004870483364636318, guid: 01e9236c130f5ea498c9e2bdc06e1716, type: 3}
+      propertyPath: m_SortingOrder
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 7096806569622135344, guid: 01e9236c130f5ea498c9e2bdc06e1716, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.75
