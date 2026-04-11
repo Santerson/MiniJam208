@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &388310373089381692
+--- !u!1 &3194406209774410513
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,9 +8,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3556083615702466400}
-  - component: {fileID: 4036200761080410980}
-  - component: {fileID: 7063693213652227986}
+  - component: {fileID: 4835720816707442485}
+  - component: {fileID: 4786712112263439681}
+  - component: {fileID: 680485383010994557}
   m_Layer: 0
   m_Name: AttackCollider
   m_TagString: PlayerAttack
@@ -18,28 +18,28 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!4 &3556083615702466400
+--- !u!4 &4835720816707442485
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 388310373089381692}
+  m_GameObject: {fileID: 3194406209774410513}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.70710576, w: 0.70710784}
-  m_LocalPosition: {x: 0.03, y: 1.34, z: 0}
+  m_LocalPosition: {x: 0, y: 0.83, z: 0}
   m_LocalScale: {x: 1.6628639, y: 2.6, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2435596230473892758}
+  m_Father: {fileID: 1218036943039716878}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
---- !u!212 &4036200761080410980
+--- !u!212 &4786712112263439681
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 388310373089381692}
+  m_GameObject: {fileID: 3194406209774410513}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -88,13 +88,13 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &7063693213652227986
+--- !u!61 &680485383010994557
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 388310373089381692}
+  m_GameObject: {fileID: 3194406209774410513}
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
@@ -134,6 +134,38 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &3255540781750792057
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1218036943039716878}
+  m_Layer: 0
+  m_Name: AttackColliderOriginPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1218036943039716878
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3255540781750792057}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.501, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 4835720816707442485}
+  m_Father: {fileID: 2435596230473892758}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3463344357747606783
 GameObject:
   m_ObjectHideFlags: 0
@@ -289,7 +321,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 3556083615702466400}
+  - {fileID: 1218036943039716878}
   - {fileID: 4845567790648392141}
   - {fileID: 6751369568015591770}
   m_Father: {fileID: 0}
@@ -570,7 +602,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4acfcbf0d3cccd499415f23f5f71593, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  refWeaponCollider: {fileID: 7063693213652227986}
+  refWeaponCollider: {fileID: 680485383010994557}
+  refWeaponHitboxScalePoint: {fileID: 3255540781750792057}
   attackUptime: 0.4
   baseAttackCooldown: 1
   baseAttackSpeed: 1

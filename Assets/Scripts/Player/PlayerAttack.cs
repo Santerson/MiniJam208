@@ -4,14 +4,17 @@ using UnityEngine.InputSystem;
 
 public class PlayerAttack : MonoBehaviour
 {
+    [Header("Attack Settings")]
     [Tooltip("The collider of the player's weapon")]
     [SerializeField] Collider2D refWeaponCollider;
+    [Tooltip("The point from which the weapon collider will be scaled")]
+    [SerializeField] GameObject refWeaponHitboxScalePoint;
     [Tooltip("The amount of time the weapon collider is active when the player attacks, in seconds")]
     [SerializeField] float attackUptime = 0.4f;
     [Tooltip("The base attack cooldown of the player, in seconds. The actual cooldown is 1 / attack speed")]
     [SerializeField] float baseAttackCooldown = 1f;
 
-
+    [Header("Base Stats")]
     [SerializeField] float baseAttackSpeed = 1;
     [SerializeField] float baseAttackDamage = 1;
     [SerializeField] float baseAttackRange = 1;
@@ -35,6 +38,7 @@ public class PlayerAttack : MonoBehaviour
     public bool IsAttacking { get; private set; } = false;
 
     float AttackCooldownLeft = 0f;
+    Vector3 baseScale = Vector3.one;
 
     private void Start()
     {
@@ -42,6 +46,7 @@ public class PlayerAttack : MonoBehaviour
         baseAttackDamage = currentAttackDamage;
         baseAttackRange = currentAttackRange;
         baseSelfAttack = currentSelfAttack;
+        baseScale = refWeaponHitboxScalePoint.transform.localScale;
     }
 
     private void Update()
@@ -60,6 +65,9 @@ public class PlayerAttack : MonoBehaviour
         {
             // Do attack logic
             IsAttacking = true;
+            // Resize the collider
+            refWeaponHitboxScalePoint.transform.localScale = baseScale * currentAttackRange;
+            // Enable the weapon collider
             refWeaponCollider.gameObject.SetActive(true);
 
             Debug.Log($"{currentAttackDamage}dmg, {currentAttackSpeed}asp, {currentAttackRange}rng");
