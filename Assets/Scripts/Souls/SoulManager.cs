@@ -8,9 +8,11 @@ public class SoulManager : MonoBehaviour
 
     [Header("Soul Display")]
     [SerializeField] GameObject[] SpawnUIPlacesParents = new GameObject[5];
+    [SerializeField] LineRenderer[] DecayLineCovers = new LineRenderer[5];
 
     SoulData[] Souls = new SoulData[5];
     List<GameObject> SpawnedItems = new List<GameObject>();
+    List<float> DecayLinesInitialXPoses = new List<float>();
     PlayerAttack refPlayerAttack;
 
     /// <summary>
@@ -19,6 +21,15 @@ public class SoulManager : MonoBehaviour
     private void Start()
     {
         refPlayerAttack = GetComponent<PlayerAttack>();
+        foreach (LineRenderer decayline in DecayLineCovers)
+        {
+            DecayLinesInitialXPoses.Add(decayline.GetPosition(1).x);
+        }
+    }
+
+    private void Update()
+    {
+        UpdateDecayLines();
     }
 
     /// <summary>
@@ -162,6 +173,9 @@ public class SoulManager : MonoBehaviour
         return;
     }
 
+    /// <summary>
+    /// Refreshes the ui for the ui souls
+    /// </summary>
     void RefreshSoulUI()
     {
         // Spawn each object
@@ -172,6 +186,34 @@ public class SoulManager : MonoBehaviour
                 SpawnedItems.Add(Instantiate(Souls[i].UIGameobject, SpawnUIPlacesParents[i].transform));
         }
 
-        // TODO: Spawn the lines for decay amount
+        // Spawn the lines for decay amount
+        UpdateDecayLines();
+    }
+
+    /// <summary>
+    /// Updates the lines for each soul until it decays
+    /// </summary>
+    void UpdateDecayLines()
+    {
+        for (int i = 0; i < SpawnUIPlacesParents.Length; i++)
+        {
+            if (Souls[i] != null)
+            {
+                // Activate the object if it is not enabled
+                if (!DecayLineCovers[i].transform.parent.gameObject.activeSelf)
+                    DecayLineCovers[i].transform.parent.gameObject.SetActive(true);
+                // Get the time to decay for the line
+                float timeToDecay = Souls[i].SoulLifeSpanLeft;
+                // Set the line renderer COVER to show the time to decay
+                float xPos = Mathf.Lerp(0, DecayLinesInitialXPoses[i], timeToDecay / Souls[i].soulLifespan);
+                DecayLineCovers[i].SetPosition(1, new Vector3(xPos, DecayLineCovers[i].GetPosition(1).y, DecayLineCovers[i].GetPosition(1).z));
+            }
+            else
+            {
+                // Otherwise, deactavate the gameobject
+                DecayLineCovers[i].transform.parent.gameObject.SetActive(false);
+            }
+        }
+
     }
 }
