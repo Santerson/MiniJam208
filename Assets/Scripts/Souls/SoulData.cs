@@ -48,11 +48,14 @@ public class SoulData : MonoBehaviour
     void Update()
     {
         // Decrease the soul's lifespan
-        soulLifeSpanLeft -= Time.deltaTime;
-        // If the soul's lifespan is up, invert the soul
-        if (soulLifeSpanLeft <= 0)
+        if (!IsSoulInverted)
         {
-            InvertSoul();
+            soulLifeSpanLeft -= Time.deltaTime;
+            // If the soul's lifespan is up, invert the soul
+            if (soulLifeSpanLeft <= 0)
+            {
+                InvertSoul();
+            }
         }
     }
 
@@ -60,6 +63,8 @@ public class SoulData : MonoBehaviour
     {
         // Invert the soul
         IsSoulInverted = true;
+        // Reapply soul effects
+        FindFirstObjectByType<SoulManager>().ApplyAllSouls();
         // Do something cool here too
     }
 }
