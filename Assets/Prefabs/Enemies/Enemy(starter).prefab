@@ -201,7 +201,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4934031839664438749}
-  - {fileID: 1008692319457076815}
+  - {fileID: 4806356703311461025}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8073740804788734336
@@ -272,6 +272,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   refWeaponCollider: {fileID: 2017206155095304772}
+  BaseDamage: 1
+  BaseDamageMultiplier: 1
 --- !u!61 &6484247880183230945
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -337,8 +339,8 @@ MonoBehaviour:
   - {fileID: 2399416122655976338, guid: 602839f7607d28942b38e3170b514455, type: 3}
   - {fileID: 2399416122655976338, guid: 4d55d51900e6b9547bd69e8cb94150e8, type: 3}
   - {fileID: 2399416122655976338, guid: 80897fae8a5f3ea468783ebff3593f65, type: 3}
-  healthBarCover: {fileID: 6758845911820133140}
-  HealthBarOffset: {x: -0.65, y: -1}
+  healthBarCover: {fileID: 1743715703104377766}
+  HealthBarOffset: {x: -0.674, y: -0.775}
   MaxHealth: 5
 --- !u!50 &-7747520066187469196
 Rigidbody2D:
@@ -367,7 +369,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!1001 &7439152432517964797
+--- !u!1001 &2914161132658917139
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -424,13 +426,13 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 589ec9920981c714483d0ea633b657be, type: 3}
---- !u!4 &1008692319457076815 stripped
+--- !u!120 &1743715703104377766 stripped
+LineRenderer:
+  m_CorrespondingSourceObject: {fileID: 3477836838921366709, guid: 589ec9920981c714483d0ea633b657be, type: 3}
+  m_PrefabInstance: {fileID: 2914161132658917139}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &4806356703311461025 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7692911125411661234, guid: 589ec9920981c714483d0ea633b657be, type: 3}
-  m_PrefabInstance: {fileID: 7439152432517964797}
-  m_PrefabAsset: {fileID: 0}
---- !u!120 &6758845911820133140 stripped
-LineRenderer:
-  m_CorrespondingSourceObject: {fileID: 4247197042403999977, guid: 589ec9920981c714483d0ea633b657be, type: 3}
-  m_PrefabInstance: {fileID: 7439152432517964797}
+  m_PrefabInstance: {fileID: 2914161132658917139}
   m_PrefabAsset: {fileID: 0}

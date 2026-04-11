@@ -8,6 +8,8 @@ TagManager:
   - PlayerAttack
   - BiggerBadderEnemy
   - HealthSlider
+  - EnemyAttack
+  - EnemyHealthSlider
   layers:
   - Default
   - TransparentFX

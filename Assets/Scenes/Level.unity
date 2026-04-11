@@ -327,6 +327,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnemyPrefab: {fileID: 8364016987667324981, guid: f03a09d14d7850347a31a13968768170, type: 3}
+  EnemyHealthPrefab: {fileID: 2085563926556546624, guid: 589ec9920981c714483d0ea633b657be, type: 3}
   TestTimer: 0
 --- !u!4 &829152215
 Transform:
