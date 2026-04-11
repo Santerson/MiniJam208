@@ -19,6 +19,15 @@ public class EnemyMovement : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
+
+    private void Update()
+    {
+        Vector2 direction = player.position - transform.position;
+
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0f, 0f, angle - 90f);
+    }
+
     private void FixedUpdate()
     {
         // Move to Enemies
