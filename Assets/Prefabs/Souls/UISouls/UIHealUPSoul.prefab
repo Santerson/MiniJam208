@@ -24,6 +24,14 @@ PrefabInstance:
       propertyPath: UIGameobject
       value: 
       objectReference: {fileID: 9202439080172667627}
+    - target: {fileID: 6797048911455991449, guid: 80897fae8a5f3ea468783ebff3593f65, type: 3}
+      propertyPath: m_Name
+      value: Sprite
+      objectReference: {fileID: 0}
+    - target: {fileID: 7000760220431990295, guid: 80897fae8a5f3ea468783ebff3593f65, type: 3}
+      propertyPath: m_SortingOrder
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7096806569622135344, guid: 80897fae8a5f3ea468783ebff3593f65, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

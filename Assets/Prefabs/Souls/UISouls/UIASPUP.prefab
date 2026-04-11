@@ -28,6 +28,14 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: 0.0049093068
       objectReference: {fileID: 0}
+    - target: {fileID: 6272648961633642459, guid: ea032b1c9435d0b4e9a630274f1290a4, type: 3}
+      propertyPath: m_Name
+      value: Sprite
+      objectReference: {fileID: 0}
+    - target: {fileID: 6755720224916851740, guid: ea032b1c9435d0b4e9a630274f1290a4, type: 3}
+      propertyPath: m_SortingOrder
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7096806569622135344, guid: ea032b1c9435d0b4e9a630274f1290a4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
