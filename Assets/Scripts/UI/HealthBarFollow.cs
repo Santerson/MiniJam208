@@ -3,10 +3,9 @@ using UnityEngine;
 public class HealthBarFollow : MonoBehaviour
 {
     Transform Player;
-    [SerializeField] Vector3 offset = new Vector3(0, -50, 0);
 
-    private void LateUpdate()
+    private void Update()
     {
-        
+        Player.transform.position =  new Vector3(Player.transform.position.x, -5f, 0);
     }
 }
