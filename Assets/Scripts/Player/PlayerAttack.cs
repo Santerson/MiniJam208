@@ -44,6 +44,8 @@ public class PlayerAttack : MonoBehaviour
 
     float AttackCooldownLeft = 0f;
     Vector3 baseScale = Vector3.one;
+    PlayerHealth refPlayerHealth;
+
 
     private void Start()
     {
@@ -52,6 +54,7 @@ public class PlayerAttack : MonoBehaviour
         baseAttackRange = currentAttackRange;
         baseSelfAttack = currentSelfAttack;
         baseScale = refWeaponHitboxScalePoint.transform.localScale;
+        refPlayerHealth = GetComponent<PlayerHealth>();
     }
 
     private void Update()
@@ -79,6 +82,8 @@ public class PlayerAttack : MonoBehaviour
             StartCoroutine(WaitDisableCollider());
             // Set the attack cooldown
             AttackCooldownLeft = baseAttackCooldown / currentAttackSpeed;
+            // Deal self damage
+            refPlayerHealth.AddHealth(-currentSelfAttack);
         }
     }
 
