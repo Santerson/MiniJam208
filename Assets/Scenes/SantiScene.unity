@@ -352,9 +352,19 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 602839f7607d28942b38e3170b514455, type: 3}
+--- !u!120 &358398453 stripped
+LineRenderer:
+  m_CorrespondingSourceObject: {fileID: 4511980668152849664, guid: 3f87c1c97e46ccf4ea5107cd943c930d, type: 3}
+  m_PrefabInstance: {fileID: 5700559077427828445}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &388407234 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4851803422292185094, guid: 3f87c1c97e46ccf4ea5107cd943c930d, type: 3}
+  m_PrefabInstance: {fileID: 5700559077427828445}
+  m_PrefabAsset: {fileID: 0}
+--- !u!120 &449178832 stripped
+LineRenderer:
+  m_CorrespondingSourceObject: {fileID: 3828689627221471881, guid: 3f87c1c97e46ccf4ea5107cd943c930d, type: 3}
   m_PrefabInstance: {fileID: 5700559077427828445}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &501093337
@@ -493,6 +503,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!120 &583167436 stripped
+LineRenderer:
+  m_CorrespondingSourceObject: {fileID: 6673943592785886674, guid: 3f87c1c97e46ccf4ea5107cd943c930d, type: 3}
+  m_PrefabInstance: {fileID: 5700559077427828445}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -947,6 +962,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea032b1c9435d0b4e9a630274f1290a4, type: 3}
+--- !u!120 &1329525021 stripped
+LineRenderer:
+  m_CorrespondingSourceObject: {fileID: 5381862765778481462, guid: 3f87c1c97e46ccf4ea5107cd943c930d, type: 3}
+  m_PrefabInstance: {fileID: 5700559077427828445}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1357587396 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3991481223728189921, guid: 3f87c1c97e46ccf4ea5107cd943c930d, type: 3}
@@ -955,6 +975,11 @@ GameObject:
 --- !u!1 &1650863163 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 328213213414664358, guid: 3f87c1c97e46ccf4ea5107cd943c930d, type: 3}
+  m_PrefabInstance: {fileID: 5700559077427828445}
+  m_PrefabAsset: {fileID: 0}
+--- !u!120 &1674809946 stripped
+LineRenderer:
+  m_CorrespondingSourceObject: {fileID: 6527533338662538605, guid: 3f87c1c97e46ccf4ea5107cd943c930d, type: 3}
   m_PrefabInstance: {fileID: 5700559077427828445}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1677563107
@@ -1298,6 +1323,26 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5201783845402012381, guid: a00a0485a38c7df49a9801ac13281d92, type: 3}
+      propertyPath: 'DecayLineCovers.Array.data[0]'
+      value: 
+      objectReference: {fileID: 449178832}
+    - target: {fileID: 5201783845402012381, guid: a00a0485a38c7df49a9801ac13281d92, type: 3}
+      propertyPath: 'DecayLineCovers.Array.data[1]'
+      value: 
+      objectReference: {fileID: 358398453}
+    - target: {fileID: 5201783845402012381, guid: a00a0485a38c7df49a9801ac13281d92, type: 3}
+      propertyPath: 'DecayLineCovers.Array.data[2]'
+      value: 
+      objectReference: {fileID: 1329525021}
+    - target: {fileID: 5201783845402012381, guid: a00a0485a38c7df49a9801ac13281d92, type: 3}
+      propertyPath: 'DecayLineCovers.Array.data[3]'
+      value: 
+      objectReference: {fileID: 583167436}
+    - target: {fileID: 5201783845402012381, guid: a00a0485a38c7df49a9801ac13281d92, type: 3}
+      propertyPath: 'DecayLineCovers.Array.data[4]'
+      value: 
+      objectReference: {fileID: 1674809946}
+    - target: {fileID: 5201783845402012381, guid: a00a0485a38c7df49a9801ac13281d92, type: 3}
       propertyPath: 'SpawnUIPlacesParents.Array.data[0]'
       value: 
       objectReference: {fileID: 1890212221}
@@ -1494,14 +1539,6 @@ PrefabInstance:
     - target: {fileID: 981421482989521651, guid: 3f87c1c97e46ccf4ea5107cd943c930d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5964956165992058942, guid: 3f87c1c97e46ccf4ea5107cd943c930d, type: 3}
-      propertyPath: m_UiScaleMode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5964956165992058942, guid: 3f87c1c97e46ccf4ea5107cd943c930d, type: 3}
-      propertyPath: m_MatchWidthOrHeight
-      value: 0.291
       objectReference: {fileID: 0}
     - target: {fileID: 7521760119911891849, guid: 3f87c1c97e46ccf4ea5107cd943c930d, type: 3}
       propertyPath: m_Name

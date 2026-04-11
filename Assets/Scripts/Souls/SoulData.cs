@@ -18,7 +18,7 @@ public class SoulData : MonoBehaviour
     [HideInInspector] public bool IsSoulInverted { get; private set; } = false;
 
     // Time until this soul becomes corrupt
-    float soulLifeSpanLeft;
+    public float SoulLifeSpanLeft { get; private set; }
 
     /// <summary>
     /// Soul containing an effect of a soul
@@ -44,7 +44,7 @@ public class SoulData : MonoBehaviour
     private void Start()
     {
         // Set the soul's lifespan
-        soulLifeSpanLeft = soulLifespan;
+        SoulLifeSpanLeft = soulLifespan;
     }
 
     void Update()
@@ -52,9 +52,9 @@ public class SoulData : MonoBehaviour
         // Decrease the soul's lifespan
         if (!IsSoulInverted)
         {
-            soulLifeSpanLeft -= Time.deltaTime;
+            SoulLifeSpanLeft -= Time.deltaTime;
             // If the soul's lifespan is up, invert the soul
-            if (soulLifeSpanLeft <= 0)
+            if (SoulLifeSpanLeft <= 0)
             {
                 InvertSoul();
             }
