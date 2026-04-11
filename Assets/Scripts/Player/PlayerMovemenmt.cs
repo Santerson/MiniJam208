@@ -5,17 +5,25 @@ using UnityEngine.InputSystem;
 public class PlayerMovemenmt : MonoBehaviour
 {
     // Speed of Player
-    [SerializeField] float speed = 5f;
+    [SerializeField] float baseMovement = 5f;
+    [SerializeField] float minimumMovement = 1f;
     // RigidBody to move the characters
     [SerializeField] Rigidbody2D rb;
     // A Vector2 for the Movement
     Vector2 movement;
+
+    [HideInInspector] public float currentMoveSpeed { get; private set; }
 
 
     private void Awake()
     {
         // Get the rigid body
         rb = GetComponent<Rigidbody2D>();
+    }
+
+    private void Start()
+    {
+        currentMoveSpeed = baseMovement;
     }
 
     // To get the context of the Value of the Inputs
@@ -32,7 +40,26 @@ public class PlayerMovemenmt : MonoBehaviour
 
     private void PlayerMoving() // To move the Player
     {
-        rb.linearVelocity = movement * speed;
+        // Move the player by either the current move speed or the minimum move speed, whichever is higher
+        rb.linearVelocity = movement * Mathf.Max(currentMoveSpeed, minimumMovement);
+    }
+
+    /// <summary>
+    /// Changes the current speed by the given amount
+    /// (Note: use negative to deduct movepseed)
+    /// </summary>
+    /// <param name="amount"></param>
+    public void ChangeMoveSpeed(float amount)
+    {
+        currentMoveSpeed += amount;
+    }
+
+    /// <summary>
+    /// Resets the player's movespeed to the default amount
+    /// </summary>
+    public void ResetMoveSpeed()
+    {
+        currentMoveSpeed = baseMovement;
     }
 
     private void PlayerLooking() // To get the player to look at mouse 
