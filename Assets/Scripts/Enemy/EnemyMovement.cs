@@ -11,7 +11,7 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] Collider2D refWeaponCollider;
     [SerializeField] float BaseDamageMultiplier = 1f;
     float stoppingDistance = 3f;
-    float attackRange = 4f;
+    [SerializeField] float attackRange = 4f;
     float attackTime;
 
     [Header("Variants")]

@@ -327,7 +327,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.27672952, g: 0.098334685, b: 0.098334685, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -375,6 +375,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   refWeaponCollider: {fileID: 3455335276017543480}
   BaseDamageMultiplier: 1
+  attackRange: 2
   refWeaponHitboxScalePoint: {fileID: 2462840964867018151}
   currentAttackRange: 1.5
   speed: 3
