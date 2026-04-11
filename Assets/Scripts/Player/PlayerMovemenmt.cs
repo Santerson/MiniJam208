@@ -11,6 +11,7 @@ public class PlayerMovemenmt : MonoBehaviour
     [SerializeField] Rigidbody2D rb;
     // A Vector2 for the Movement
     Vector2 movement;
+    bool movementInverted = false;
 
     [HideInInspector] public float currentMoveSpeed { get; private set; }
 
@@ -29,7 +30,7 @@ public class PlayerMovemenmt : MonoBehaviour
     // To get the context of the Value of the Inputs
     public void OnMove(InputAction.CallbackContext context)
     {
-        movement = context.ReadValue<Vector2>();
+        movement = context.ReadValue<Vector2>() * (movementInverted ? -1 : 1);
     }
 
     private void FixedUpdate() // To contant update the Moving of the player
@@ -60,6 +61,16 @@ public class PlayerMovemenmt : MonoBehaviour
     public void ResetMoveSpeed()
     {
         currentMoveSpeed = baseMovement;
+        movementInverted = false;
+    }
+
+    /// <summary>
+    /// Inverts the player's movement controls
+    /// Resets on ResetMoveSpeed() call
+    /// </summary>
+    public void InvertMovement()
+    {
+        movementInverted = true;
     }
 
     private void PlayerLooking() // To get the player to look at mouse 

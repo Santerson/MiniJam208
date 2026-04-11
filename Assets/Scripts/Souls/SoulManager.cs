@@ -150,6 +150,10 @@ public class SoulManager : MonoBehaviour
                 case SoulData.StatType.ExplodingDamade:
                     Debug.Log("This doesn't exist yet :/");
                     break;
+                // Inverts the player's controls
+                case SoulData.StatType.InvertPlayerControls:
+                    refPlayerMovement.InvertMovement();
+                    break;
             }
         }
     }

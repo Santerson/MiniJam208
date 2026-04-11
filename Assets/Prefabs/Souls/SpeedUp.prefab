@@ -140,7 +140,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2077463714751755979, guid: b90f735817dc33d4983cb5ee6a26731f, type: 3}
       propertyPath: invertedSoulEffects.Array.data[0].statType
-      value: 3
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 2077463714751755979, guid: b90f735817dc33d4983cb5ee6a26731f, type: 3}
       propertyPath: invertedSoulEffects.Array.data[1].statType
@@ -148,7 +148,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2077463714751755979, guid: b90f735817dc33d4983cb5ee6a26731f, type: 3}
       propertyPath: invertedSoulEffects.Array.data[0].statChange
-      value: -2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2077463714751755979, guid: b90f735817dc33d4983cb5ee6a26731f, type: 3}
       propertyPath: invertedSoulEffects.Array.data[1].statChange

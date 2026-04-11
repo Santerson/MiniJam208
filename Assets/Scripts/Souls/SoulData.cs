@@ -43,7 +43,8 @@ public class SoulData : MonoBehaviour
         DamageReduction,
         HealPlayer,
         ExplodingDamade,
-        EnemyHeal
+        EnemyHeal,
+        InvertPlayerControls
     }
 
     private void Start()
