@@ -11,14 +11,18 @@ public class SoulManager : MonoBehaviour
     [SerializeField] LineRenderer[] DecayLineCovers = new LineRenderer[5];
 
     [Header("Colors")]
-    [SerializeField] Color NoSoulColor = Color.yellow;
-    [SerializeField] Color PositiveSoulColor = Color.yellow;
+    [SerializeField] Color PositiveSoulColor = Color.white;
     [SerializeField] Color InvertedSoulColor = Color.black;
+    [SerializeField] Color NoSoulBackgroundColor = Color.yellow;
+    [SerializeField] Color PositiveSoulBackgroundColor = Color.yellow;
+    [SerializeField] Color InvertedSoulBackgroundColor = Color.black;
 
     // Currently active souls, from oldest to newest. soul 0 is the newest, soul 4 is the oldest
     SoulData[] Souls = new SoulData[5];
     // A list of the currently spawned ui items for the souls, so they can be easily destroyed when refreshing the ui
     List<GameObject> SpawnedItems = new List<GameObject>();
+    // A list of the base spriterenderers of every soul
+    List<SpriteRenderer> SpawnedSoulSprites = new List<SpriteRenderer>();
     // A list of the initial x positions of the decay line covers, used to calculate how much to show of the line when refreshing the ui
     List<float> DecayLinesInitialXPoses = new List<float>();
 
@@ -239,27 +243,37 @@ public class SoulManager : MonoBehaviour
             if (item != null)
                 Destroy(item);
         }
-        // Spawn each object
         SpawnedItems.Clear();
+        SpawnedSoulSprites.Clear();
+        // Spawn each object
         // Loop through the soul array and spawn the corresponding ui element for each soul in the correct position
         for (int i = 0; i < SpawnUIPlacesParents.Length; i++)
         {
             // Spawn the soul object
             if (Souls[i] != null)
+            {
                 SpawnedItems.Add(Instantiate(Souls[i].UIGameobject, SpawnUIPlacesParents[i].transform));
+                SpawnedSoulSprites.Add(SpawnedItems[i].GetComponentInChildren<SpriteRenderer>());
+            }
             // For each slot, set the corresponding background color for the soul
             if (Souls[i] != null)
             {
                 // Check if the soul is inverted, and set the color accordingly
                 if (Souls[i].IsSoulInverted)
-                    SpawnUIPlacesParents[i].GetComponent<SpriteRenderer>().color = InvertedSoulColor;
+                {
+                    SpawnUIPlacesParents[i].GetComponent<SpriteRenderer>().color = InvertedSoulBackgroundColor;
+                    SpawnedItems[i].GetComponentInChildren<SpriteRenderer>().color = SpawnedSoulSprites[i].color * InvertedSoulColor;
+                }
                 else
-                    SpawnUIPlacesParents[i].GetComponent<SpriteRenderer>().color = PositiveSoulColor;
+                {
+                    SpawnUIPlacesParents[i].GetComponent<SpriteRenderer>().color = PositiveSoulBackgroundColor;
+                    SpawnedItems[i].GetComponentInChildren<SpriteRenderer>().color = SpawnedSoulSprites[i].color * PositiveSoulColor;
+                }
             }
             else
             {
                 // Otherwise, default to the no soul color
-                SpawnUIPlacesParents[i].GetComponent<SpriteRenderer>().color = NoSoulColor;
+                SpawnUIPlacesParents[i].GetComponent<SpriteRenderer>().color = NoSoulBackgroundColor;
             }
         }
         // Spawn the lines for decay amount
