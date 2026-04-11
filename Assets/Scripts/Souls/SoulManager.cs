@@ -15,10 +15,16 @@ public class SoulManager : MonoBehaviour
     [SerializeField] Color PositiveSoulColor = Color.yellow;
     [SerializeField] Color InvertedSoulColor = Color.black;
 
+    // Currently active souls, from oldest to newest. soul 0 is the newest, soul 4 is the oldest
     SoulData[] Souls = new SoulData[5];
+    // A list of the currently spawned ui items for the souls, so they can be easily destroyed when refreshing the ui
     List<GameObject> SpawnedItems = new List<GameObject>();
+    // A list of the initial x positions of the decay line covers, used to calculate how much to show of the line when refreshing the ui
     List<float> DecayLinesInitialXPoses = new List<float>();
+
+    // References to player scripts to apply soul effects to
     PlayerAttack refPlayerAttack;
+    PlayerMovemenmt refPlayerMovement;
 
     /// <summary>
     /// initializes variables
@@ -30,6 +36,7 @@ public class SoulManager : MonoBehaviour
         {
             DecayLinesInitialXPoses.Add(decayline.GetPosition(1).x);
         }
+        refPlayerMovement = GetComponent<PlayerMovemenmt>();
     }
 
     private void Update()
@@ -48,7 +55,7 @@ public class SoulManager : MonoBehaviour
         // Do nothing if it does not have one
         if (refData == null)
         {
-            UnityEngine.Debug.LogError("The soul passed does not have a SoulData component");
+            Debug.LogError("The soul passed does not have a SoulData component");
             return;
         }
         // Duplicate this data into another component on the souldata storage object
@@ -121,7 +128,7 @@ public class SoulManager : MonoBehaviour
                 // Player Move Speed
                 case SoulData.StatType.MoveSpeed:
                     // Add the stat change to the player's move speed
-                    Debug.Log("This doesn't exist yes :/");
+                    refPlayerMovement.ChangeMoveSpeed(effect.statChange);
                     break;
                 // If the soul damages the player on attack
                 case SoulData.StatType.PlayerDamageSelf:
@@ -153,6 +160,7 @@ public class SoulManager : MonoBehaviour
     void ResetPlayerStats()
     {
         refPlayerAttack.ResetStats();
+        refPlayerMovement.ResetMoveSpeed();
     }
 
     /// <summary>
