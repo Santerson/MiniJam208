@@ -11,6 +11,8 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] GameObject refWeaponHitboxScalePoint;
     [Tooltip("The explosion aoe on enemy death")]
     [SerializeField] GameObject EnemyDeathAOEPrefab;
+    [Tooltip("To show the animation of the player attacking")]
+    [SerializeField] Animator anim;
 
     [Header("Attack Settings")]
     [Tooltip("The amount of time the weapon collider is active when the player attacks, in seconds")]
@@ -54,6 +56,10 @@ public class PlayerAttack : MonoBehaviour
     Vector3 baseScale = Vector3.one;
     PlayerHealth refPlayerHealth;
 
+    private void Awake()
+    {
+        anim = GetComponent<Animator>();
+    }
 
     private void Start()
     {
@@ -67,6 +73,7 @@ public class PlayerAttack : MonoBehaviour
 
     private void Update()
     {
+        anim.SetBool("IsAttacking", IsAttacking);
         // Reduce atk cd
         if (AttackCooldownLeft != 0)
             AttackCooldownLeft = Mathf.Max(0, AttackCooldownLeft - Time.deltaTime);
