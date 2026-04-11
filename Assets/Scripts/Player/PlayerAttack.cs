@@ -71,6 +71,9 @@ public class PlayerAttack : MonoBehaviour
         // Check if the player is attacking
         if (context.performed && AttackCooldownLeft <= 0 && !IsAttacking)
         {
+            // Set the collider's position
+            refWeaponHitboxScalePoint.transform.position = transform.position;
+            refWeaponHitboxScalePoint.transform.rotation = transform.rotation;
             // Do attack logic
             IsAttacking = true;
             // Resize the collider
