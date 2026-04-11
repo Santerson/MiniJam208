@@ -144,7 +144,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5737810785899139068}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: Enemy (basic)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -359,7 +359,7 @@ MonoBehaviour:
   - {fileID: 2399416122655976338, guid: 5a333993f244c4e439e531870954434e, type: 3}
   healthBarCover: {fileID: 27501425613462462}
   HealthBarOffset: {x: -0.674, y: -1}
-  MaxHealth: 20
+  MaxHealth: 5
 --- !u!114 &396444578974421165
 MonoBehaviour:
   m_ObjectHideFlags: 0
