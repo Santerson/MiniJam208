@@ -3,11 +3,16 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     PlayerAttack PA;
-    float health = 5f;
+    [SerializeField]float health = 5f;
     private void Update()
     {
-        if (health <= 0)
+        if (health <= 0 && gameObject.CompareTag("BiggerBadderEnemy").Equals(false))
         {
+            Destroy(this);
+        }
+        else if (health <= 0 && gameObject.CompareTag("BiggerBadderEnemy").Equals(true))
+        {
+            Debug.Log("Spawwn Soul");
             Destroy(this);
         }
     }
