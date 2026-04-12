@@ -36,17 +36,18 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        UpdateTimer += Time.deltaTime;
+        
         if (SceneManager.GetSceneByName("Level").isLoaded)
         {
             PlayTime += Time.deltaTime;
-        }
-        if (UpdateTimer <= 0f)
-        {
-            HealthChange++;
-            SpeedChange++;
-            DamageChange++;
-            UpdateTimer = ResetUpdateTimer;
+            UpdateTimer -= Time.deltaTime;
+            if (UpdateTimer <= 0f)
+            {
+                HealthChange++;
+                SpeedChange++;
+                DamageChange++;
+                UpdateTimer = ResetUpdateTimer;
+            }
         }
 
     }
