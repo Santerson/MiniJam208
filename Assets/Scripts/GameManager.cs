@@ -29,28 +29,21 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void Start()
+    private void Update()
     {
-        if (SceneManager.GetSceneByName("MainMenu").isLoaded)
+        
+        if (SceneManager.GetSceneByName("Dead").isLoaded)
+        {
+            audioSources[0].Stop();
+        }
+        else if (!audioSources[0].isPlaying)
         {
             audioSources[0].Play();
         }
         if (SceneManager.GetSceneByName("Level").isLoaded)
         {
-            audioSources[1].Play();
-            audioSources[0].Stop();
-        }
-    }
-
-    private void Update()
-    {
-        
-        if (SceneManager.GetSceneByName("Level").isLoaded)
-        {
             PlayTime += Time.deltaTime;
-            audioSources[0].Stop();
         }
-
     }
 
     public void Reset()

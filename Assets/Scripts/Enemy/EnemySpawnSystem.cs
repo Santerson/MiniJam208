@@ -20,6 +20,7 @@ public class EnemySpawnSystem : MonoBehaviour
     [Header("Initial Spawns")]
     [Tooltip("Time until the initial enemies spawn in seconds")]
     [SerializeField] float TimeToInitialEnemySpawns = 10f;
+    [SerializeField] float TimeToInitialEnemySpawnsInitialRun = 20f;
     [Tooltip("The amount of enemies to spawn at the start of the game")]
     [SerializeField] int InitialEnemySpawns = 5;
 
@@ -41,6 +42,7 @@ public class EnemySpawnSystem : MonoBehaviour
     [Tooltip("The amount that each enemy's speed scales by for every enemy spawned\nEquation: NewSpeed = CurrentSpeed * (1 + EnemySpeedScalingFactor * TotalEnemySpawns)")]
     [SerializeField] float EnemySpeedScalingFactor = 0.05f;
 
+    static bool firstRun = true;
 
     int totalEnemySpawns = 0;
 
@@ -65,6 +67,11 @@ public class EnemySpawnSystem : MonoBehaviour
     {
         timeToNextEnemySpawn = Random.Range(TimeInbetweenSpawns.x, TimeInbetweenSpawns.y);
         timeToNextWave = IntervalBetweenWaves;
+        if (firstRun)
+        {
+            TimeToInitialEnemySpawns = TimeToInitialEnemySpawnsInitialRun;
+            firstRun = false;
+        }
     }
 
 
