@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,6 +8,8 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] LineRenderer healthBarCover;
     [Tooltip("The offset of the health bar from the player, in world units")]
     [SerializeField] Vector2 HealthBarOffset = new Vector2(0, -1f);
+    [Tooltip("The prefab for the damage number that appears when the player takes damage or heals")]
+    [SerializeField] GameObject ReferenceDamageNumber;
     [Tooltip("The maximum health of the player")]
     [SerializeField] float MaxHealth = 20f;
     [SerializeField] float BaseIncomingDmgMultiplier = 1f;
@@ -16,6 +19,8 @@ public class PlayerHealth : MonoBehaviour
     float currentHealth = 0;
     float currentIncomingDmgMultiplier = 1;
     float currentHealthRegen = 0f;
+
+    float timeToNextHeal = 0f;
 
     /// <summary>
     /// Initializes variables
@@ -38,8 +43,16 @@ public class PlayerHealth : MonoBehaviour
         // Set the health bar to that position
         healthBarCover.transform.position = (Vector2)transform.position + HealthBarOffset;
         // Apply Heal over Time or Damage over Time
-        AddHealth(currentHealthRegen * Time.deltaTime);
-        if (currentHealth > MaxHealth) currentHealth = MaxHealth;
+        if (currentHealthRegen != 0)
+        {
+            timeToNextHeal -= Time.deltaTime;
+            if (timeToNextHeal <= 0)
+            {
+                AddHealth(currentHealthRegen);
+                if (currentHealth > MaxHealth) currentHealth = MaxHealth;
+                timeToNextHeal = 1;
+            }
+        }
     }
 
     /// <summary>
@@ -49,13 +62,26 @@ public class PlayerHealth : MonoBehaviour
     /// <param name="added">the amount of health to add / subtract</param>
     public void AddHealth(float added)
     {
+        if (added == 0) return;
+        // Spawn a damage number
+        GameObject damageNumber = Instantiate(ReferenceDamageNumber, transform.position, Quaternion.identity);
+        damageNumber.GetComponentInChildren<DamageNumber>().damageNumberType = added > 0 ? DamageNumber.DamageNumberType.PlayerHeal : DamageNumber.DamageNumberType.PlayerTakeDamage;
+        // Set the text of the damage number to the amount of health changed
+        if (added % 1 != 0)
+        {
+            damageNumber.GetComponentInChildren<TextMeshProUGUI>().text = $"{Mathf.Abs(added): 0.00}";
+        }
+        else
+        {
+            damageNumber.GetComponentInChildren<TextMeshProUGUI>().text = $"{Mathf.Abs(added)}";
+        }
         if (added <= 0)
         {
             ChangeHealth(currentHealth + added * currentIncomingDmgMultiplier);
         }
         else
         {
-            ChangeHealth(currentHealth + added);
+            ChangeHealth(currentHealth + added > MaxHealth ? MaxHealth : currentHealth + added);
         }
     }
 
