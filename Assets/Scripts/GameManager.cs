@@ -51,4 +51,15 @@ public class GameManager : MonoBehaviour
         }
 
     }
+
+    public void Reset()
+    {
+        PlayTime = 0f;
+        EnemiesKilled = 0f;
+        SoulsCorrupted = 0f;
+        SoulsCollected = 0f;
+        HealthChange = 0f;
+        SpeedChange = 0f;
+        DamageChange = 0f;
+    }
 }
