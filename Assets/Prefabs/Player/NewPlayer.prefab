@@ -438,6 +438,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8722653875819839130}
     m_Modifications:
+    - target: {fileID: 334129149600274913, guid: 448f3780bfeadd242b4e8648d488338e, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 334129149600274913, guid: 448f3780bfeadd242b4e8648d488338e, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.g
+      value: 0.32156864
+      objectReference: {fileID: 0}
+    - target: {fileID: 334129149600274913, guid: 448f3780bfeadd242b4e8648d488338e, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 334129149600274913, guid: 448f3780bfeadd242b4e8648d488338e, type: 3}
+      propertyPath: m_Parameters.colorGradient.key1.g
+      value: 0.323454
+      objectReference: {fileID: 0}
+    - target: {fileID: 334129149600274913, guid: 448f3780bfeadd242b4e8648d488338e, type: 3}
+      propertyPath: m_Parameters.colorGradient.key1.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2887295313107641108, guid: 448f3780bfeadd242b4e8648d488338e, type: 3}
       propertyPath: m_Name
       value: HP Cover

@@ -16,7 +16,11 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] float IFrames = 0.5f;
     [SerializeField] float BaseIncomingDmgMultiplier = 1f;
     [SerializeField] float BaseHealthRegen = 0f;
-    
+
+    [Header("EFX for Dmg")]
+    [SerializeField] public bool EnableBloodSplatter = true;
+    [SerializeField] GameObject DamageFX;
+
 
     float initialHealthBarPosition = 0;
     float currentHealth = 0;
@@ -96,6 +100,11 @@ public class PlayerHealth : MonoBehaviour
     /// <param name="newHealth">The new health of the player</param>
     public void ChangeHealth(float newHealth)
     {
+        // Play damage effect if the player took damage
+        if (newHealth < currentHealth)
+        {
+            PlayDamageEffect();
+        }
         // Change the health of the player and update the health bar
         currentHealth = newHealth;
         // Set the pos of the barcover
@@ -106,6 +115,15 @@ public class PlayerHealth : MonoBehaviour
         {
             Skissue();
         }
+    }
+
+    void PlayDamageEffect()
+    {
+        // Particle System for taking damage
+        if (EnableBloodSplatter)
+            Instantiate(DamageFX, transform.position, Quaternion.identity);
+
+
     }
 
     /// <summary>
