@@ -1,19 +1,16 @@
 fileFormatVersion: 2
-guid: 8e454d8237c7fae479dbbf0bf0faad58
+guid: 57117c81179ea7b4d99a289d83bef594
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5428553980459039965
-    second: purpleRange_0
+      213: 8557765970214345380
+    second: Spritesheet_london_shank_prople_0
   - first:
-      213: -4155374296508926825
-    second: purpleRange_1
+      213: 2409398177448030200
+    second: Spritesheet_london_shank_prople_1
   - first:
-      213: -5982077393516439707
-    second: purpleRange_2
-  - first:
-      213: 2520035695181180392
-    second: purpleRange_3
+      213: -1830988529302867918
+    second: Spritesheet_london_shank_prople_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -122,89 +119,67 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: purpleRange_0
+      name: Spritesheet_london_shank_prople_0
       rect:
         serializedVersion: 2
-        x: 88
-        y: 263
-        width: 95
-        height: 147
-      alignment: 9
-      pivot: {x: 0.42702636, y: 0.8079832}
+        x: 34
+        y: 158
+        width: 61
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 323c4be9ae6e9a4b0800000000000000
-      internalID: -5428553980459039965
+      spriteID: 4aa5d851fca43c670800000000000000
+      internalID: 8557765970214345380
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: purpleRange_1
+      name: Spritesheet_london_shank_prople_1
       rect:
         serializedVersion: 2
-        x: 344
-        y: 344
-        width: 165
-        height: 82
-      alignment: 9
-      pivot: {x: 0.2496238, y: 0.47584498}
+        x: 162
+        y: 158
+        width: 61
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 794fbcbe7152556c0800000000000000
-      internalID: -4155374296508926825
+      spriteID: 8ff634970e6ef6120800000000000000
+      internalID: 2409398177448030200
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: purpleRange_2
+      name: Spritesheet_london_shank_prople_2
       rect:
         serializedVersion: 2
-        x: 87
-        y: 87
-        width: 105
-        height: 146
-      alignment: 9
-      pivot: {x: 0.37603688, y: 0.2809972}
+        x: 34
+        y: 30
+        width: 61
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 567de841e446bfca0800000000000000
-      internalID: -5982077393516439707
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: purpleRange_3
-      rect:
-        serializedVersion: 2
-        x: 344
-        y: 91
-        width: 79
-        height: 140
-      alignment: 9
-      pivot: {x: 0.52328146, y: 0.2847486}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8ed2490fc17f8f220800000000000000
-      internalID: 2520035695181180392
+      spriteID: 230761332a50796e0800000000000000
+      internalID: -1830988529302867918
       vertices: []
       indices: 
       edges: []
@@ -213,7 +188,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: fd1e6fa8f8104ed41a5a01b475d40e9f
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -223,10 +198,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      purpleRange_0: -5428553980459039965
-      purpleRange_1: -4155374296508926825
-      purpleRange_2: -5982077393516439707
-      purpleRange_3: 2520035695181180392
+      Spritesheet_london_shank_prople_0: 8557765970214345380
+      Spritesheet_london_shank_prople_1: 2409398177448030200
+      Spritesheet_london_shank_prople_2: -1830988529302867918
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

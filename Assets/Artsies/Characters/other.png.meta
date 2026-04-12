@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: 8e454d8237c7fae479dbbf0bf0faad58
+guid: 80711ae0c0b003a449118f0877313359
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5428553980459039965
-    second: purpleRange_0
+      213: 4299695302058953689
+    second: other_0
   - first:
-      213: -4155374296508926825
-    second: purpleRange_1
+      213: -3479028984331692938
+    second: other_1
   - first:
-      213: -5982077393516439707
-    second: purpleRange_2
+      213: 6159752592510258195
+    second: other_2
   - first:
-      213: 2520035695181180392
-    second: purpleRange_3
+      213: 2216051457789328346
+    second: other_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -122,89 +122,89 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: purpleRange_0
+      name: other_0
       rect:
         serializedVersion: 2
-        x: 88
-        y: 263
-        width: 95
-        height: 147
-      alignment: 9
-      pivot: {x: 0.42702636, y: 0.8079832}
+        x: 90
+        y: 345
+        width: 114
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 323c4be9ae6e9a4b0800000000000000
-      internalID: -5428553980459039965
+      spriteID: 9dbc3a1b8169bab30800000000000000
+      internalID: 4299695302058953689
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: purpleRange_1
+      name: other_1
       rect:
         serializedVersion: 2
-        x: 344
-        y: 344
-        width: 165
-        height: 82
-      alignment: 9
-      pivot: {x: 0.2496238, y: 0.47584498}
+        x: 346
+        y: 345
+        width: 82
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 794fbcbe7152556c0800000000000000
-      internalID: -4155374296508926825
+      spriteID: 6741f99429108bfc0800000000000000
+      internalID: -3479028984331692938
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: purpleRange_2
+      name: other_2
       rect:
         serializedVersion: 2
-        x: 87
-        y: 87
-        width: 105
-        height: 146
-      alignment: 9
-      pivot: {x: 0.37603688, y: 0.2809972}
+        x: 90
+        y: 89
+        width: 70
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 567de841e446bfca0800000000000000
-      internalID: -5982077393516439707
+      spriteID: 31c8ddcd856db7550800000000000000
+      internalID: 6159752592510258195
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: purpleRange_3
+      name: other_3
       rect:
         serializedVersion: 2
-        x: 344
-        y: 91
-        width: 79
-        height: 140
-      alignment: 9
-      pivot: {x: 0.52328146, y: 0.2847486}
+        x: 317
+        y: 89
+        width: 99
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8ed2490fc17f8f220800000000000000
-      internalID: 2520035695181180392
+      spriteID: adbf4894f0ff0ce10800000000000000
+      internalID: 2216051457789328346
       vertices: []
       indices: 
       edges: []
@@ -213,7 +213,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: fd1e6fa8f8104ed41a5a01b475d40e9f
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -223,10 +223,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      purpleRange_0: -5428553980459039965
-      purpleRange_1: -4155374296508926825
-      purpleRange_2: -5982077393516439707
-      purpleRange_3: 2520035695181180392
+      other_0: 4299695302058953689
+      other_1: -3479028984331692938
+      other_2: 6159752592510258195
+      other_3: 2216051457789328346
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
