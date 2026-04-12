@@ -5,6 +5,8 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
+    [SerializeField] AudioSource[] audioSources = new AudioSource[8];
+
     [Header ("End Screen things")]
     [SerializeField] public float PlayTime = 0;
     [SerializeField] public float EnemiesKilled = 0;
@@ -26,12 +28,26 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        if (SceneManager.GetSceneByName("MainMenu").isLoaded)
+        {
+            audioSources[0].Play();
+        }
+        if (SceneManager.GetSceneByName("Level").isLoaded)
+        {
+            audioSources[1].Play();
+            audioSources[0].Stop();
+        }
+    }
+
     private void Update()
     {
         
         if (SceneManager.GetSceneByName("Level").isLoaded)
         {
             PlayTime += Time.deltaTime;
+            audioSources[0].Stop();
         }
 
     }
