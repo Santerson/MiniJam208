@@ -62,4 +62,14 @@ public class GameManager : MonoBehaviour
         SpeedChange = 0f;
         DamageChange = 0f;
     }
+
+    public void AddPickedUpSoul()
+    {
+        SoulsCollected++;
+    }
+
+    public void AddCorruptedSoul()
+    {
+        SoulsCorrupted++;
+    }
 }

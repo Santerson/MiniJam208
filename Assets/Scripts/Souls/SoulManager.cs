@@ -35,6 +35,7 @@ public class SoulManager : MonoBehaviour
     PlayerAttack refPlayerAttack;
     PlayerMovemenmt refPlayerMovement;
     PlayerHealth refPlayerHealth;
+    GameManager refGameManager;
 
     /// <summary>
     /// initializes variables
@@ -48,6 +49,7 @@ public class SoulManager : MonoBehaviour
         }
         refPlayerMovement = GetComponent<PlayerMovemenmt>();
         refPlayerHealth = GetComponent<PlayerHealth>();
+        refGameManager = FindFirstObjectByType<GameManager>();
     }
 
     private void Update()
@@ -71,6 +73,8 @@ public class SoulManager : MonoBehaviour
         }
         // Duplicate this data into another component on the souldata storage object
         SoulData newData = DuplicateSoulData(refData);
+        // Save onto the gamemanager
+        refGameManager.AddPickedUpSoul();
         // Remove the last soul from the array and storage object
         RemoveSoulData(4);
 

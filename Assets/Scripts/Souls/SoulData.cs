@@ -20,6 +20,8 @@ public class SoulData : MonoBehaviour
     // Time until this soul becomes corrupt
     public float SoulLifeSpanLeft { get; private set; }
 
+    GameManager refGameManager;
+
     /// <summary>
     /// Soul containing an effect of a soul
     /// </summary>
@@ -55,6 +57,8 @@ public class SoulData : MonoBehaviour
     {
         // Set the soul's lifespan
         SoulLifeSpanLeft = soulLifespan;
+        // Get gamemanager reference
+        refGameManager = FindFirstObjectByType<GameManager>();
     }
 
     void Update()
@@ -77,6 +81,8 @@ public class SoulData : MonoBehaviour
         IsSoulInverted = true;
         // Reapply soul effects
         FindFirstObjectByType<SoulManager>().ApplyAllSouls();
+        // Add one to the game manager
+        refGameManager.AddCorruptedSoul();
         // Do something cool here too
     }
 }
