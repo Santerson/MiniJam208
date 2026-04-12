@@ -1,0 +1,216 @@
+fileFormatVersion: 2
+guid: 94b87facd4a6e684f947cdb4becdadf1
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4843303714322459868
+    second: isaac_floor_thingyh2_0
+  - first:
+      213: -690763348813835466
+    second: isaac_floor_thingyh2_1
+  - first:
+      213: -4040457355934755224
+    second: isaac_floor_thingyh2_2
+  - first:
+      213: -4916146972931448037
+    second: isaac_floor_thingyh2_3
+  - first:
+      213: -7724675321743582963
+    second: isaac_floor_thingyh2_4
+  - first:
+      213: -8362323478762582649
+    second: isaac_floor_thingyh2_5
+  - first:
+      213: -3348979098413303385
+    second: isaac_floor_thingyh2_6
+  - first:
+      213: 7236058362736401920
+    second: isaac_floor_thingyh2_7
+  - first:
+      213: 4716450137399026193
+    second: isaac_floor_thingyh2_8
+  - first:
+      213: 6885368318630371631
+    second: isaac_floor_thingyh2_9
+  - first:
+      213: 586020243669538774
+    second: isaac_floor_thingyh2_10
+  - first:
+      213: -1710774176287569073
+    second: isaac_floor_thingyh2_11
+  - first:
+      213: 180233180865539713
+    second: isaac_floor_thingyh2_12
+  - first:
+      213: -1109081910152991699
+    second: isaac_floor_thingyh2_13
+  - first:
+      213: 7857498417172392438
+    second: isaac_floor_thingyh2_14
+  - first:
+      213: -1607815333925398829
+    second: isaac_floor_thingyh2_15
+  - first:
+      213: 8784807027716522966
+    second: isaac_floor_thingyh2_16
+  - first:
+      213: 7258844762371181246
+    second: isaac_floor_thingyh2_17
+  - first:
+      213: 3733870306784036149
+    second: isaac_floor_thingyh2_18
+  - first:
+      213: 6263209511951292069
+    second: isaac_floor_thingyh2_19
+  - first:
+      213: -4893071041304623635
+    second: isaac_floor_thingyh2_20
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: isaac_floor_thingyh2_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 512
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 423da78cee029ccb0800000000000000
+      internalID: -4843303714322459868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 4520a944484e02a4c8e43f8cfac5671f
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      isaac_floor_thingyh2_0: -4843303714322459868
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
