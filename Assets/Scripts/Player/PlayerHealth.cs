@@ -19,6 +19,8 @@ public class PlayerHealth : MonoBehaviour
 
     [Header("EFX for Dmg")]
     [SerializeField] GameObject DamageFX;
+    [SerializeField] AudioSource PlayerHurtSFX;
+    [SerializeField] AudioSource PlayerHurtSFXClean;
 
 
     public bool EnableBloodSplatter = false;
@@ -122,8 +124,14 @@ public class PlayerHealth : MonoBehaviour
     {
         // Particle System for taking damage
         if (EnableBloodSplatter)
+        {
             Instantiate(DamageFX, transform.position, Quaternion.identity);
-
+            Instantiate(PlayerHurtSFX, transform.position, Quaternion.identity);
+        }
+        else
+        {
+            Instantiate(PlayerHurtSFXClean, transform.position, Quaternion.identity);
+        }
 
     }
 
