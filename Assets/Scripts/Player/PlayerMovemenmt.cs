@@ -9,6 +9,7 @@ public class PlayerMovemenmt : MonoBehaviour
     [SerializeField] float minimumMovement = 1f;
     // RigidBody to move the characters
     [SerializeField] Rigidbody2D rb;
+    Animator anim;
     // A Vector2 for the Movement
     Vector2 movement;
     bool movementInverted = false;
@@ -20,6 +21,7 @@ public class PlayerMovemenmt : MonoBehaviour
     {
         // Get the rigid body
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
 
     private void Start()
@@ -41,6 +43,8 @@ public class PlayerMovemenmt : MonoBehaviour
 
     private void PlayerMoving() // To move the Player
     {
+        anim.SetFloat("movingY", movement.y);
+        anim.SetFloat("movingX", movement.x);
         // Move the player by either the current move speed or the minimum move speed, whichever is higher
         rb.linearVelocity = movement * Mathf.Max(currentMoveSpeed, minimumMovement);
     }
