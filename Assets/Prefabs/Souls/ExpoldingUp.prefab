@@ -211,7 +211,7 @@ PrefabInstance:
       objectReference: {fileID: 26695749171731858, guid: 0246a87a3d4fdc44a9fd76f1c450b6ed, type: 3}
     - target: {fileID: 2077463714751755979, guid: b90f735817dc33d4983cb5ee6a26731f, type: 3}
       propertyPath: soulLifespan
-      value: 20
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 2077463714751755979, guid: b90f735817dc33d4983cb5ee6a26731f, type: 3}
       propertyPath: soulEffects.Array.size
