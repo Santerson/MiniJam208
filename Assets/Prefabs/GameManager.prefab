@@ -313,6 +313,7 @@ MonoBehaviour:
   - {fileID: 4589164804430533271}
   - {fileID: 2144269503901671986}
   - {fileID: 5261779769140316562}
+  SoulCorruptSFX: {fileID: 6470040471708681403, guid: 2f0155df611cfef4cb69013abc59fa40, type: 3}
   PlayTime: 0
   EnemiesKilled: 0
   SoulsCollected: 0

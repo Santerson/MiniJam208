@@ -51,6 +51,7 @@ MonoBehaviour:
   invertedSoulEffects: []
   soulLifespan: 30
   UIGameobject: {fileID: 0}
+  soulInvertSFX: {fileID: 6470040471708681403, guid: 2f0155df611cfef4cb69013abc59fa40, type: 3}
 --- !u!114 &5959274957486197067
 MonoBehaviour:
   m_ObjectHideFlags: 0
