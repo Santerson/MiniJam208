@@ -223,7 +223,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2077463714751755979, guid: b90f735817dc33d4983cb5ee6a26731f, type: 3}
       propertyPath: soulEffects.Array.data[0].statChange
-      value: 0.25
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 2077463714751755979, guid: b90f735817dc33d4983cb5ee6a26731f, type: 3}
       propertyPath: invertedSoulEffects.Array.data[0].statType

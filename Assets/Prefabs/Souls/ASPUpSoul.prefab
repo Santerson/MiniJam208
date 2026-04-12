@@ -210,6 +210,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 34269102963145749, guid: 158cb143c552c1045b8870929a27fe23, type: 3}
     - target: {fileID: 2077463714751755979, guid: b90f735817dc33d4983cb5ee6a26731f, type: 3}
+      propertyPath: soulLifespan
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 2077463714751755979, guid: b90f735817dc33d4983cb5ee6a26731f, type: 3}
       propertyPath: soulEffects.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -231,7 +235,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2077463714751755979, guid: b90f735817dc33d4983cb5ee6a26731f, type: 3}
       propertyPath: invertedSoulEffects.Array.data[0].statChange
-      value: -0.1
+      value: -0.2
       objectReference: {fileID: 0}
     - target: {fileID: 2603974806304567605, guid: b90f735817dc33d4983cb5ee6a26731f, type: 3}
       propertyPath: m_LocalPosition.x

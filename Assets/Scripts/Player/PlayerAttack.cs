@@ -95,7 +95,7 @@ public class PlayerAttack : MonoBehaviour
             // Disable the weapon collider after a short delay
             StartCoroutine(WaitDisableCollider());
             // Set the attack cooldown
-            AttackCooldownLeft = baseAttackCooldown / currentAttackSpeed;
+            AttackCooldownLeft = baseAttackCooldown / (currentAttackSpeed < 0.1f ? 0.1f : currentAttackSpeed);
             // Deal self damage
             refPlayerHealth.AddHealth(-currentSelfAttack);
         }

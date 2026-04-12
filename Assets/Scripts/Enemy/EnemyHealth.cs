@@ -145,7 +145,7 @@ public class EnemyHealth : MonoBehaviour
             refPlayerAttack.SpawnEnemyDeathAOE(transform.position);
         }
         GameManager.Instance.EnemiesKilled++;
-        spawnSystem.RegularEnemiesSpawn--;
+        spawnSystem.TotalEnemiesCurrentlySpawned--;
         
         // TODO: Death effect
 

@@ -386,10 +386,10 @@ MonoBehaviour:
   stoppingDistance: 2
   attackRange: 2
   refWeaponHitboxScalePoint: {fileID: 2462840964867018151}
-  currentAttackRange: 1.5
-  speed: 3
+  currentAttackRange: 2
+  speed: 2.4
   AttackRate: 0.4
-  BaseDamage: 1
+  BaseDamage: 2
 --- !u!50 &1274746341847685240
 Rigidbody2D:
   serializedVersion: 5
