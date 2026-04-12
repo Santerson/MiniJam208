@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: 454e35d5bab2eda4182ec5550263fc44
+guid: f0e0bb173a1e37e4fbd1e7d539de7a30
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8633881525917383573
-    second: Spritesheet_0
+      213: 3195811598214790818
+    second: Spritesheet_normal_porple_0
   - first:
-      213: -1771866121167276815
-    second: Spritesheet_1
+      213: -1893649182772872660
+    second: Spritesheet_normal_porple_1
   - first:
-      213: 2091829175261615561
-    second: Spritesheet_2
+      213: -4643143084178513770
+    second: Spritesheet_normal_porple_2
   - first:
-      213: 756911166660455246
-    second: Spritesheet_3
+      213: 3294662576986877359
+    second: Spritesheet_normal_porple_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -122,89 +122,89 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Spritesheet_0
+      name: Spritesheet_normal_porple_0
       rect:
         serializedVersion: 2
-        x: 92
-        y: 348
-        width: 112
-        height: 108
-      alignment: 9
-      pivot: {x: 0.32632473, y: 0.33033356}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 59bfc19e085b1d770800000000000000
-      internalID: 8633881525917383573
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Spritesheet_1
-      rect:
-        serializedVersion: 2
-        x: 347
-        y: 347
-        width: 81
-        height: 124
-      alignment: 9
-      pivot: {x: 0.46171588, y: 0.26356137}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1f4764a86211967e0800000000000000
-      internalID: -1771866121167276815
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Spritesheet_2
-      rect:
-        serializedVersion: 2
-        x: 90
-        y: 90
-        width: 74
+        x: 86
+        y: 341
+        width: 118
         height: 115
       alignment: 9
-      pivot: {x: 0.48857117, y: 0.32105023}
+      pivot: {x: 0.34533155, y: 0.34375715}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9c5544a4d8ba70d10800000000000000
-      internalID: 2091829175261615561
+      spriteID: 2ae7aa867bdc95c20800000000000000
+      internalID: 3195811598214790818
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spritesheet_3
+      name: Spritesheet_normal_porple_1
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 342
+        width: 87
+        height: 129
+      alignment: 9
+      pivot: {x: 0.47885972, y: 0.3069735}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2a3d9be91868b5e0800000000000000
+      internalID: -1893649182772872660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spritesheet_normal_porple_2
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 86
+        width: 83
+        height: 119
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3359311}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6906a3227fd309fb0800000000000000
+      internalID: -4643143084178513770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spritesheet_normal_porple_3
       rect:
         serializedVersion: 2
         x: 317
-        y: 93
-        width: 104
-        height: 100
+        y: 85
+        width: 103
+        height: 108
       alignment: 9
-      pivot: {x: 0.65721714, y: 0.38159806}
+      pivot: {x: 0.6401062, y: 0.37686038}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e4ba25f12b6118a00800000000000000
-      internalID: 756911166660455246
+      spriteID: fad631c682ef8bd20800000000000000
+      internalID: 3294662576986877359
       vertices: []
       indices: 
       edges: []
@@ -213,7 +213,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: d0803d67eb8bf6f458364c477d4c13fb
+    spriteID: 66d70f1b4170eb44fb1d190e53173323
     internalID: 0
     vertices: []
     indices: 
@@ -223,10 +223,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Spritesheet_0: 8633881525917383573
-      Spritesheet_1: -1771866121167276815
-      Spritesheet_2: 2091829175261615561
-      Spritesheet_3: 756911166660455246
+      Spritesheet_normal_porple_0: 3195811598214790818
+      Spritesheet_normal_porple_1: -1893649182772872660
+      Spritesheet_normal_porple_2: -4643143084178513770
+      Spritesheet_normal_porple_3: 3294662576986877359
+      Spritesheet_normal_porple_4: 1440351951
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
