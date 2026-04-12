@@ -11,6 +11,10 @@ TagManager:
   - EnemyAttack
   - EnemyHealthSlider
   - PauseMenu
+  - DMGUpEnemy
+  - RegularEmey
+  - SpeedUpEnemy
+  - BiggerRangEnemy
   layers:
   - Default
   - TransparentFX
