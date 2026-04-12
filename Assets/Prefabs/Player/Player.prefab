@@ -396,6 +396,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthBarCover: {fileID: 0}
   HealthBarOffset: {x: -0.65, y: -1}
+  ReferenceDamageNumber: {fileID: 6514653344157738564, guid: 26097fc63389b3d4cb299e4ea411d0b3, type: 3}
   MaxHealth: 20
   BaseIncomingDmgMultiplier: 1
   BaseHealthRegen: 0
@@ -609,6 +610,7 @@ MonoBehaviour:
   refWeaponHitboxScalePoint: {fileID: 3255540781750792057}
   EnemyDeathAOEPrefab: {fileID: 0}
   anim: {fileID: 0}
+  SparkPrefab: {fileID: 0}
   attackUptime: 0.4
   baseAttackCooldown: 1
   AttackColliderOffset: 0.5
