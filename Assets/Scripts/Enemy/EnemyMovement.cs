@@ -63,15 +63,6 @@ public class EnemyMovement : MonoBehaviour
                 transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
             else if (distance <= attackRange && Time.time > attackTime)
             {
-                EnemyHealth enemyHealth = GetComponent<EnemyHealth>();
-                if (enemyHealth.IsPurple == true)
-                {
-                    IsPurpleAttacking = true;
-                }
-                else if (enemyHealth.IsPurple == false)
-                {
-                    IsAttacking = true;
-                }
                 Shoot();
                 StartCoroutine(WaitDisableCollider());
                 attackTime = Time.time + 1f / AttackRate;
@@ -81,6 +72,15 @@ public class EnemyMovement : MonoBehaviour
 
     private void Shoot()
     {
+        EnemyHealth enemyHealth = GetComponent<EnemyHealth>();
+        if (enemyHealth.IsPurple == true)
+        {
+            IsPurpleAttacking = true;
+        }
+        else if (enemyHealth.IsPurple == false)
+        {
+            IsAttacking = true;
+        }
         refWeaponHitboxScalePoint.transform.localScale = baseScale * currentAttackRange;
         refWeaponCollider.gameObject.SetActive(true);
     }

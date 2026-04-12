@@ -52,26 +52,22 @@ public class EnemyHealth : MonoBehaviour
         {
             sr.sprite = alts[1];
             IsPurple = true;
-            enemyMovement.IsPurpleAttacking = true;
             
         }
         else if (Parent.CompareTag("BiggerBadderEnemy").Equals(true) && gameObject.CompareTag("RegularEmey").Equals(true))
         {
             sr.sprite = alts[0];
             IsPurple = true;
-            enemyMovement.IsPurpleAttacking = true;
         }
         else if (Parent.CompareTag("BiggerBadderEnemy").Equals(true) && gameObject.CompareTag("SpeedUpEnemy").Equals(true))
         {
             sr.sprite = alts[2];
             IsPurple = true;
-            enemyMovement.IsPurpleAttacking = true;
         }
         else if (Parent.CompareTag("BiggerBadderEnemy").Equals(true) && gameObject.CompareTag("BiggerRangEnemy").Equals(true))
         {
             sr.sprite = alts[3];
             IsPurple = true;
-            enemyMovement.IsPurpleAttacking = true;
         }
         // Set the health bar to the correct position
         initialHealthBarPosition = healthBarCover.GetPosition(0).x;
