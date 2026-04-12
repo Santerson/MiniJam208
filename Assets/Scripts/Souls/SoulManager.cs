@@ -9,6 +9,7 @@ public class SoulManager : MonoBehaviour
 
     [Header("Soul Display")]
     [SerializeField] GameObject[] SpawnUIPlacesParents = new GameObject[5];
+    [SerializeField] Vector2 SpawnUIPlacesOffset; // the offset from the parent object to spawn the soul ui element at
     [SerializeField] LineRenderer[] DecayLineCovers = new LineRenderer[5];
     [SerializeField] TextMeshProUGUI[] StatTextDisplays = new TextMeshProUGUI[5];
 
@@ -267,6 +268,7 @@ public class SoulManager : MonoBehaviour
             if (Souls[i] != null)
             {
                 SpawnedItems.Add(Instantiate(Souls[i].UIGameobject, SpawnUIPlacesParents[i].transform));
+                SpawnedItems[i].transform.localPosition = SpawnUIPlacesOffset;
                 SpawnedSoulSprites.Add(SpawnedItems[i].GetComponentInChildren<SpriteRenderer>());
             }
             // For each slot, set the corresponding background color for the soul
