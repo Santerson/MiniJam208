@@ -111,7 +111,6 @@ public class SoulManager : MonoBehaviour
 
     void ApplyTargetSoul(List<SoulData.Effects> effects)
     {
-        foreach (SoulData.Effects effect in effects)
         for (int i = 0; i < effects.Count; i++)
         {
             SoulData.Effects effect = effects[i];
