@@ -74,4 +74,9 @@ public class GameManager : MonoBehaviour
     {
         EnableBlood = !EnableBlood;
     }
+
+    public bool GetBloodStatus()
+    {
+        return EnableBlood;
+    }
 }
