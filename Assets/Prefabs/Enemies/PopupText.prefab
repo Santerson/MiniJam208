@@ -66,10 +66,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 20.00
+  m_text: 20
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8a89fa14b10d46a99122fd4f73fca9a2, type: 2}
-  m_sharedMaterial: {fileID: 2140474, guid: 8a89fa14b10d46a99122fd4f73fca9a2, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 7a72497dd02c27c43bd0a40064441412, type: 2}
+  m_sharedMaterial: {fileID: -6220623268831540268, guid: 7a72497dd02c27c43bd0a40064441412, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -93,8 +93,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 85.94
+  m_fontSizeBase: 85.94
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -154,6 +154,11 @@ MonoBehaviour:
   xVelocity: {x: 0.85, y: 1.32}
   yVelocity: {x: 0.96, y: 0.41}
   refRB: {fileID: 6452195347448739709}
+  EnemyTakeDamageColor: {r: 1, g: 0.6666667, b: 0, a: 1}
+  EnemyHealColor: {r: 0, g: 1, b: 0.39217973, a: 1}
+  PlayerTakeDamageColor: {r: 1, g: 0, b: 0, a: 1}
+  PlayerHealColor: {r: 0, g: 0.7584905, b: 0.13770035, a: 1}
+  damageNumberType: 0
   refText: {fileID: 0}
 --- !u!1 &6514653344157738564
 GameObject:

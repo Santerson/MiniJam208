@@ -350,6 +350,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Parent: {fileID: 3789134319988432624}
+  ReferenceDamageNumber: {fileID: 6514653344157738564, guid: 26097fc63389b3d4cb299e4ea411d0b3, type: 3}
   souls:
   - {fileID: 2399416122655976338, guid: ea032b1c9435d0b4e9a630274f1290a4, type: 3}
   - {fileID: 2399416122655976338, guid: 61af3bfc661a44e4a8cc673cd7769ce6, type: 3}

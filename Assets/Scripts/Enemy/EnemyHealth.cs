@@ -1,11 +1,13 @@
 using NUnit.Framework;
+using TMPro;
 using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
     PlayerAttack PA;
-
+    [Header("Refrences")]
     [SerializeField] GameObject Parent;
+    [SerializeField] GameObject ReferenceDamageNumber;
 
     [Header("SOULS")]
     [SerializeField] GameObject[] souls = new GameObject[4];
@@ -63,6 +65,12 @@ public class EnemyHealth : MonoBehaviour
     /// <param name="added">the amount of health to add / subtract</param>
     public void AddHealth(float added)
     {
+        // Make it so max health cannot be exceeded
+        if (currentHealth + added > MaxHealth)
+        {
+            added = MaxHealth - currentHealth;
+        }
+        // Change health
         ChangeHealth(currentHealth + added);
     }
 
@@ -72,6 +80,10 @@ public class EnemyHealth : MonoBehaviour
     /// <param name="newHealth">The new health of the player</param>
     public void ChangeHealth(float newHealth)
     {
+        // Spawn a damage number
+        GameObject damageNumber = Instantiate(ReferenceDamageNumber, transform.position, Quaternion.identity);
+        damageNumber.GetComponentInChildren<DamageNumber>().damageNumberType =  currentHealth < newHealth ? DamageNumber.DamageNumberType.EnemyHeal : DamageNumber.DamageNumberType.EnemyTakeDamage;
+        damageNumber.GetComponentInChildren<TextMeshProUGUI>().text = Mathf.Abs(currentHealth - newHealth).ToString();
         // Change the health of the player and update the health bar
         currentHealth = newHealth;
         // Set the pos of the barcover
