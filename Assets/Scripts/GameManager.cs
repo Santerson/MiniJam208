@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     [SerializeField] AudioSource[] audioSources = new AudioSource[8];
+    [SerializeField] AudioSource SoulCorruptSFX;
 
     [Header ("End Screen things")]
     [SerializeField] public float PlayTime = 0;
@@ -68,6 +69,7 @@ public class GameManager : MonoBehaviour
     public void AddCorruptedSoul()
     {
         SoulsCorrupted++;
+        Instantiate(SoulCorruptSFX, FindFirstObjectByType<PlayerMovemenmt>().transform.position, Quaternion.identity);
     }
 
     public void ChangeBloodStatus()

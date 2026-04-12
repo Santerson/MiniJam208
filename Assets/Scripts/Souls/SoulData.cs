@@ -16,6 +16,7 @@ public class SoulData : MonoBehaviour
     /// Whether or not this soul is inverted
     /// </summary>
     [HideInInspector] public bool IsSoulInverted { get; private set; } = false;
+    [SerializeField] AudioSource soulInvertSFX;
 
     // Time until this soul becomes corrupt
     public float SoulLifeSpanLeft { get; private set; }
@@ -81,8 +82,12 @@ public class SoulData : MonoBehaviour
         IsSoulInverted = true;
         // Reapply soul effects
         FindFirstObjectByType<SoulManager>().ApplyAllSouls();
+        // Do something cool here too
+        if (soulInvertSFX != null)
+        {
+            Instantiate(soulInvertSFX, transform.position, Quaternion.identity);
+        }
         // Add one to the game manager
         refGameManager.AddCorruptedSoul();
-        // Do something cool here too
     }
 }
