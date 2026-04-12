@@ -142,7 +142,7 @@ public class EnemyHealth : MonoBehaviour
         {
             refPlayerAttack.SpawnEnemyDeathAOE(transform.position);
         }
-
+        GameManager.Instance.EnemiesKilled++;
         // TODO: Death effect
 
         // Destroy the enemy
