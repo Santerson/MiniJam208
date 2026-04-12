@@ -13,6 +13,8 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] GameObject EnemyDeathAOEPrefab;
     [Tooltip("To show the animation of the player attacking")]
     [SerializeField] Animator anim;
+    [Tooltip("Spark Particle for the players attack")]
+    [SerializeField] GameObject SparkPrefab;
 
     [Header("Attack Settings")]
     [Tooltip("The amount of time the weapon collider is active when the player attacks, in seconds")]
@@ -98,6 +100,8 @@ public class PlayerAttack : MonoBehaviour
             refWeaponHitboxScalePoint.transform.localScale = baseScale * currentAttackRange;
             // Enable the weapon collider
             refWeaponCollider.gameObject.SetActive(true);
+            // Spawn Spark
+            GameObject Spark = Instantiate(SparkPrefab);
             // Debug.Log($"{currentAttackDamage}dmg, {currentAttackSpeed}asp, {currentAttackRange}rng");
             // Disable the weapon collider after a short delay
             StartCoroutine(WaitDisableCollider());
