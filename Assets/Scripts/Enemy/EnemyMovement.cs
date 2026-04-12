@@ -38,6 +38,8 @@ public class EnemyMovement : MonoBehaviour
 
     private void Update()
     {
+        if (player == null)
+            return;
         Vector2 direction = player.position - transform.position;
 
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
