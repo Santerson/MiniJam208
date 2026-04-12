@@ -9,9 +9,9 @@ public class DeadScene : MonoBehaviour
 
     private void Update()
     {
-        TimePlayed.text = "Time Played: " + GameManager.Instance.PlayTime;
-        EnemiesKilled.text = "Enemies Killed: " + GameManager.Instance.EnemiesKilled;
-        SoulsCollected.text = "Souls Collected: " + GameManager.Instance.SoulsCollected;
-        SoulsCorrupted.text = "Souls Corrupted: " + GameManager.Instance.SoulsCorrupted;
+        TimePlayed.text = "Time Played: " + (int)GameManager.Instance.PlayTime + " Seconds";
+        EnemiesKilled.text = "Enemies Killed: " + (int)GameManager.Instance.EnemiesKilled;
+        SoulsCollected.text = "Souls Collected: " + (int)GameManager.Instance.SoulsCollected;
+        SoulsCorrupted.text = "Souls Corrupted: " + (int)GameManager.Instance.SoulsCorrupted;
     }
 }
