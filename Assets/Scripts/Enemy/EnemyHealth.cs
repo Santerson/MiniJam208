@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
-    PlayerAttack PA;
-    EnemySpawnSystem SpawnSystem;
     [Header("Refrences")]
     [SerializeField] GameObject Parent;
     [SerializeField] GameObject ReferenceDamageNumber;
@@ -151,5 +149,28 @@ public class EnemyHealth : MonoBehaviour
 
         // Destroy the enemy
         Destroy(Parent);
+    }
+
+    /// <summary>
+    /// Gets the current max health
+    /// </summary>
+    /// <returns>float of the max health</returns>
+    public float GetMaxHealth()
+    {
+        return MaxHealth;
+    }
+
+    /// <summary>
+    /// Changes the max health of the enemy
+    /// </summary>
+    /// <param name="newHealth">The new health</param>
+    /// <param name="fullHeal">Whether or not to fully heal the enemy</param>
+    public void ChangeMaxHealth(float newHealth, bool fullHeal = true)
+    {
+        MaxHealth = newHealth;
+        if (fullHeal)
+        {
+            ChangeHealth(MaxHealth);
+        }
     }
 }

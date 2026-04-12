@@ -34,8 +34,13 @@ public class EnemySpawnSystem : MonoBehaviour
     [SerializeField] float TimeAfterWaveBeforeNextSpawn = 10f;
 
     [Header("Scaling BISHEP >:(")]
+    [Tooltip("The amount that each enemy's health scales by for every enemy spawned\nEquation: NewHealth = CurrentHealth * (1 + EnemyHealthScalingFactor * TotalEnemySpawns)")]
+    [SerializeField] float EnemyHealthScalingFactor = 0.05f;
 
 
+    int totalEnemySpawns = 0;
+
+    // Timers for the next enemy spawn and wave, and the time left in the current wave
     float timeToNextEnemySpawn = 5f;
     float timeToNextWave = 60f;
     float timeLeftOfWave = 0f;
@@ -120,42 +125,6 @@ public class EnemySpawnSystem : MonoBehaviour
             // Otherwise, handle regular enemy spawns
             HandleGeneralEnemySpawns();
         }
-
-
-
-
-        // ????????????????????????????????????????????????????`?????????????????????????????
-        // COMMENT YOUR DAMN CODE
-        // (It doens't even work)
-        /*
-        if (spawnedStartEnemiesBool == false)
-        {
-            SpawnEnemy();
-        }
-        else if (IntervalBetweenWaves <= 0f) // for after the Inbetween waves
-        {
-            WaveTimer -= Time.deltaTime; // Wave Countdown
-            if (WaveTimer <= 0f)
-            {
-                SpawnEnemy();
-            }
-        }
-        else
-        {
-            if (RegualSpawnTime <= 0 && RegularEnemiesSpawn != RegualMaxSpawn) // Regular Version
-            {
-                SpawnEnemy();
-                RegularEnemiesSpawn++;
-                RegualSpawnTime = ResetSpawnTime;
-                IntervalBetweenWaves -= Time.deltaTime; // THIS DOESN'T WORK
-            }
-            RegualSpawnTime -= Time.deltaTime;
-        }
-        if (WaveTimer <= 0 && spawnedEnemiesInWave == maxSpawnEnemiesPerWave) // to fix the WaveTimer after its done
-        {
-            WaveTimer = ResetWaveTimer;
-        }
-        */
     }
 
     void SpawnEnemy()
@@ -175,9 +144,11 @@ public class EnemySpawnSystem : MonoBehaviour
 
         // Spawning Enemy
         GameObject Enemy = Instantiate(Enemys[Random.Range(0, Enemys.Length)], spawnPosition, Quaternion.identity);
-
+        HandleEnemyDifficultyScaling(Enemy);
         // Increment the total amount of enemies on the map
         TotalEnemiesCurrentlySpawned++;
+        // Increment total spawns
+        totalEnemySpawns++;
 
         // Decide whether or not the enemy should drop a soul
         if (Random.Range(1, 100) <= SoulEnemyChance)
@@ -188,29 +159,6 @@ public class EnemySpawnSystem : MonoBehaviour
         {
             Enemy.tag = "Enemy";
         }
-
-
-        // Wtf is this? COMMENT YOUR CODE DUDE
-        //if (spawnedStartEnemies < StartSpawnedEnemies) // for the starting spawned enemies
-        //{
-        //    spawnedStartEnemies++;
-        //}
-        //if (spawnedStartEnemies >= StartSpawnedEnemies) // to do Waves spawning
-        //{
-        //    spawnedStartEnemiesBool = true;
-        //    if (IntervalBetweenWaves == 0)
-        //    {
-        //        if (spawnedEnemiesInWave > maxSpawnEnemiesPerWave)
-        //        {
-        //            spawnedEnemiesInWave++;
-        //        }
-        //        if (spawnedEnemiesInWave == maxSpawnEnemiesPerWave)
-        //        {
-        //            spawnedEnemiesInWave = 0;
-        //            IntervalBetweenWaves = ResetIntervalBetweenWaves;
-        //        }
-        //    }
-        //}
     }
 
     void HandleGeneralEnemySpawns()
@@ -221,5 +169,18 @@ public class EnemySpawnSystem : MonoBehaviour
             SpawnEnemy();
             timeToNextEnemySpawn = Random.Range(TimeInbetweenSpawns.x, TimeInbetweenSpawns.y);
         }
+    }
+
+    void HandleEnemyDifficultyScaling(GameObject Enemy)
+    {
+        // Get the health component from the enemy and scale its health based on the total amount of enemies spawned
+        EnemyHealth refEnemyHealth = Enemy.GetComponentInChildren<EnemyHealth>();
+        if (refEnemyHealth != null)
+        {
+            // Lower max health
+            float newHP = refEnemyHealth.GetMaxHealth() * (1 + EnemyHealthScalingFactor * totalEnemySpawns);
+            refEnemyHealth.ChangeMaxHealth(Mathf.Floor(newHP));
+        }
+
     }
 }
