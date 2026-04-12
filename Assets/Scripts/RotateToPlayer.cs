@@ -11,6 +11,7 @@ public class RotateToPlayer : MonoBehaviour
 
     private void Start()
     {
+        Destroy(gameObject, 0.4f);
         Vector2 direction = player.position - transform.position;
 
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;

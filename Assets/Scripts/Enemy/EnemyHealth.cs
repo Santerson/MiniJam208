@@ -8,6 +8,8 @@ public class EnemyHealth : MonoBehaviour
     [Header("Refrences")]
     [SerializeField] GameObject Parent;
     [SerializeField] GameObject ReferenceDamageNumber;
+    [Tooltip("Spark Particle for the players attack")]
+    [SerializeField] GameObject SparkPrefab;
 
     [Header("SOULS")]
     [SerializeField] GameObject[] souls = new GameObject[4];
@@ -105,6 +107,7 @@ public class EnemyHealth : MonoBehaviour
 
     private void DamageTaken(float damage)
     {
+        Instantiate(SparkPrefab, transform.position, Quaternion.identity);
         ChangeHealth(currentHealth - damage);
     }
 

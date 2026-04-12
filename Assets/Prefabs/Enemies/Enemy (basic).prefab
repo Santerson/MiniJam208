@@ -351,6 +351,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Parent: {fileID: 3789134319988432624}
   ReferenceDamageNumber: {fileID: 6514653344157738564, guid: 26097fc63389b3d4cb299e4ea411d0b3, type: 3}
+  SparkPrefab: {fileID: 8591621038443921934, guid: 35e980017bc20644798c5bf8fe381cad, type: 3}
   souls:
   - {fileID: 2399416122655976338, guid: ea032b1c9435d0b4e9a630274f1290a4, type: 3}
   - {fileID: 2399416122655976338, guid: 61af3bfc661a44e4a8cc673cd7769ce6, type: 3}
