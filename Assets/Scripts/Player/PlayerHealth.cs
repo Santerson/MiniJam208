@@ -13,13 +13,16 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] GameObject ReferenceDamageNumber;
     [Tooltip("The maximum health of the player")]
     [SerializeField] float MaxHealth = 20f;
+    [SerializeField] float IFrames = 0.5f;
     [SerializeField] float BaseIncomingDmgMultiplier = 1f;
     [SerializeField] float BaseHealthRegen = 0f;
+    
 
     float initialHealthBarPosition = 0;
     float currentHealth = 0;
     float currentIncomingDmgMultiplier = 1;
     float currentHealthRegen = 0f;
+    float IframeTimeLeft = 0f;
 
     float timeToNextHeal = 0f;
 
@@ -54,6 +57,7 @@ public class PlayerHealth : MonoBehaviour
                 timeToNextHeal = 1;
             }
         }
+        IframeTimeLeft = Mathf.Max(0, IframeTimeLeft - Time.deltaTime);
     }
 
     /// <summary>
@@ -110,13 +114,14 @@ public class PlayerHealth : MonoBehaviour
     /// <param name="collision"></param>
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("EnemyAttack"))
+        if (collision.gameObject.CompareTag("EnemyAttack") && IframeTimeLeft <= 0)
         {
             // Get the damage of the attack and subtract it from the player's health
             EnemyMovement refEnemy = collision.gameObject.GetComponentInParent<EnemyMovement>();
             if (refEnemy != null)
             {
                 AddHealth(-refEnemy.getDamage());
+                IframeTimeLeft = IFrames;
             }
             else
             {
