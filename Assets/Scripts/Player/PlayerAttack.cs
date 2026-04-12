@@ -20,6 +20,7 @@ public class PlayerAttack : MonoBehaviour
     [Tooltip("The base attack cooldown of the player, in seconds. The actual cooldown is 1 / attack speed")]
     [SerializeField] float baseAttackCooldown = 1f;
     [SerializeField] float AttackColliderOffset = 0.5f;
+    [SerializeField] AudioSource AttackSFX;
 
     [Header("Base Stats")]
     [SerializeField] float baseAttackSpeed = 1;
@@ -92,6 +93,8 @@ public class PlayerAttack : MonoBehaviour
             refWeaponHitboxScalePoint.transform.localScale = baseScale * currentAttackRange;
             // Enable the weapon collider
             refWeaponCollider.gameObject.SetActive(true);
+            // Play attack sfx
+            Instantiate(AttackSFX, transform.position, Quaternion.identity);
             // Disable the weapon collider after a short delay
             StartCoroutine(WaitDisableCollider());
             // Set the attack cooldown
