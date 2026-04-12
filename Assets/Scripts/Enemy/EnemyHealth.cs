@@ -6,6 +6,7 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     PlayerAttack PA;
+    EnemySpawnSystem SpawnSystem;
     [Header("Refrences")]
     [SerializeField] GameObject Parent;
     [SerializeField] GameObject ReferenceDamageNumber;
@@ -138,11 +139,14 @@ public class EnemyHealth : MonoBehaviour
     {
         // Spawn an explosion if it should
         PlayerAttack refPlayerAttack = FindFirstObjectByType<PlayerAttack>();
+        EnemySpawnSystem spawnSystem = FindFirstObjectByType<EnemySpawnSystem>();
         if (refPlayerAttack.currentEnemyDeathAOEScale > 0)
         {
             refPlayerAttack.SpawnEnemyDeathAOE(transform.position);
         }
         GameManager.Instance.EnemiesKilled++;
+        spawnSystem.RegularEnemiesSpawn--;
+        
         // TODO: Death effect
 
         // Destroy the enemy

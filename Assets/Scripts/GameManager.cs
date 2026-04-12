@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     [Header ("End Screen things")]
-    [SerializeField] float PlayTime = 0;
+    [SerializeField] public float PlayTime = 0;
     [SerializeField] public float EnemiesKilled = 0;
     [SerializeField] public float SoulsCollected = 0;
     [SerializeField] public float SoulsCorrupted = 0;
