@@ -401,7 +401,7 @@ MonoBehaviour:
   IFrames: 0.5
   BaseIncomingDmgMultiplier: 1
   BaseHealthRegen: 0
-  DamageFX: {fileID: 0}
+  DamageFX: {fileID: 6233553025947594677, guid: e89236e866b18094290f643f6351faf3, type: 3}
   PlayerHurtSFX: {fileID: 6470040471708681403, guid: 7bfdee5ed53a4064aaa79bcea654ca69, type: 3}
   PlayerHurtSFXClean: {fileID: 6470040471708681403, guid: 90a7298bf3ff168418e1f0d469505486, type: 3}
   EnableBloodSplatter: 0
@@ -446,6 +446,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseMovement: 5
   minimumMovement: 1
+  FootstepSFX: {fileID: 0}
   rb: {fileID: 0}
 --- !u!114 &5201783845402012381
 MonoBehaviour:
@@ -639,6 +640,7 @@ MonoBehaviour:
   attackUptime: 0.4
   baseAttackCooldown: 1
   AttackColliderOffset: 0.5
+  AttackSFX: {fileID: 0}
   baseAttackSpeed: 1
   baseAttackDamage: 1
   baseAttackRange: 1

@@ -7,12 +7,14 @@ public class PlayerMovemenmt : MonoBehaviour
     // Speed of Player
     [SerializeField] float baseMovement = 5f;
     [SerializeField] float minimumMovement = 1f;
+    [SerializeField] AudioSource FootstepSFX;
     // RigidBody to move the characters
     [SerializeField] Rigidbody2D rb;
     Animator anim;
     // A Vector2 for the Movement
     Vector2 movement;
     bool movementInverted = false;
+    bool isMoving = false;
 
     [HideInInspector] public float currentMoveSpeed { get; private set; }
 
@@ -33,6 +35,16 @@ public class PlayerMovemenmt : MonoBehaviour
     public void OnMove(InputAction.CallbackContext context)
     {
         movement = context.ReadValue<Vector2>() * (movementInverted ? -1 : 1);
+        if (movement != Vector2.zero && !isMoving)
+        {
+            FootstepSFX.Play();
+            isMoving = true;
+        }
+        else if (movement == Vector2.zero && isMoving)
+        {
+            FootstepSFX.Stop();
+            isMoving = false;
+        }
     }
 
     private void FixedUpdate() // To contant update the Moving of the player
