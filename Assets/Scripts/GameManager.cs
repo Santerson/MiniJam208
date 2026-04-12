@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] public float SoulsCollected = 0;
     [SerializeField] public float SoulsCorrupted = 0;
 
+    public bool EnableBlood { get; private set; } = true;
 
     private void Awake()
     {
@@ -51,5 +52,10 @@ public class GameManager : MonoBehaviour
     public void AddCorruptedSoul()
     {
         SoulsCorrupted++;
+    }
+
+    public void ChangeBloodStatus()
+    {
+        EnableBlood = !EnableBlood;
     }
 }

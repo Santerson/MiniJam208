@@ -18,10 +18,10 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] float BaseHealthRegen = 0f;
 
     [Header("EFX for Dmg")]
-    [SerializeField] public bool EnableBloodSplatter = true;
     [SerializeField] GameObject DamageFX;
 
 
+    public bool EnableBloodSplatter = false;
     float initialHealthBarPosition = 0;
     float currentHealth = 0;
     float currentIncomingDmgMultiplier = 1;
@@ -41,6 +41,7 @@ public class PlayerHealth : MonoBehaviour
         ChangeHealth(MaxHealth);
         currentIncomingDmgMultiplier = BaseIncomingDmgMultiplier;
         currentHealthRegen = BaseHealthRegen;
+        EnableBloodSplatter = FindFirstObjectByType<GameManager>().EnableBlood;
     }
 
     /// <summary>
