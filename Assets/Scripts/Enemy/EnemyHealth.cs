@@ -26,6 +26,10 @@ public class EnemyHealth : MonoBehaviour
     [Tooltip("The maximum health of the player")]
     [SerializeField] float MaxHealth = 20f;
 
+    [Header("SFX")]
+    [SerializeField] AudioSource EnemyHurtSFX;
+    [SerializeField] AudioSource EnemyDeathSFX;
+
     float initialHealthBarPosition = 0;
     float currentHealth = 0;
 
@@ -130,6 +134,7 @@ public class EnemyHealth : MonoBehaviour
     private void DamageTaken(float damage)
     {
         Instantiate(SparkPrefab, transform.position, Quaternion.identity);
+        Instantiate(EnemyHurtSFX, transform.position, Quaternion.identity);
         ChangeHealth(currentHealth - damage);
     }
 
@@ -146,6 +151,7 @@ public class EnemyHealth : MonoBehaviour
         spawnSystem.TotalEnemiesCurrentlySpawned--;
         
         // TODO: Death effect
+        Instantiate(EnemyDeathSFX, transform.position, Quaternion.identity);
 
         // Destroy the enemy
         Destroy(Parent);
