@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
@@ -129,7 +130,7 @@ public class PlayerHealth : MonoBehaviour
     /// </summary>
     void Skissue()
     {
-        // Do something cool here eventaully
+        SceneManager.LoadScene("Dead");
         Destroy(gameObject);
     }
 
