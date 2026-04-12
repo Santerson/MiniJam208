@@ -398,8 +398,13 @@ MonoBehaviour:
   HealthBarOffset: {x: -0.65, y: -1}
   ReferenceDamageNumber: {fileID: 6514653344157738564, guid: 26097fc63389b3d4cb299e4ea411d0b3, type: 3}
   MaxHealth: 20
+  IFrames: 0.5
   BaseIncomingDmgMultiplier: 1
   BaseHealthRegen: 0
+  DamageFX: {fileID: 0}
+  PlayerHurtSFX: {fileID: 6470040471708681403, guid: 7bfdee5ed53a4064aaa79bcea654ca69, type: 3}
+  PlayerHurtSFXClean: {fileID: 6470040471708681403, guid: 90a7298bf3ff168418e1f0d469505486, type: 3}
+  EnableBloodSplatter: 0
 --- !u!50 &7434798361887374136
 Rigidbody2D:
   serializedVersion: 5
@@ -461,6 +466,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  SpawnUIPlacesOffset: {x: 0, y: 0}
   DecayLineCovers:
   - {fileID: 0}
   - {fileID: 0}

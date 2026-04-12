@@ -50,7 +50,7 @@ public class SoulManager : MonoBehaviour
         }
         refPlayerMovement = GetComponent<PlayerMovemenmt>();
         refPlayerHealth = GetComponent<PlayerHealth>();
-        refGameManager = FindFirstObjectByType<GameManager>();
+        refGameManager = GameManager.Instance;
     }
 
     private void Update()
