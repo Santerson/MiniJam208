@@ -50,6 +50,7 @@ MonoBehaviour:
   soulEffects: []
   invertedSoulEffects: []
   soulLifespan: 30
+  UIGameobject: {fileID: 0}
 --- !u!114 &5959274957486197067
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62,6 +63,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c89e3d1a59f8a543814319ab9a87d81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pickupsfx: {fileID: 6470040471708681403, guid: 07b8d38ab4dbb3e4b8dc42277be0f940, type: 3}
 --- !u!58 &7425494437019516065
 CircleCollider2D:
   m_ObjectHideFlags: 0
