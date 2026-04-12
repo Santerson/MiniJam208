@@ -373,6 +373,7 @@ MonoBehaviour:
   MaxHealth: 3
   EnemyHurtSFX: {fileID: 6470040471708681403, guid: 0d638e0c7686f9b438a01688f7ef22b2, type: 3}
   EnemyDeathSFX: {fileID: 6470040471708681403, guid: 7f4a26f45e4898d4f9f26c0223f50bc5, type: 3}
+  EnemyDropSoulSFX: {fileID: 6470040471708681403, guid: 96445e31e41c16f4da036823126ee8c2, type: 3}
 --- !u!114 &396444578974421165
 MonoBehaviour:
   m_ObjectHideFlags: 0
