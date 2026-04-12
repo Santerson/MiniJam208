@@ -73,7 +73,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8906337704514460478}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -170,5 +170,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 0.2
+  explosionEfx: {fileID: 7237243079527225963, guid: 2fa014a6a9fa1f244b9aa5b020738963, type: 3}
+  healEFX: {fileID: 7237243079527225963, guid: a46b682bf134cb845aa351b44024b8ef, type: 3}
   scale: 1
   damageAmount: 10
