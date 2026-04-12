@@ -79,15 +79,9 @@ public class PlayerAttack : MonoBehaviour
             AttackCooldownLeft = Mathf.Max(0, AttackCooldownLeft - Time.deltaTime);
         // If attacking, move the collider to in front of the player
         refWeaponHitboxScalePoint.transform.position = transform.position + transform.up * AttackColliderOffset;
-    }
 
-    /// <summary>
-    /// Called when the player attacks, enables the weapon collider for a short bit
-    /// </summary>
-    public void OnAttack(InputAction.CallbackContext context)
-    {
         // Check if the player is attacking
-        if (context.performed && AttackCooldownLeft <= 0 && !IsAttacking)
+        if (Input.GetMouseButton(0) && AttackCooldownLeft <= 0 && !IsAttacking)
         {
             // Set the collider's position
             refWeaponHitboxScalePoint.transform.position = transform.position;
@@ -98,8 +92,6 @@ public class PlayerAttack : MonoBehaviour
             refWeaponHitboxScalePoint.transform.localScale = baseScale * currentAttackRange;
             // Enable the weapon collider
             refWeaponCollider.gameObject.SetActive(true);
-            // Spawn Spark
-            // Debug.Log($"{currentAttackDamage}dmg, {currentAttackSpeed}asp, {currentAttackRange}rng");
             // Disable the weapon collider after a short delay
             StartCoroutine(WaitDisableCollider());
             // Set the attack cooldown
@@ -107,6 +99,14 @@ public class PlayerAttack : MonoBehaviour
             // Deal self damage
             refPlayerHealth.AddHealth(-currentSelfAttack);
         }
+    }
+
+    /// <summary>
+    /// Called when the player attacks, enables the weapon collider for a short bit
+    /// </summary>
+    public void OnAttack(InputAction.CallbackContext context)
+    {
+        // Fuck this function and the stupid new input system it SUCKS
     }
 
     /// <summary>
