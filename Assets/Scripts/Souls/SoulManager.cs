@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class SoulManager : MonoBehaviour
@@ -9,6 +10,10 @@ public class SoulManager : MonoBehaviour
     [Header("Soul Display")]
     [SerializeField] GameObject[] SpawnUIPlacesParents = new GameObject[5];
     [SerializeField] LineRenderer[] DecayLineCovers = new LineRenderer[5];
+    [SerializeField] TextMeshProUGUI[] StatTextDisplays = new TextMeshProUGUI[5];
+
+    [Header("Soul Effect Displays")]
+    [SerializeField] string[] StatTypeDisplayNames = new string[System.Enum.GetValues(typeof(SoulData.StatType)).Length];
 
     [Header("Colors")]
     [SerializeField] Color PositiveSoulColor = Color.white;
@@ -107,7 +112,9 @@ public class SoulManager : MonoBehaviour
     void ApplyTargetSoul(List<SoulData.Effects> effects)
     {
         foreach (SoulData.Effects effect in effects)
+        for (int i = 0; i < effects.Count; i++)
         {
+            SoulData.Effects effect = effects[i];
             // Apply the effect to the player here, using effect.statType and effect.statChange
             // Get the current soul effect
             SoulData.StatType statType = effect.statType;
@@ -282,6 +289,52 @@ public class SoulManager : MonoBehaviour
         }
         // Spawn the lines for decay amount
         UpdateDecayLines();
+
+        // Update the text for each soul's stats
+        for (int i = 0; i < Souls.Length; i++)
+        {
+            SoulData soul = Souls[i];
+            if (soul != null)
+            {
+                // Get the text component for this soul
+                TextMeshProUGUI textDisplay = StatTextDisplays[i];
+                // Create a string to display the stats of the soul
+                string displayString = "";
+                List<SoulData.Effects> effects = soul.IsSoulInverted ? soul.invertedSoulEffects : soul.soulEffects;
+                for (int j = 0; j < effects.Count; j++)
+                {
+                    SoulData.Effects effect = effects[j];
+                    // Get the sign of the stat change, and add it to the display string along with the stat type
+                    string sign;
+                    // (im committing a sin)
+                    if ((int)effect.statType == 6 || (int)effect.statType == 11)
+                    {
+                        sign = "x";
+                    }
+                    else if ((int) effect.statType == 5)
+                    {
+                        sign = "/";
+                    }
+                    else if ((int)effect.statType == 12)
+                    {
+                        sign = "";
+                    }
+                    else
+                    {
+                        sign = effect.statChange > 0 ? "+" : "";
+                    }
+                    // Assign the text to the textbox
+                    displayString += StatTypeDisplayNames[(int)effect.statType] + " " + sign + (effect.statChange != 0 ? effect.statChange.ToString() : "") + "\n";
+                }
+                // Set the text of the text component to the display string
+                textDisplay.text = displayString;
+            }
+            else
+            {
+                // If there is no soul, set the text to empty
+                StatTextDisplays[i].text = "";
+            }
+        }
     }
 
     /// <summary>

@@ -467,6 +467,26 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  StatTextDisplays:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  StatTypeDisplayNames:
+  - Atk Dmg +
+  - Atk Rng +
+  - Atk Spd +
+  - Speed +
+  - Self Damage +
+  - Inc Dmg /
+  - Inc Dmg x
+  - Heal Over Time +
+  - Dmg Over Time +
+  - Explosion Dmg +
+  - Explosion Healing +
+  - Enemy Death AOE Scale x
+  - Inverted Controls
   PositiveSoulColor: {r: 1, g: 1, b: 1, a: 1}
   InvertedSoulColor: {r: 0.27619532, g: 0, b: 0.5169811, a: 1}
   NoSoulBackgroundColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
@@ -610,7 +630,6 @@ MonoBehaviour:
   refWeaponHitboxScalePoint: {fileID: 3255540781750792057}
   EnemyDeathAOEPrefab: {fileID: 0}
   anim: {fileID: 0}
-  SparkPrefab: {fileID: 0}
   attackUptime: 0.4
   baseAttackCooldown: 1
   AttackColliderOffset: 0.5

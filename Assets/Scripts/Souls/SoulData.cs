@@ -32,6 +32,7 @@ public class SoulData : MonoBehaviour
 
     /// <summary>
     /// An enum consisting of different stats that can be affected by souls.
+    /// NOTE: ORDER NOW MATTERS, ADD NEW STATS AT THE END
     /// </summary>
     public enum StatType
     {
