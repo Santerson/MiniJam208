@@ -215,7 +215,7 @@ GameObject:
   - component: {fileID: 1274746341847685240}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: BiggerRangEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -357,7 +357,7 @@ MonoBehaviour:
   - {fileID: -950493113596870630, guid: 4b19699c73330c74a96de5c0d110b118, type: 3}
   - {fileID: -8222094007123768620, guid: 389c6c6a1d569764392320ad91e7ecd6, type: 3}
   - {fileID: -2678394577819576460, guid: 7c7a8708d2c5a0b4491b5e3326b7f99c, type: 3}
-  - {fileID: 4334783836991956000, guid: bd6eea6900587ec43bd773a93b49e8de, type: 3}
+  - {fileID: -5428553980459039965, guid: 8e454d8237c7fae479dbbf0bf0faad58, type: 3}
   souls:
   - {fileID: 2399416122655976338, guid: ea032b1c9435d0b4e9a630274f1290a4, type: 3}
   - {fileID: 2399416122655976338, guid: 61af3bfc661a44e4a8cc673cd7769ce6, type: 3}
