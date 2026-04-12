@@ -144,7 +144,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.11764706}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -211,7 +211,7 @@ PrefabInstance:
     - target: {fileID: 465024736148695634, guid: a00a0485a38c7df49a9801ac13281d92, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 4334783836991956000, guid: bd6eea6900587ec43bd773a93b49e8de, type: 3}
+      objectReference: {fileID: -8517045037525813390, guid: cbd72de23125f1b4ea78af4c57046477, type: 3}
     - target: {fileID: 1776789099622943218, guid: a00a0485a38c7df49a9801ac13281d92, type: 3}
       propertyPath: healthBarCover
       value: 
@@ -257,6 +257,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2774688579186102073, guid: a00a0485a38c7df49a9801ac13281d92, type: 3}
+      propertyPath: anim
+      value: 
+      objectReference: {fileID: 1739282969667836703}
+    - target: {fileID: 2774688579186102073, guid: a00a0485a38c7df49a9801ac13281d92, type: 3}
       propertyPath: refWeaponCollider
       value: 
       objectReference: {fileID: 7103301347873441459}
@@ -272,6 +276,54 @@ PrefabInstance:
       propertyPath: refWeaponHitboxScalePoint
       value: 
       objectReference: {fileID: 2694095682445655213}
+    - target: {fileID: 5201783845402012381, guid: a00a0485a38c7df49a9801ac13281d92, type: 3}
+      propertyPath: 'StatTypeDisplayNames.Array.data[0]'
+      value: Atk Dmg
+      objectReference: {fileID: 0}
+    - target: {fileID: 5201783845402012381, guid: a00a0485a38c7df49a9801ac13281d92, type: 3}
+      propertyPath: 'StatTypeDisplayNames.Array.data[1]'
+      value: Atk Range
+      objectReference: {fileID: 0}
+    - target: {fileID: 5201783845402012381, guid: a00a0485a38c7df49a9801ac13281d92, type: 3}
+      propertyPath: 'StatTypeDisplayNames.Array.data[2]'
+      value: Atk Speed
+      objectReference: {fileID: 0}
+    - target: {fileID: 5201783845402012381, guid: a00a0485a38c7df49a9801ac13281d92, type: 3}
+      propertyPath: 'StatTypeDisplayNames.Array.data[3]'
+      value: Move Speed
+      objectReference: {fileID: 0}
+    - target: {fileID: 5201783845402012381, guid: a00a0485a38c7df49a9801ac13281d92, type: 3}
+      propertyPath: 'StatTypeDisplayNames.Array.data[4]'
+      value: Self Damage
+      objectReference: {fileID: 0}
+    - target: {fileID: 5201783845402012381, guid: a00a0485a38c7df49a9801ac13281d92, type: 3}
+      propertyPath: 'StatTypeDisplayNames.Array.data[5]'
+      value: Inc Dmg
+      objectReference: {fileID: 0}
+    - target: {fileID: 5201783845402012381, guid: a00a0485a38c7df49a9801ac13281d92, type: 3}
+      propertyPath: 'StatTypeDisplayNames.Array.data[6]'
+      value: Inc Dmg
+      objectReference: {fileID: 0}
+    - target: {fileID: 5201783845402012381, guid: a00a0485a38c7df49a9801ac13281d92, type: 3}
+      propertyPath: 'StatTypeDisplayNames.Array.data[7]'
+      value: Heal Over Time
+      objectReference: {fileID: 0}
+    - target: {fileID: 5201783845402012381, guid: a00a0485a38c7df49a9801ac13281d92, type: 3}
+      propertyPath: 'StatTypeDisplayNames.Array.data[8]'
+      value: Dmg Over Time
+      objectReference: {fileID: 0}
+    - target: {fileID: 5201783845402012381, guid: a00a0485a38c7df49a9801ac13281d92, type: 3}
+      propertyPath: 'StatTypeDisplayNames.Array.data[9]'
+      value: Explosion Dmg
+      objectReference: {fileID: 0}
+    - target: {fileID: 5201783845402012381, guid: a00a0485a38c7df49a9801ac13281d92, type: 3}
+      propertyPath: 'StatTypeDisplayNames.Array.data[10]'
+      value: Explosion Healing
+      objectReference: {fileID: 0}
+    - target: {fileID: 5201783845402012381, guid: a00a0485a38c7df49a9801ac13281d92, type: 3}
+      propertyPath: 'StatTypeDisplayNames.Array.data[11]'
+      value: Enemy Death AOE Scale
+      objectReference: {fileID: 0}
     - target: {fileID: 6709193749432787357, guid: a00a0485a38c7df49a9801ac13281d92, type: 3}
       propertyPath: m_Name
       value: PlayerObjectDontRename
@@ -288,7 +340,7 @@ PrefabInstance:
       addedObject: {fileID: 5640259297951839027}
     - targetCorrespondingSourceObject: {fileID: 6709193749432787357, guid: a00a0485a38c7df49a9801ac13281d92, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1813388102015909990}
+      addedObject: {fileID: 1739282969667836703}
   m_SourcePrefab: {fileID: 100100000, guid: a00a0485a38c7df49a9801ac13281d92, type: 3}
 --- !u!1 &2186571483773195335 stripped
 GameObject:
@@ -331,7 +383,7 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.58
---- !u!95 &1813388102015909990
+--- !u!95 &1739282969667836703
 Animator:
   serializedVersion: 7
   m_ObjectHideFlags: 0
