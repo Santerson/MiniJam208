@@ -368,7 +368,7 @@ MonoBehaviour:
   - {fileID: 2399416122655976338, guid: 5a333993f244c4e439e531870954434e, type: 3}
   healthBarCover: {fileID: 27501425613462462}
   HealthBarOffset: {x: -0.674, y: -1}
-  MaxHealth: 5
+  MaxHealth: 3
 --- !u!114 &396444578974421165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -387,7 +387,7 @@ MonoBehaviour:
   attackRange: 2
   refWeaponHitboxScalePoint: {fileID: 4767329944785630851}
   currentAttackRange: 0.5
-  speed: 5
+  speed: 4
   AttackRate: 0.4
   BaseDamage: 1
 --- !u!50 &1274746341847685240

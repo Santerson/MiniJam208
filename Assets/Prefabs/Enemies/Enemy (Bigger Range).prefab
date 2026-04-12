@@ -368,7 +368,7 @@ MonoBehaviour:
   - {fileID: 2399416122655976338, guid: 5a333993f244c4e439e531870954434e, type: 3}
   healthBarCover: {fileID: 27501425613462462}
   HealthBarOffset: {x: -0.674, y: -1}
-  MaxHealth: 5
+  MaxHealth: 6
 --- !u!114 &396444578974421165
 MonoBehaviour:
   m_ObjectHideFlags: 0

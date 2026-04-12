@@ -36,6 +36,10 @@ public class EnemySpawnSystem : MonoBehaviour
     [Header("Scaling BISHEP >:(")]
     [Tooltip("The amount that each enemy's health scales by for every enemy spawned\nEquation: NewHealth = CurrentHealth * (1 + EnemyHealthScalingFactor * TotalEnemySpawns)")]
     [SerializeField] float EnemyHealthScalingFactor = 0.05f;
+    [Tooltip("The amount that each enemy's damage scales by for every enemy spawned\nEquation: NewDamage = CurrentDamage * (1 + EnemyDamageScalingFactor * TotalEnemySpawns)")]
+    [SerializeField] float EnemyDamageScalingFactor = 0.05f;
+    [Tooltip("The amount that each enemy's speed scales by for every enemy spawned\nEquation: NewSpeed = CurrentSpeed * (1 + EnemySpeedScalingFactor * TotalEnemySpawns)")]
+    [SerializeField] float EnemySpeedScalingFactor = 0.05f;
 
 
     int totalEnemySpawns = 0;
@@ -46,7 +50,7 @@ public class EnemySpawnSystem : MonoBehaviour
     float timeLeftOfWave = 0f;
 
     // The amount of enemies currently on the field, used to make sure we don't spawn more than the max amount of enemies
-    public int TotalEnemiesCurrentlySpawned = 0;
+    [HideInInspector] public int TotalEnemiesCurrentlySpawned = 0;
     // Whether or not the initial enemies have spawned
     bool spawnedStartEnemiesBool = false;
     // Whether or not we are currently spawning a wave
@@ -181,6 +185,15 @@ public class EnemySpawnSystem : MonoBehaviour
             float newHP = refEnemyHealth.GetMaxHealth() * (1 + EnemyHealthScalingFactor * totalEnemySpawns);
             refEnemyHealth.ChangeMaxHealth(Mathf.Floor(newHP));
         }
-
+        EnemyMovement refEnemyMovement = Enemy.GetComponentInChildren<EnemyMovement>();
+        if (refEnemyMovement != null)
+        {
+            // Increase damage
+            float newDamage = refEnemyMovement.getDamage() * (1 + EnemyDamageScalingFactor * totalEnemySpawns);
+            refEnemyMovement.ChangeDamage(Mathf.Floor(newDamage));
+            // Increase speed
+            float newSpeed = refEnemyMovement.speed * (1 + EnemySpeedScalingFactor * totalEnemySpawns);
+            refEnemyMovement.speed = newSpeed;
+        }
     }
 }

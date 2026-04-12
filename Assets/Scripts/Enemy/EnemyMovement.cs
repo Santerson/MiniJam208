@@ -17,7 +17,7 @@ public class EnemyMovement : MonoBehaviour
     [Header("Variants")]
     [SerializeField] GameObject refWeaponHitboxScalePoint;
     [SerializeField] float currentAttackRange = 1f;
-    [SerializeField] float speed = 3f;
+    public float speed = 3f;
     [SerializeField] float AttackRate = .4f;
     [SerializeField] float BaseDamage = 1f;
     Vector3 baseScale = Vector3.one;
