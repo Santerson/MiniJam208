@@ -13,6 +13,9 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] float stoppingDistance = 3f;
     [SerializeField] float attackRange = 4f;
     float attackTime;
+    bool IsAttacking = false;
+    [HideInInspector] public bool IsPurpleAttacking = false;
+    Animator anim;
 
     [Header("Variants")]
     [SerializeField] GameObject refWeaponHitboxScalePoint;
@@ -28,6 +31,7 @@ public class EnemyMovement : MonoBehaviour
     private void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        anim = GetComponent<Animator>();
     }
 
     private void Start()
@@ -38,6 +42,8 @@ public class EnemyMovement : MonoBehaviour
 
     private void Update()
     {
+        anim.SetBool("IsAttacking", IsAttacking);
+        anim.SetBool("IsPurpleAttacking", IsPurpleAttacking);
         if (player == null)
             return;
         Vector2 direction = player.position - transform.position;
@@ -57,6 +63,15 @@ public class EnemyMovement : MonoBehaviour
                 transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
             else if (distance <= attackRange && Time.time > attackTime)
             {
+                EnemyHealth enemyHealth = GetComponent<EnemyHealth>();
+                if (enemyHealth.IsPurple == true)
+                {
+                    IsPurpleAttacking = true;
+                }
+                else if (enemyHealth.IsPurple == false)
+                {
+                    IsAttacking = true;
+                }
                 Shoot();
                 StartCoroutine(WaitDisableCollider());
                 attackTime = Time.time + 1f / AttackRate;
@@ -72,7 +87,16 @@ public class EnemyMovement : MonoBehaviour
 
     IEnumerator WaitDisableCollider()
     {
+        EnemyHealth enemyHealth = GetComponent<EnemyHealth>();
         yield return new WaitForSeconds(AttackRate);
+        if (enemyHealth.IsPurple == true)
+        {
+            IsPurpleAttacking = false;
+        }
+        else if (enemyHealth.IsPurple == false)
+        {
+            IsAttacking = false;
+        }
         refWeaponCollider.gameObject.SetActive(false);
 
     }

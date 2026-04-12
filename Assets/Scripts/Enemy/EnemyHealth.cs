@@ -12,6 +12,8 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] GameObject SparkPrefab;
     [SerializeField] SpriteRenderer sr;
     [SerializeField] Sprite[] alts = new Sprite[4];
+    Animator anim;
+    public bool IsPurple = false;
 
     [Header("SOULS")]
     [SerializeField] GameObject[] souls = new GameObject[4];
@@ -32,6 +34,7 @@ public class EnemyHealth : MonoBehaviour
     private void Awake()
     {
         sr = GetComponent<SpriteRenderer>();
+        anim = GetComponent<Animator>();
     }
 
     /// <summary>
@@ -39,21 +42,31 @@ public class EnemyHealth : MonoBehaviour
     /// </summary>
     private void Start()
     {
+        EnemyMovement enemyMovement = GetComponent<EnemyMovement>();
         if (Parent.CompareTag("BiggerBadderEnemy").Equals(true) && gameObject.CompareTag("DMGUpEnemy").Equals(true))
         {
             sr.sprite = alts[1];
+            IsPurple = true;
+            enemyMovement.IsPurpleAttacking = true;
+            
         }
         else if (Parent.CompareTag("BiggerBadderEnemy").Equals(true) && gameObject.CompareTag("RegularEmey").Equals(true))
         {
             sr.sprite = alts[0];
+            IsPurple = true;
+            enemyMovement.IsPurpleAttacking = true;
         }
         else if (Parent.CompareTag("BiggerBadderEnemy").Equals(true) && gameObject.CompareTag("SpeedUpEnemy").Equals(true))
         {
             sr.sprite = alts[2];
+            IsPurple = true;
+            enemyMovement.IsPurpleAttacking = true;
         }
         else if (Parent.CompareTag("BiggerBadderEnemy").Equals(true) && gameObject.CompareTag("BiggerRangEnemy").Equals(true))
         {
             sr.sprite = alts[3];
+            IsPurple = true;
+            enemyMovement.IsPurpleAttacking = true;
         }
         // Set the health bar to the correct position
         initialHealthBarPosition = healthBarCover.GetPosition(0).x;
@@ -66,6 +79,7 @@ public class EnemyHealth : MonoBehaviour
     /// </summary>
     private void Update()
     {
+        anim.SetBool("IsPurple", IsPurple);
         // Set the health bar to that position
         healthBarCover.transform.position = (Vector2)transform.position + HealthBarOffset;
         if (currentHealth <= 0 && Parent.CompareTag("BiggerBadderEnemy").Equals(false))
