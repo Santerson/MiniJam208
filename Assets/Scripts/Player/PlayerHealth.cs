@@ -41,7 +41,7 @@ public class PlayerHealth : MonoBehaviour
         ChangeHealth(MaxHealth);
         currentIncomingDmgMultiplier = BaseIncomingDmgMultiplier;
         currentHealthRegen = BaseHealthRegen;
-        EnableBloodSplatter = FindFirstObjectByType<GameManager>().EnableBlood;
+        EnableBloodSplatter = GameManager.Instance.GetBloodStatus();
     }
 
     /// <summary>
