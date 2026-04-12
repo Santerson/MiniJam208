@@ -44,7 +44,7 @@ public class EnemyHealth : MonoBehaviour
         {
             sr.sprite = alts[1];
         }
-        else if (Parent.CompareTag("BiggerBadderEnemy").Equals(true) && gameObject.CompareTag("RegularEnemy").Equals(true))
+        else if (Parent.CompareTag("BiggerBadderEnemy").Equals(true) && gameObject.CompareTag("RegularEmey").Equals(true))
         {
             sr.sprite = alts[0];
         }
