@@ -153,7 +153,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -152, y: 234}
+  m_AnchoredPosition: {x: -1393, y: 121}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &371558784
@@ -242,7 +242,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -485.906, w: -94.591064}
+  m_margin: {x: 0, y: 0, z: -542.49677, w: -94.591064}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -603,7 +603,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -316, y: 1050}
+  m_AnchoredPosition: {x: -743, y: 620}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &607819609
@@ -1028,7 +1028,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -483, y: -211}
+  m_AnchoredPosition: {x: 790, y: -328}
   m_SizeDelta: {x: 308.1468, y: 124.3604}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1070061943
@@ -1078,6 +1078,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1439177706}
         m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
         m_MethodName: MainMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1439177712}
+        m_TargetAssemblyTypeName: PlayUIClick, Assembly-CSharp
+        m_MethodName: PlayClickSFX
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1159,7 +1171,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 19, y: 522.15845}
+  m_AnchoredPosition: {x: 132, y: 522.15845}
   m_SizeDelta: {x: 126.3218, y: 45.683}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1408647385
@@ -1216,7 +1228,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -1248,7 +1260,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -583.87305, y: 0, z: 0, w: -189.63379}
+  m_margin: {x: -1030.5352, y: 0, z: -765.9949, w: -189.63379}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1298,7 +1310,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -26, y: -472}
+  m_AnchoredPosition: {x: 681.00006, y: -472}
   m_SizeDelta: {x: 537.5524, y: 124.3604}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1433496416
@@ -1348,6 +1360,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1439177706}
         m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
         m_MethodName: LevelScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1439177712}
+        m_TargetAssemblyTypeName: PlayUIClick, Assembly-CSharp
+        m_MethodName: PlayClickSFX
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1409,6 +1433,7 @@ GameObject:
   - component: {fileID: 1439177707}
   - component: {fileID: 1439177706}
   - component: {fileID: 1439177711}
+  - component: {fileID: 1439177712}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1531,6 +1556,18 @@ MonoBehaviour:
   EnemiesKilled: {fileID: 546700661}
   SoulsCollected: {fileID: 1533784902}
   SoulsCorrupted: {fileID: 371558784}
+--- !u!114 &1439177712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1439177705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5f911170222ef48adbad260e3af63c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1533784900
 GameObject:
   m_ObjectHideFlags: 0
@@ -1654,7 +1691,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -510.45502, w: -94.591064}
+  m_margin: {x: 0, y: 0, z: -571.08795, w: -94.591064}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
