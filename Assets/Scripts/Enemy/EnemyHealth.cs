@@ -1,5 +1,6 @@
 using NUnit.Framework;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
@@ -10,6 +11,8 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] GameObject ReferenceDamageNumber;
     [Tooltip("Spark Particle for the players attack")]
     [SerializeField] GameObject SparkPrefab;
+    [SerializeField] SpriteRenderer sr;
+    [SerializeField] Sprite[] alts = new Sprite[4];
 
     [Header("SOULS")]
     [SerializeField] GameObject[] souls = new GameObject[4];
@@ -27,12 +30,32 @@ public class EnemyHealth : MonoBehaviour
     float initialHealthBarPosition = 0;
     float currentHealth = 0;
 
+    private void Awake()
+    {
+        sr = GetComponent<SpriteRenderer>();
+    }
+
     /// <summary>
     /// Initializes variables
     /// </summary>
     private void Start()
     {
-
+        if (Parent.CompareTag("BiggerBadderEnemy").Equals(true) && gameObject.CompareTag("DMGUpEnemy").Equals(true))
+        {
+            sr.sprite = alts[1];
+        }
+        else if (Parent.CompareTag("BiggerBadderEnemy").Equals(true) && gameObject.CompareTag("RegularEnemy").Equals(true))
+        {
+            sr.sprite = alts[0];
+        }
+        else if (Parent.CompareTag("BiggerBadderEnemy").Equals(true) && gameObject.CompareTag("SpeedUpEnemy").Equals(true))
+        {
+            sr.sprite = alts[2];
+        }
+        else if (Parent.CompareTag("BiggerBadderEnemy").Equals(true) && gameObject.CompareTag("BiggerRangEnemy").Equals(true))
+        {
+            sr.sprite = alts[3];
+        }
         // Set the health bar to the correct position
         initialHealthBarPosition = healthBarCover.GetPosition(0).x;
         healthBarCover.SetPosition(1, healthBarCover.GetPosition(0));

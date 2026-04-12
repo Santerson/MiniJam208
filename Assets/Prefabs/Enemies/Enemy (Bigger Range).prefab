@@ -352,6 +352,12 @@ MonoBehaviour:
   Parent: {fileID: 3789134319988432624}
   ReferenceDamageNumber: {fileID: 6514653344157738564, guid: 26097fc63389b3d4cb299e4ea411d0b3, type: 3}
   SparkPrefab: {fileID: 8591621038443921934, guid: 35e980017bc20644798c5bf8fe381cad, type: 3}
+  sr: {fileID: 0}
+  alts:
+  - {fileID: -950493113596870630, guid: 4b19699c73330c74a96de5c0d110b118, type: 3}
+  - {fileID: -8222094007123768620, guid: 389c6c6a1d569764392320ad91e7ecd6, type: 3}
+  - {fileID: -2678394577819576460, guid: 7c7a8708d2c5a0b4491b5e3326b7f99c, type: 3}
+  - {fileID: 4334783836991956000, guid: bd6eea6900587ec43bd773a93b49e8de, type: 3}
   souls:
   - {fileID: 2399416122655976338, guid: ea032b1c9435d0b4e9a630274f1290a4, type: 3}
   - {fileID: 2399416122655976338, guid: 61af3bfc661a44e4a8cc673cd7769ce6, type: 3}
