@@ -101,9 +101,6 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: IsPurple
-    m_EventTreshold: 0
-  - m_ConditionMode: 1
     m_ConditionEvent: IsPurpleAttacking
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
@@ -119,7 +116,7 @@ AnimatorStateTransition:
   m_HasFixedDuration: 0
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
-  m_CanTransitionToSelf: 1
+  m_CanTransitionToSelf: 0
 --- !u!1101 &2974700683536152196
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -128,9 +125,6 @@ AnimatorStateTransition:
   m_PrefabAsset: {fileID: 0}
   m_Name: 
   m_Conditions:
-  - m_ConditionMode: 1
-    m_ConditionEvent: IsPurple
-    m_EventTreshold: 0
   - m_ConditionMode: 2
     m_ConditionEvent: IsPurpleAttacking
     m_EventTreshold: 0
@@ -244,6 +238,9 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
+    m_ConditionEvent: IsPurple
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
     m_ConditionEvent: IsPurple
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
