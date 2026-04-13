@@ -35,10 +35,17 @@ public class GameManager : MonoBehaviour
         if (SceneManager.GetSceneByName("Dead").isLoaded)
         {
             audioSources[0].Stop();
+            audioSources[1].Stop();
         }
-        else if (!audioSources[0].isPlaying)
+        else if (!audioSources[0].isPlaying && SceneManager.GetSceneByName("MainMenu").isLoaded)
         {
             audioSources[0].Play();
+            audioSources[1].Stop();
+        }
+        else if (!audioSources[1].isPlaying && SceneManager.GetSceneByName("Level").isLoaded)
+        {
+            audioSources[0].Stop();
+            audioSources[1].Play();
         }
         if (SceneManager.GetSceneByName("Level").isLoaded)
         {
