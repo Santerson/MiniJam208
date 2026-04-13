@@ -41,6 +41,7 @@ public class EnemySpawnSystem : MonoBehaviour
     [SerializeField] float EnemyDamageScalingFactor = 0.05f;
     [Tooltip("The amount that each enemy's speed scales by for every enemy spawned\nEquation: NewSpeed = CurrentSpeed * (1 + EnemySpeedScalingFactor * TotalEnemySpawns)")]
     [SerializeField] float EnemySpeedScalingFactor = 0.05f;
+    [SerializeField] float EnemySpeedScalingFactorMax = 0.5f;
 
     static bool firstRun = true;
 
@@ -199,7 +200,7 @@ public class EnemySpawnSystem : MonoBehaviour
             float newDamage = refEnemyMovement.getDamage() * (1 + EnemyDamageScalingFactor * totalEnemySpawns);
             refEnemyMovement.ChangeDamage(Mathf.Floor(newDamage));
             // Increase speed
-            float newSpeed = refEnemyMovement.speed * (1 + EnemySpeedScalingFactor * totalEnemySpawns);
+            float newSpeed = refEnemyMovement.speed * (1 + Mathf.Min(EnemySpeedScalingFactor * totalEnemySpawns, EnemySpeedScalingFactorMax));
             refEnemyMovement.speed = newSpeed;
         }
     }
